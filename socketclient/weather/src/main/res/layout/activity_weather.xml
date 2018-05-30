@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="me.example.weather.app.activity.WeatherActivity"
+    android:background="@mipmap/icon_weather_bg">
+
+    <!--禅城区,多云,25度,西南风,5~6级,2018-03-28 14:00:00更新-->
+
+    <TextView
+        android:paddingLeft="6dp"
+        android:paddingTop="6dp"
+        android:id="@+id/tv_city"
+        android:text="禅城区"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_temperature"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="50sp"
+        android:layout_below="@+id/tv_city"
+        android:text="17℃" />
+    <TextView
+        android:id="@+id/tv_weather"
+        android:text="多云"
+        android:textSize="20sp"
+        android:layout_below="@+id/tv_temperature"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_wind"
+        android:layout_centerInParent="true"
+        android:text="西南风"
+        android:textSize="18sp"
+        android:paddingTop="6dp"
+        android:layout_below="@+id/tv_weather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_windlevel"
+        android:text="5~6级"
+        android:paddingTop="6dp"
+        android:textSize="18sp"
+        android:layout_below="@+id/tv_wind"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_time"
+        android:textSize="16sp"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
+        android:layout_below="@+id/tv_windlevel"
+        android:layout_centerInParent="true"
+        android:text="03-28 14:00:00更新"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

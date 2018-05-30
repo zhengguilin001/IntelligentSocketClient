@@ -1,0 +1,1 @@
+include ':app', ':socket', ':common', ':voice', ':phone', ':location', ':weather', ':alarm', ':wxchat', ':camera', ':global'

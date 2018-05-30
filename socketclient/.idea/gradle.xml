@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/alarm" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/camera" />
+            <option value="$PROJECT_DIR$/common" />
+            <option value="$PROJECT_DIR$/global" />
+            <option value="$PROJECT_DIR$/location" />
+            <option value="$PROJECT_DIR$/phone" />
+            <option value="$PROJECT_DIR$/socket" />
+            <option value="$PROJECT_DIR$/voice" />
+            <option value="$PROJECT_DIR$/weather" />
+            <option value="$PROJECT_DIR$/wxchat" />
+          </set>
+        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,32 @@
+{
+    "ident":361999,
+    "alarm":[
+        {
+            "duration":0.0,
+            "week":"1111111",
+            "size":0,
+            "start":"08:05",
+            "text":"闹钟",
+            "status":1
+        },
+
+        {
+            "duration":0.0,
+            "week":"0000000",
+            "size":0,
+            "start":"08:00",
+            "text":"闹钟",
+            "status":1
+        }
+    ],
+    "imei":"C5B20180200030",
+    "type":30
+}
+
+ {"ident":467674,"alarm":[{"duration":0.0,"week":"1111111","size":0,"start":"08:05","text":"闹钟","status":1},{"duration":0.0,eek":"0000000","size":0,"start":"08:00","text":"闹钟","status":1}],"imei":"C5B20180200030","type":30}
+
+
+{"ident":981718,"alarm":[{"duration":0.0,"week":"1111111","size":0,"start":"08:05","text":"闹钟","status":1},{"duration":0.0,eek":"0000000","size":0,"start":"08:00","text":"闹钟","status":1},{"duration":0.0,"week":"1111000","size":0,"start":"08:00","text":"闹钟","status":1}],"imei":"C5B20180200030","type":30}
+
+
+{"accuracy":50,"as":"AS4538 China Education and Research Network Center","city":"Nanjing","country":"China","countryCode":"CN","isp":"China Education and Research Network Center","lat":32.0617,"lon":118.7778,"mobile":false,"org":"China Education and Research Network Center","proxy":false,"query":"58.192.32.1","region":"JS","regionName":"Jiangsu","status":"success","timezone":"Asia/Shanghai","zip":""}

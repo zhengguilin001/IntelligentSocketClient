@@ -1,0 +1,105 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    signingConfigs {
+        debug {
+            keyAlias 'platform'
+            keyPassword 'android'
+            storeFile file('release.keystore')
+            storePassword 'android'
+        }
+        release {
+            keyAlias 'platform'
+            keyPassword 'android'
+            storeFile file('release.keystore')
+            storePassword 'android'
+        }
+    }
+    defaultConfig {
+        applicationId "me.example.weather"
+        minSdkVersion 22
+        targetSdkVersion 26
+        versionCode 2
+        versionName "1.0.1"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        //以下为添加的配置多渠道
+        flavorDimensions "versionCode"
+        //以上为添加的配置多渠道
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    //多渠道、多环境打包配置
+    productFlavors {
+        ctyon {
+            // 每个环境包名不同
+            applicationId "me.example.weather"
+            // 动态添加 string.xml 字段；
+            // 注意，这里是添加，在 string.xml 不能有这个字段，会重名！！！
+            resValue "string", "app_name_over", "ctyon"
+            resValue "bool", "auto_options", 'true'
+            // 动态修改 常量 字段
+            buildConfigField "String", "ENVIRONMENT", '"ctyon"'
+            buildConfigField "String", "BUGLLYAPPID", '"622f572d25"'
+            buildConfigField "String", "HOST", "\"https://free-api.heweather.com\""
+            buildConfigField "int", "PORT", "2222"
+            manifestPlaceholders = [CHANNEL_VALUE: "ctyon"
+                                    , app_icon   : "@mipmap/ic_launcher"]
+        }
+        xmaihh {
+            // 每个环境包名不同
+            applicationId "me.example.weather"
+            // 动态添加 string.xml 字段；
+            // 注意，这里是添加，在 string.xml 不能有这个字段，会重名！！！
+            resValue "string", "app_name_over", "xmaihh"
+            resValue "bool", "auto_options", 'true'
+            // 动态修改 常量 字段
+            buildConfigField "String", "ENVIRONMENT", '"xmaihh"'
+            buildConfigField "String", "BUGLLYAPPID", '"622f572d25"'
+            buildConfigField "String", "HOST", "\"https://free-api.heweather.com\""
+            buildConfigField "int", "PORT", "2222"
+            manifestPlaceholders = [CHANNEL_VALUE: "xmaihh"
+                                    , app_icon   : "@mipmap/ic_launcher"]
+        }
+    }
+    productFlavors.all {
+        flavor -> flavor.manifestPlaceholders = [CHANNEL_VALUE: name]
+    }
+
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    //**
+    // 使用retrofit2
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.1'
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    // 使用okhttp3
+    compile 'com.squareup.okhttp3:logging-interceptor:3.9.0'
+    compile 'com.squareup.okhttp3:okhttp:3.9.0'
+    implementation project(':common')
+    implementation project(':global')
+}

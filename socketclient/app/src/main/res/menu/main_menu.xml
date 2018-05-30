@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/machineinfo"
+        android:title="设备信息" />
+    <item
+        android:id="@+id/modeminfo"
+        android:title="基站信息" />
+    <item
+        android:id="@+id/callphone"
+        android:title="快速拨号" />
+    <item
+        android:id="@+id/weather"
+        android:title="获取天气" />
+    <item
+        android:id="@+id/intent_weather"
+        android:title="intent" />
+    <item
+        android:id="@+id/insert_contact"
+        android:title="插入联系人" />
+    <item
+        android:id="@+id/battery"
+        android:title="电池电量" />
+    <item
+        android:id="@+id/shutdown"
+        android:title="关机" />
+    <item
+        android:id="@+id/take_photo"
+        android:title="拍照" />
+
+    <item
+        android:id="@+id/wipe_data"
+        android:title="恢复出厂设置" />
+    <item
+        android:id="@+id/wechat"
+        android:title="开启微聊" />
+    <item
+        android:id="@+id/insert_wechat"
+        android:title="插入数据库" />
+    <item
+        android:id="@+id/set_zen_mode"
+        android:title="设置勿扰模式" />
+</menu>
+

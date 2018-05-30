@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="LibMarsdaemon:@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/LibMarsdaemon.aar/587fa1922180a956ff83ffd33003ec4a/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/LibMarsdaemon.aar/587fa1922180a956ff83ffd33003ec4a/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

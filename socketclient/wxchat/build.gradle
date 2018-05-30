@@ -1,0 +1,61 @@
+//apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
+//apply plugin: 'com.jakewharton.butterknife'
+
+android {
+    compileSdkVersion 26
+
+
+
+    defaultConfig {
+//        applicationId "me.example.wxchat"
+        minSdkVersion 22
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    //**
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+    implementation project(':common')
+    compile project(':global')
+    //    implementation 'com.jakewharton:butterknife:8.6.0'
+    //    annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.lzy.net:okgo:3.0.4'
+    compile 'com.lzy.net:okserver:2.0.5'
+    // Room
+    api 'android.arch.persistence.room:runtime:1.0.0'
+    annotationProcessor "android.arch.persistence.room:compiler:1.0.0"
+    // RxJava support for Room
+    api 'android.arch.persistence.room:rxjava2:1.0.0'
+    // ViewModel and LiveData
+    api 'android.arch.lifecycle:extensions:1.0.0'
+    annotationProcessor "android.arch.lifecycle:compiler:1.0.0"
+    api project(':voice')
+    implementation project(':phone')
+}

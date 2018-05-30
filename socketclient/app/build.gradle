@@ -1,0 +1,135 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        debug {
+            keyAlias 'platform'
+            keyPassword 'android'
+            storeFile file('release.keystore')
+            storePassword 'android'
+        }
+        release {
+            keyAlias 'platform'
+            keyPassword 'android'
+            storeFile file('release.keystore')
+            storePassword 'android'
+        }
+    }
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    defaultConfig {
+        applicationId "com.ctyon.socketclient"
+        minSdkVersion rootProject.ext.appMinSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 2
+        versionName "1.0.1"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        //以下为添加的配置多渠道
+        flavorDimensions "versionCode"
+        //以上为添加的配置多渠道
+//        ndk {
+//            abiFilters "armeabi-v7a", "x86"
+//        }
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+    // 以下为开启Java8 lambda表达式
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    // 以上为开启Java8 lambda表达式
+
+    //多渠道、多环境打包配置
+    productFlavors {sssssss
+        ctyon {
+            // 每个环境包名不同
+            applicationId "com.ctyon.socketclient"
+            // 动态添加 string.xml 字段；
+            // 注意，这里是添加，在 string.xml 不能有这个字段，会重名！！！
+            resValue "string", "app_name_over", "ctyon"
+            resValue "bool", "auto_options", 'true'
+            // 动态修改 常量 字段
+            buildConfigField "String", "ENVIRONMENT", '"ctyon"'
+            buildConfigField "String", "BUGLLYAPPID", '"622f572d25"'
+            //buildConfigField "String", "HOST", "\"httptest.iot08.com\""
+            //buildConfigField "String", "APIIMAGE","\"http://httptest.iot08.com/sendImage\""
+            //buildConfigField "String", "APIVOICE","\"http://httptest.iot08.com/sendAudio\""
+            buildConfigField "String", "HOST", "\"juhuo.iot08.com\""
+            buildConfigField "String", "APIIMAGE","\"http://juhuo.iot08.com/sendImage\""
+            buildConfigField "String", "APIVOICE","\"http://juhuo.iot08.com/sendAudio\""
+            buildConfigField "int", "PORT", "12500"
+            buildConfigField "boolean", "deBug","true"
+            manifestPlaceholders = [CHANNEL_VALUE: "ctyon"
+                                    , app_icon   : "@mipmap/ic_launcher"]
+        }
+        xmaihh {
+            // 每个环境包名不同
+            applicationId "com.ctyon.socketclient"
+            // 动态添加 string.xml 字段；
+            // 注意，这里是添加，在 string.xml 不能有这个字段，会重名！！！
+            resValue "string", "app_name_over", "xmaihh"
+            resValue "bool", "auto_options", 'true'
+            // 动态修改 常量 字段
+            buildConfigField "String", "ENVIRONMENT", '"xmaihh"'
+            buildConfigField "String", "BUGLLYAPPID", '"622f572d25"'
+            buildConfigField "String", "HOST", "\"juhuo.iot08.com\""
+            buildConfigField "String", "APIIMAGE","\"http://juhuo.iot08.com/sendImage\""
+            buildConfigField "String", "APIVOICE","\"http://juhuo.iot08.com/sendAudio\""
+            //buildConfigField "String", "HOST", "\"httptest.iot08.com\""
+            //buildConfigField "String", "APIIMAGE","\"http://httptest.iot08.com/sendImage\""
+            //buildConfigField "String", "APIVOICE","\"http://httptest.iot08.com/sendAudio\""
+            buildConfigField "int", "PORT", "12500"
+            buildConfigField "boolean", "deBug","true"
+            manifestPlaceholders = [CHANNEL_VALUE: "xmaihh"
+                                    , app_icon   : "@mipmap/ic_launcher"]
+        }
+    }
+    productFlavors.all {
+        flavor -> flavor.manifestPlaceholders = [CHANNEL_VALUE: name]
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs' ////就是你放aar的目录地址
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "com.android.support:appcompat-v7: $supportVersion"
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    //*以下为添加的依赖
+    implementation project(':common')
+    implementation project(':socket')
+    implementation "com.android.support:recyclerview-v7:$supportVersion"
+    implementation "com.android.support:design:$supportVersion"
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    implementation 'com.google.code.gson:gson:2.2.4'
+    compile 'com.github.hss01248:NotifyUtil:1.0.1'
+    implementation name: 'bugly_crashreport_upgrade-1.3.4', ext: 'aar'
+    implementation name: 'LibMarsdaemon', ext: 'aar'
+    implementation project(':voice')
+    implementation project(':phone')
+    api project(':location')
+    implementation project(':camera')
+    implementation project(':global')
+    implementation project(':wxchat')
+    compile 'com.facebook.stetho:stetho:1.1.0'
+    compile 'com.facebook.stetho:stetho-okhttp:1.1.0'
+    compile 'com.google.code.gson:gson:2.2.4'
+}
