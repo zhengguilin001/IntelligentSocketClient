@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Wed May 30 19:10:12 CST 2018
+#Sat Jun 02 11:01:21 CST 2018
 4.path=lib/x86/libdaemon_api20.so
 13.baseType=DIRECTORY
 8.set=NATIVE_RESOURCE

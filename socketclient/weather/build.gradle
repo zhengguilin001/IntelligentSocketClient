@@ -27,6 +27,9 @@ android {
         //以下为添加的配置多渠道
         flavorDimensions "versionCode"
         //以上为添加的配置多渠道
+
+        //启用矢量图支持库,api<20不支持
+        vectorDrawables.useSupportLibrary=true
     }
 
     buildTypes {

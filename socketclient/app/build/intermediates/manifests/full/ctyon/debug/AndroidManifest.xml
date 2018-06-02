@@ -33,6 +33,8 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.SHUTDOWN" />
     <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
     <!-- 以下AndroidStudio3.0下使用多渠道打包 -->
@@ -73,6 +75,16 @@
                 <!-- tools:ignore="AppLinkUrlError" /> -->
                 <!-- 只要添加上面这句话，可以隐藏应用图标   +++ -->
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.ctyon.socketclient.app.activity.NewMessageTipActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTop" >
+            <intent-filter>
+                <action android:name="com.ctyon.shawn.MESSAGE_TIP" />
+
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <!-- android:theme="@style/TranslucentTheme" -->

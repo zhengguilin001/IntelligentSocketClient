@@ -16,31 +16,31 @@ import java.lang.Override;
 public class MainActivity_ViewBinding implements Unbinder {
   private MainActivity target;
 
+  private View view2131230819;
+
+  private View view2131230878;
+
+  private View view2131230813;
+
+  private View view2131230857;
+
   private View view2131230816;
 
-  private View view2131230869;
+  private View view2131230890;
 
-  private View view2131230811;
+  private View view2131230855;
 
-  private View view2131230850;
+  private View view2131230837;
 
-  private View view2131230814;
+  private View view2131230941;
 
-  private View view2131230881;
+  private View view2131230939;
 
-  private View view2131230848;
+  private View view2131230947;
 
-  private View view2131230832;
+  private View view2131230853;
 
-  private View view2131230931;
-
-  private View view2131230929;
-
-  private View view2131230936;
-
-  private View view2131230846;
-
-  private View view2131230847;
+  private View view2131230854;
 
   @UiThread
   public MainActivity_ViewBinding(MainActivity target) {
@@ -54,7 +54,7 @@ public class MainActivity_ViewBinding implements Unbinder {
     View view;
     view = Utils.findRequiredView(source, R.id.connect, "field 'connect' and method 'onViewClicked'");
     target.connect = Utils.castView(view, R.id.connect, "field 'connect'", Button.class);
-    view2131230816 = view;
+    view2131230819 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -63,7 +63,7 @@ public class MainActivity_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.login, "field 'login' and method 'onViewClicked'");
     target.login = Utils.castView(view, R.id.login, "field 'login'", Button.class);
-    view2131230869 = view;
+    view2131230878 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -72,7 +72,7 @@ public class MainActivity_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.clear_log, "field 'clearLog' and method 'onViewClicked'");
     target.clearLog = Utils.castView(view, R.id.clear_log, "field 'clearLog'", Button.class);
-    view2131230811 = view;
+    view2131230813 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -82,7 +82,7 @@ public class MainActivity_ViewBinding implements Unbinder {
     target.sendList = Utils.findRequiredViewAsType(source, R.id.send_list, "field 'sendList'", RecyclerView.class);
     target.receList = Utils.findRequiredViewAsType(source, R.id.rece_list, "field 'receList'", RecyclerView.class);
     view = Utils.findRequiredView(source, R.id.heartbeat_c, "method 'onViewClicked'");
-    view2131230850 = view;
+    view2131230857 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -90,7 +90,7 @@ public class MainActivity_ViewBinding implements Unbinder {
       }
     });
     view = Utils.findRequiredView(source, R.id.clocksync, "method 'onViewClicked'");
-    view2131230814 = view;
+    view2131230816 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -98,7 +98,7 @@ public class MainActivity_ViewBinding implements Unbinder {
       }
     });
     view = Utils.findRequiredView(source, R.id.newmessage, "method 'onViewClicked'");
-    view2131230881 = view;
+    view2131230890 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -106,7 +106,7 @@ public class MainActivity_ViewBinding implements Unbinder {
       }
     });
     view = Utils.findRequiredView(source, R.id.getweather, "method 'onViewClicked'");
-    view2131230848 = view;
+    view2131230855 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -114,7 +114,7 @@ public class MainActivity_ViewBinding implements Unbinder {
       }
     });
     view = Utils.findRequiredView(source, R.id.electricity, "method 'onViewClicked'");
-    view2131230832 = view;
+    view2131230837 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -122,7 +122,7 @@ public class MainActivity_ViewBinding implements Unbinder {
       }
     });
     view = Utils.findRequiredView(source, R.id.setpcount, "method 'onViewClicked'");
-    view2131230931 = view;
+    view2131230941 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -130,7 +130,7 @@ public class MainActivity_ViewBinding implements Unbinder {
       }
     });
     view = Utils.findRequiredView(source, R.id.sendvoicess, "method 'onViewClicked'");
-    view2131230929 = view;
+    view2131230939 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -138,7 +138,7 @@ public class MainActivity_ViewBinding implements Unbinder {
       }
     });
     view = Utils.findRequiredView(source, R.id.shutdown, "method 'onViewClicked'");
-    view2131230936 = view;
+    view2131230947 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -146,7 +146,7 @@ public class MainActivity_ViewBinding implements Unbinder {
       }
     });
     view = Utils.findRequiredView(source, R.id.getlocation, "method 'onViewClicked'");
-    view2131230846 = view;
+    view2131230853 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -154,7 +154,7 @@ public class MainActivity_ViewBinding implements Unbinder {
       }
     });
     view = Utils.findRequiredView(source, R.id.getmodem, "method 'onViewClicked'");
-    view2131230847 = view;
+    view2131230854 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -176,31 +176,31 @@ public class MainActivity_ViewBinding implements Unbinder {
     target.sendList = null;
     target.receList = null;
 
+    view2131230819.setOnClickListener(null);
+    view2131230819 = null;
+    view2131230878.setOnClickListener(null);
+    view2131230878 = null;
+    view2131230813.setOnClickListener(null);
+    view2131230813 = null;
+    view2131230857.setOnClickListener(null);
+    view2131230857 = null;
     view2131230816.setOnClickListener(null);
     view2131230816 = null;
-    view2131230869.setOnClickListener(null);
-    view2131230869 = null;
-    view2131230811.setOnClickListener(null);
-    view2131230811 = null;
-    view2131230850.setOnClickListener(null);
-    view2131230850 = null;
-    view2131230814.setOnClickListener(null);
-    view2131230814 = null;
-    view2131230881.setOnClickListener(null);
-    view2131230881 = null;
-    view2131230848.setOnClickListener(null);
-    view2131230848 = null;
-    view2131230832.setOnClickListener(null);
-    view2131230832 = null;
-    view2131230931.setOnClickListener(null);
-    view2131230931 = null;
-    view2131230929.setOnClickListener(null);
-    view2131230929 = null;
-    view2131230936.setOnClickListener(null);
-    view2131230936 = null;
-    view2131230846.setOnClickListener(null);
-    view2131230846 = null;
-    view2131230847.setOnClickListener(null);
-    view2131230847 = null;
+    view2131230890.setOnClickListener(null);
+    view2131230890 = null;
+    view2131230855.setOnClickListener(null);
+    view2131230855 = null;
+    view2131230837.setOnClickListener(null);
+    view2131230837 = null;
+    view2131230941.setOnClickListener(null);
+    view2131230941 = null;
+    view2131230939.setOnClickListener(null);
+    view2131230939 = null;
+    view2131230947.setOnClickListener(null);
+    view2131230947 = null;
+    view2131230853.setOnClickListener(null);
+    view2131230853 = null;
+    view2131230854.setOnClickListener(null);
+    view2131230854 = null;
   }
 }

@@ -1,5 +1,8 @@
 package com.ctyon.socketclient.app.server;
 
+import android.app.ActivityManager;
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
@@ -12,30 +15,27 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.location.LocationProvider;
 import android.net.ConnectivityManager;
-import android.net.wifi.ScanResult;
-import android.net.wifi.WifiInfo;
-import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.IBinder;
 import android.os.Message;
 import android.provider.Settings;
+import android.support.v4.app.NotificationCompat;
 import android.text.TextUtils;
 import android.util.Log;
-import android.widget.Toast;
+import android.view.Gravity;
 
 import com.ctyon.socketclient.App;
 import com.ctyon.socketclient.BuildConfig;
+import com.ctyon.socketclient.R;
 import com.ctyon.socketclient.app.network.NetBroadcastReceiver;
 import com.ctyon.socketclient.app.network.NetEvent;
-import com.ctyon.socketclient.app.network.NetUtil;
 import com.ctyon.socketclient.project.model.AlarmModel;
 import com.ctyon.socketclient.project.senddata.RedirectException;
 import com.ctyon.socketclient.project.senddata.publish.PulseData;
 import com.ctyon.socketclient.project.senddata.publish.SendData;
 import com.ctyon.socketclient.project.support.MyHeaderProtocol;
 import com.ctyon.socketclient.project.support.observer.SettingsObserver;
-import com.ctyon.socketclient.project.util.GpsTool;
 import com.ctyon.socketclient.project.util.IToast;
 import com.example.camera.CameraActivity;
 import com.example.location.AMapLocationImp;
@@ -49,6 +49,7 @@ import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.convert.StringConvert;
 import com.lzy.okgo.model.Response;
 import com.lzy.okgo.request.PostRequest;
+import com.sdsmdg.tastytoast.TastyToast;
 import com.wx.common.support.utils.FileUtils;
 import com.wx.common.support.utils.SafeHandler;
 import com.wx.common.support.utils.timer.RxTimeUtil;
@@ -104,6 +105,8 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
     private long stealCallTime = 0;
     private long uploadLocationTime = 0;
 
+    private ActivityManager activityManager;
+
 
     /**
      * 监控网络的广播
@@ -125,20 +128,21 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
     @Override
     public void onCreate() {
         super.onCreate();
-        Log.i(TAG,  "SocketService oncreate() begin");
+        Log.i(TAG, "SocketService oncreate() begin");
         mHandler = new SafeHandler<SocketService>(this);
+        activityManager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
         //registerContentObserver();
 
         //add by shipeixian on 2018-05-24 begin
         registerReceivers();
         //add by shipeixian on 2018-05-24 end
-        Log.i(TAG,  "SocketService oncreate(...) end");
+        Log.i(TAG, "SocketService oncreate(...) end");
 
     }
 
     private void registerContentObserver() {
         //注册Settings.Global的监听
-        mPicpathObserver = new SettingsObserver(this,mHandler,
+        mPicpathObserver = new SettingsObserver(this, mHandler,
                 Constants.MODEL.SETTINGS.GLOBAL_PIC_PATH,
                 Constants.COMMON.MSG.MSG_UPLOAD_PHOTO, SettingsObserver.UTYPE.STRING);
         getContentResolver().registerContentObserver(Settings.Global
@@ -179,7 +183,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
         //基于当前参配对象构建一个参配建造者类
         OkSocketOptions.Builder builder = new OkSocketOptions.Builder(mOkOptions);
         //修改参配设置
-        builder.setPulseFrequency(9*60 * 1000); // 默认心跳 60s
+        builder.setPulseFrequency(9 * 60 * 1000); // 默认心跳 60s
         builder.setHeaderProtocol(new MyHeaderProtocol());
         //建造一个新的参配对象并且付给通道
         mManager.option(builder.build());
@@ -205,7 +209,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
         public void onSocketReadResponse(Context context, ConnectionInfo info, String action, OriginalData data) {
             String str = new String(data.getBodyBytes(), Charset.forName("utf-8"));
             int length = data.getBodyBytes().length;
-            if(length!=0&& length<65535) {
+            if (length != 0 && length < 65535) {
 //            if (str.length() != 0 && str.length() < 65535) {
                 //打印日志
                 Log.i(TAG, str.length() + "onSocketReadResponse: " + str);
@@ -227,11 +231,13 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                                     .setPulseSendable(new PulseData())
                                     .pulse();
                             //上传电量，服务器要求的
-                            mHandler.sendEmptyMessageDelayed(4401, 20*1000);
+                            mHandler.sendEmptyMessageDelayed(4401, 20 * 1000);
                             //上传定位，服务器要求的
-                            mHandler.sendEmptyMessageDelayed(4403, 40*1000);
+                            mHandler.sendEmptyMessageDelayed(4403, 40 * 1000);
                             //请求天气
-                            mHandler.sendEmptyMessageDelayed(4402, 2*60*1000);
+                            mHandler.sendEmptyMessageDelayed(4402, 2 * 60 * 1000);
+                            //挂通知
+                            sendNotification();
                             Settings.Global.putString(getContentResolver(), Constants.MODEL.SETTINGS.GLOBAL_TOKEN, token);
                             //IToast.show("登录成功");
 //                            mHandler.sendEmptyMessageDelayed(Constants.COMMON.MSG.MSG_SYNC_CLOCK, 1000);
@@ -255,28 +261,28 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                             //服务器下发心跳
                             Log.i("shipeixian", "服务器下发心跳");
                             if (mManager != null && mManager.isConnect()) {
-                                mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_PULSE_S, ident+""));
+                                mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_PULSE_S, ident + ""));
                             }
                             break;
                         case Constants.COMMON.TYPE.TYPE_LOCATION_S:
                             //服务器返回定位结果
                             Log.i("shipeixian", "服务器返回定位结果");
                             if (mManager != null && mManager.isConnect()) {
-                                mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_LOCATION_S, ident+""));
+                                mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_LOCATION_S, ident + ""));
                             }
                             break;
                         case Constants.COMMON.TYPE.TYPE_LOCATION_C:
                             //终端上传定位
                             Log.i("shipeixian", "终端上传定位");
-                            if(mManager!=null && mManager.isConnect()){
+                            if (mManager != null && mManager.isConnect()) {
                                 //mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_LOCATION_C));
                             }
                             break;
                         case Constants.COMMON.TYPE.TYPE_LOCK_S:
                             //服务器请求定位
                             Log.i("shipeixian", "服务器请求定位");
-                            if(mManager!=null && mManager.isConnect()){
-                                mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_LOCK_S, ident+""));
+                            if (mManager != null && mManager.isConnect()) {
+                                mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_LOCK_S, ident + ""));
                             }
                             /*if (AMapLocationImp.buildLocationClient(App.getsContext(), mHandler).isStarted()) {
                                 AMapLocationImp.buildLocationClient(App.getsContext(), mHandler).stopLocation();
@@ -294,8 +300,8 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                         case Constants.COMMON.TYPE.TYPE_SET_CONTACT_S:
 //                        {"type":16,"ident":463124,"index":0,"last":0,"contact":[{"name":"qqq","phone":"1234","t":1521689556.594874}]}
                             Log.i("shipeixian", "通讯录号码设置");
-                            if (mManager!=null && mManager.isConnect()){
-                                mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_SET_CONTACT_S, ident+""));
+                            if (mManager != null && mManager.isConnect()) {
+                                mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_SET_CONTACT_S, ident + ""));
                             }
                             int index = jsonObject.get(Constants.MODEL.DATA.DATA_INEDX).getAsInt();
                             int last = jsonObject.get(Constants.MODEL.DATA.DATA_LAST).getAsInt();
@@ -315,8 +321,8 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
 //                        {"type":10,"ident":226201,"id":"5ab49367c493a9055a9344dc","url":"http://devicetest.iot08.com/static/message/fe801c53132108ecc9781e9e.amr","duration":8,"size":14022}
                             //IToast.show("您有一条新消息(语音)");
                             Log.i("shipeixian", "您有一条新消息(语音)");
-                            if(mManager!=null && mManager.isConnect()){
-                                mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_VOICE_MESSAGE, ident+""));
+                            if (mManager != null && mManager.isConnect()) {
+                                mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_VOICE_MESSAGE, ident + ""));
                             }
                             WeChatMessage bean = new WeChatMessage();
                             bean.setMessageType(WxchatMessageBean.MessageType.Voice.ordinal());
@@ -327,51 +333,53 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                             bean.setShowMeaageTime(true);
                             bean.setValue1(jsonObject.get(Constants.MODEL.DATA.DATA_URL).getAsString());
                             bean.setDuringTime(jsonObject.get(Constants.MODEL.DATA.DATA_DURATION).getAsInt());
-                            bean.setValue2(jsonObject.get(Constants.MODEL.DATA.DATA_SIZE).getAsInt()+"");
-                            DbUtils.insertMsg(App.getsContext(),bean);
+                            bean.setValue2(jsonObject.get(Constants.MODEL.DATA.DATA_SIZE).getAsInt() + "");
+                            DbUtils.insertMsg(App.getsContext(), bean);
+                            mHandler.sendEmptyMessage(4406);
                             break;
                         case Constants.COMMON.TYPE.TYPE_SET_VOLUME:
 //                             {"type":26,"ident":706373,"level":5}
                             //设置音量级别
                             Log.i("shipeixian", "设置音量级别");
                             int volume_level = jsonObject.get(Constants.MODEL.DATA.DATA_LEVEL).getAsInt();
-                            if(mManager!=null&&SettingsUtils.setMediaVolume(App.getsContext(),volume_level*2)){
-                                mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_SET_VOLUME, ident+""));
+                            if (mManager != null && SettingsUtils.setMediaVolume(App.getsContext(), volume_level * 2)) {
+                                mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_SET_VOLUME, ident + ""));
                             }
                             break;
                         case Constants.COMMON.TYPE.TYPE_SHUT_DOWN:
                             //远程关机
                             Log.i("shipeixian", "远程关机");
-                            if(mManager!=null && mManager.isConnect()){
-                                mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_SHUT_DOWN, ident+""));
+                            if (mManager != null && mManager.isConnect()) {
+                                mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_SHUT_DOWN, ident + ""));
                             }
-                            mHandler.sendEmptyMessageDelayed(Constants.COMMON.MSG.MSG_SHUT_DOWN,5000);
+                            mHandler.sendEmptyMessageDelayed(Constants.COMMON.MSG.MSG_SHUT_DOWN, 5000);
                             break;
                         case Constants.COMMON.TYPE.TYPE_WATCH_MACTION:
                             //监听手机
 //                        {"type":34,"ident":381291,"phone":"13678989878"}
-                            if(mManager!=null && mManager.isConnect()){
-                                mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_WATCH_MACTION, ident+""));
+                            if (mManager != null && mManager.isConnect()) {
+                                mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_WATCH_MACTION, ident + ""));
                             }
                             //30秒限制，防止无限下发
                             if (System.currentTimeMillis() - stealCallTime > 30000) {
                                 final String phone = jsonObject.get(Constants.MODEL.DATA.DATA_PHONE).getAsString();
                                 sendBroadcast(new Intent().setAction("com.ctyon.shawn.STEAL_CALL").putExtra("number", phone));
                                 stealCallTime = System.currentTimeMillis();
+                                Log.i("shipeixian", "来自" + phone + "的监听");
                             } else {
                                 final String phone = jsonObject.get(Constants.MODEL.DATA.DATA_PHONE).getAsString();
-                                Log.i("shipeixian", "来自"+phone+"的监听, 30秒前已在拨打监听号码，请稍后重试");
+                                Log.i("shipeixian", "来自" + phone + "的监听, 30秒前已在拨打监听号码，请稍后重试");
                             }
                             break;
                         case Constants.COMMON.TYPE.TYPE_SET_SOS_NUMBER:
 //                             {"type":20,"ident":523220,"sos":["11122233311"]}
                             //设置sos号码
-                            JsonArray sosArray=  jsonObject.get(Constants.MODEL.DATA.DATA_SOS).getAsJsonArray();
+                            JsonArray sosArray = jsonObject.get(Constants.MODEL.DATA.DATA_SOS).getAsJsonArray();
                             String[] sosNumbers = new String[sosArray.size()];
-                            Log.i("shipeixian", "服务器设置紧急联系人"+sosNumbers.toString());
+                            Log.i("shipeixian", "服务器设置紧急联系人" + sosNumbers.toString());
                             //ContactUtils.addContact(App.getsContext(),"sos紧急联系人",sos);
-                            if (mManager!=null && mManager.isConnect()){
-                                mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_SET_SOS_NUMBER, ident+""));
+                            if (mManager != null && mManager.isConnect()) {
+                                mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_SET_SOS_NUMBER, ident + ""));
                             }
                             for (int i = 0; i < sosArray.size(); i++) {
                                 sosNumbers[i] = sosArray.get(i).getAsString();
@@ -385,10 +393,10 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                             //IToast.show("上课禁用指令下达");
                             String disturb = jsonObject.toString();
                             Log.i("shipeixian", "上课禁用指令下达:" + disturb);
-                            if (mManager!=null && mManager.isConnect()){
-                                mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_NO_DISTURB, ident+""));
+                            if (mManager != null && mManager.isConnect()) {
+                                mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_NO_DISTURB, ident + ""));
                             }
-                            Settings.Global.putString(getContentResolver(),Constants.MODEL.SETTINGS.GLOBAL_DISTURB,disturb);
+                            Settings.Global.putString(getContentResolver(), Constants.MODEL.SETTINGS.GLOBAL_DISTURB, disturb);
                             Intent launchIntent = new Intent(Intent.ACTION_MAIN);
                             launchIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             launchIntent.addCategory(Intent.CATEGORY_HOME);
@@ -398,8 +406,8 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                             //定时提醒设置
                             Log.i("shipeixian", "定时提醒设置");
                             String alarm = jsonObject.toString();
-                            if(mManager!=null && mManager.isConnect()){
-                                mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_TIMER_REMIND, ident+""));
+                            if (mManager != null && mManager.isConnect()) {
+                                mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_TIMER_REMIND, ident + ""));
                                 //mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_TIMER_REMIND));
                             }
                             Gson gson = new Gson();
@@ -411,12 +419,12 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                                 List<AlarmModel.AlarmBean> alarmBeans = alarmModel.getAlarm();
                                 if (alarmBeans != null) {
                                     for (AlarmModel.AlarmBean itemBean : alarmBeans) {
-                                        alarmArgs += itemBean.getStart()+","+getAlarmCycle(itemBean.getWeek())+"/";
+                                        alarmArgs += itemBean.getStart() + "," + getAlarmCycle(itemBean.getWeek()) + "/";
                                     }
                                 }
-                                Log.i(TAG, "解析参数 == "+alarmArgs);
+                                Log.i(TAG, "解析参数 == " + alarmArgs);
                             } catch (Exception e) {
-                                Log.i(TAG, "socketclient 闹钟json解析错误："+e);
+                                Log.i(TAG, "socketclient 闹钟json解析错误：" + e);
                             }
                             alarmIntent.putExtra("alarmArgs", alarmArgs);
                             sendBroadcast(alarmIntent);
@@ -427,10 +435,10 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
 //                            {"type":38,"ident":535087,"id":"5ab492fcc493a9055a9344db","content":"flank an jar"}
                             //IToast.show("您有一条新消息(文字)");
                             Log.i("shipeixian", "您有一条新消息(文字)");
-                            if (mManager!=null && mManager.isConnect()){
-                                mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_TEXT_MESSAGE, ident+""));
+                            if (mManager != null && mManager.isConnect()) {
+                                mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_TEXT_MESSAGE, ident + ""));
                             }
-                            WeChatMessage wcm =new WeChatMessage();
+                            WeChatMessage wcm = new WeChatMessage();
                             wcm.setSecid(jsonObject.get(Constants.MODEL.DATA.DATA_ID).getAsString());
                             wcm.setMessageType(WxchatMessageBean.MessageType.Text.ordinal());
                             wcm.setMessageTime(System.currentTimeMillis());
@@ -438,13 +446,14 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                             wcm.setMessageSenderType(WxchatMessageBean.MessageSenderType.Parents.ordinal());
                             wcm.setMessageReadStatus(WxchatMessageBean.MessageReadStatus.UnRead.ordinal());
                             wcm.setShowMeaageTime(true);
-                            DbUtils.insertMsg(App.getsContext(),wcm);
+                            DbUtils.insertMsg(App.getsContext(), wcm);
+                            mHandler.sendEmptyMessage(4406);
                             break;
                         case Constants.COMMON.TYPE.TYPE_REMOTE_PHOTO:
                             //远程拍照
                             Log.i("shipeixian", "远程拍照");
-                            if(mManager!=null && mManager.isConnect()){
-                                mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_REMOTE_PHOTO, ident+""));
+                            if (mManager != null && mManager.isConnect()) {
+                                mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_REMOTE_PHOTO, ident + ""));
                             }
                             //20秒限制，防止无限下发
                             if (System.currentTimeMillis() - stealPhotoTime > 20000) {
@@ -458,32 +467,32 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                             //设置终端定时上传定位
                             Log.i("shipeixian", "设置终端定时上传定位");
                             int timer = jsonObject.get(Constants.MODEL.DATA.DATA_SECOND).getAsInt();
-                            if(mManager!=null && mManager.isConnect()){
-                                mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_TIMER_LOCK, ident+""));
+                            if (mManager != null && mManager.isConnect()) {
+                                mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_TIMER_LOCK, ident + ""));
                             }
                             Settings.Global.putInt(getContentResolver(),
-                                    Constants.MODEL.SETTINGS.GLOBAL_TIMER_LOCK,timer);
+                                    Constants.MODEL.SETTINGS.GLOBAL_TIMER_LOCK, timer);
                             mHandler.obtainMessage(Constants.COMMON.MSG.MSG_TIMER_LOCK).sendToTarget();
                             break;
                         case Constants.COMMON.TYPE.TYPE_CALL_STRATEGY:
                             //拒绝陌生人来电设置
                             //IToast.show("拒绝陌生人来电指令下达");
                             Log.i("shipeixian", "拒绝陌生人来电指令下达");
-                            if(mManager!=null && mManager.isConnect()){
-                                mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_CALL_STRATEGY, ident+""));
+                            if (mManager != null && mManager.isConnect()) {
+                                mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_CALL_STRATEGY, ident + ""));
                             }
                             int strategy = jsonObject.get("on").getAsInt();
                             Settings.Global.putInt(getContentResolver(),
-                                    Constants.MODEL.SETTINGS.GLOBAL_CALLSTRATEGY,strategy);
+                                    Constants.MODEL.SETTINGS.GLOBAL_CALLSTRATEGY, strategy);
                             break;
                         case Constants.COMMON.TYPE.TYPE_GET_WEATHER:
                             //查询终端所在地天气信息
                             Log.i("shipeixian", "查询终端所在地天气信息");
                             String weather = jsonObject.get("weather").getAsString();
                             Settings.Global.putString(getContentResolver(),
-                                    Constants.MODEL.SETTINGS.GLOBAL_WEATHER,weather);
+                                    Constants.MODEL.SETTINGS.GLOBAL_WEATHER, weather);
                             try {
-                                FileUtils.saveData(App.getsContext(),weather,"weather.json");
+                                FileUtils.saveData(App.getsContext(), weather, "weather.json");
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
@@ -491,8 +500,8 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                         case Constants.COMMON.TYPE.TYPE_MASTER_CLEAR:
                             //恢复手表出厂设置
                             Log.i("shipeixian", "恢复手表出厂设置");
-                            if(mManager!=null && mManager.isConnect()){
-                                mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_MASTER_CLEAR, ident+""));
+                            if (mManager != null && mManager.isConnect()) {
+                                mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_MASTER_CLEAR, ident + ""));
                             }
                             FileUtils.cleanInternalCache(App.getsContext());
                             FileUtils.deleteFilesByDirectory(new File(Constants.MODEL.CACHEPATH.CACHE));
@@ -509,10 +518,10 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                             //IToast.show("恢复出厂设置指令下达");
                             Log.i("shipeixian", "服务器下发设备验证码");
                             String deviceToken = jsonObject.get("token").getAsString();
-                            if(mManager!=null && mManager.isConnect()){
-                                mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_DEVICE_TOKEN, ident+""));
+                            if (mManager != null && mManager.isConnect()) {
+                                mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_DEVICE_TOKEN, ident + ""));
                             }
-                            Settings.Global.putString(getContentResolver(), "socket_client_token",deviceToken);
+                            Settings.Global.putString(getContentResolver(), "socket_client_token", deviceToken);
                             //startActivity
                             Intent qrcodeIntent = new Intent();
                             qrcodeIntent.setClassName("com.ctyon.watch", "com.ctyon.watch.ui.activity.QrcodeActivity");
@@ -551,7 +560,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                         message.arg1 = typeArgsValue;
                         mHandler.sendMessage(message);
                     }
-                }, 10*1000);
+                }, 10 * 1000);
             }
             Log.i(TAG, "type = " + typeValue);
             //add by shipeixian for record the response time end
@@ -596,19 +605,20 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                             }
                         }, 5000);
                     }*/
-
                 }
             } else {
                 //IToast.show("正常断开");
                 Log.i(TAG, "正常断开");
             }
+            //取消通知
+            cancelNotification();
         }
 
         @Override
         public void onSocketConnectionSuccess(Context context, ConnectionInfo info, String action) {
             String str = info.getIp() + info.getPort() + action;
             Log.i(TAG, "onSocketConnectionSuccess: 服务器连接成功" + str);
-            mHandler.sendEmptyMessageDelayed(Constants.COMMON.MSG.MSG_LOGIN,1500);
+            mHandler.sendEmptyMessageDelayed(Constants.COMMON.MSG.MSG_LOGIN, 1500);
             //失败重连次数值为0
             connectFailedCount = 0;
         }
@@ -618,7 +628,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
             String str = info.getIp() + info.getPort() + action + e.toString();
             Log.i(TAG, "onSocketConnectionFailed: 服务器连接失败" + str);
             //失败重连次数自增，当重连失败3次，则重置socket，10分钟后尝试再连接
-            connectFailedCount ++;
+            connectFailedCount++;
             if (connectFailedCount == 3) {
                 if (mManager != null) {
                     mManager.unRegisterReceiver(adapter);
@@ -626,7 +636,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                     mManager = null;
                 }
                 connectFailedCount = 0;
-                mHandler.sendEmptyMessageDelayed(4405, 10*60*1000);
+                mHandler.sendEmptyMessageDelayed(4405, 10 * 60 * 1000);
             }
         }
     };
@@ -673,14 +683,14 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                 startActivity(new Intent(this, CameraActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                 break;
             case Constants.COMMON.MSG.MSG_UPLOAD_PHOTO:
-                if (msg.obj instanceof String){
-                    String path = (String)msg.obj;
+                if (msg.obj instanceof String) {
+                    String path = (String) msg.obj;
                     PostRequest<String> postRequest = OkGo.<String>post(Constants.COMMON.Url.sendImage)
                             .params("imei", DeviceUtils.getIMEI(this))
                             //.params("imei", "C5B20180200030")
                             .params("token", Settings.Global.getString(getContentResolver(),
                                     Constants.MODEL.SETTINGS.GLOBAL_TOKEN))
-                            .params("content",new File(path))
+                            .params("content", new File(path))
                             .converter(new StringConvert());
                     postRequest.execute(new StringCallback() {
                         @Override
@@ -700,9 +710,9 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
             case Constants.COMMON.MSG.MSG_TIMER_LOCK:
                 mHandler.removeMessages(4403);
                 RxTimeUtil.cancel();
-                int time = (int)msg.obj;
+                int time = (int) msg.obj;
                 //重新设置定时上传定位的时间
-                RxTimeUtil.interval(1000*time,number ->{
+                RxTimeUtil.interval(1000 * time, number -> {
                             if (AMapLocationImp.buildLocationClient(App.getsContext(), mHandler).isStarted()) {
                                 AMapLocationImp.buildLocationClient(App.getsContext(), mHandler).stopLocation();
                             }
@@ -710,12 +720,12 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
 
                             //***每天更新天气信息
                             SimpleDateFormat df = new SimpleDateFormat("HH:mm");//设置日期格式
-                            boolean isInTime = TimeUtils.isInTime("02:00-10:00",df.format(new Date()));
+                            boolean isInTime = TimeUtils.isInTime("02:00-10:00", df.format(new Date()));
                             //如果当天未更新天气信息，则将自动从服务器获取一次
-                            if (isInTime&& (!FileUtils.inSameDay(
+                            if (isInTime && (!FileUtils.inSameDay(
                                     FileUtils.getFileLastModifiedTime(path + file),
-                                    new Date()))){
-                                if (mManager!=null && mManager.isConnect()){
+                                    new Date()))) {
+                                if (mManager != null && mManager.isConnect()) {
                                     mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_GET_WEATHER));
                                 }
                             }
@@ -739,7 +749,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                 //每一个小时上传一次电量，如此可减少功耗
                 if (mManager != null && mManager.isConnect()) {
                     mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_ELECTRICITY));
-                    mHandler.sendEmptyMessageDelayed(4401, 60*60*1000);
+                    mHandler.sendEmptyMessageDelayed(4401, 60 * 60 * 1000);
                 }
                 break;
             case 4402:
@@ -750,7 +760,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
             case 4403:
                 //默认省电模式，每一小时上传一次定位
                 startLocationWithNetwork();
-                mHandler.sendEmptyMessageDelayed(4403, 60*60*1000);
+                mHandler.sendEmptyMessageDelayed(4403, 60 * 60 * 1000);
                 break;
             case 4404:
                 if (isWaitingServerResponse) {
@@ -773,7 +783,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                         }, 5000);
                     } else {
                         if (mManager != null && mManager.isConnect()) {
-                            resendCodeCount ++;
+                            resendCodeCount++;
                             //如果重发了三次还不行，则重连
                             if (resendCodeCount == 4) {
                                 mHandler.removeMessages(4400);
@@ -796,15 +806,19 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                             }
                         }
                     }
-                    Log.i(TAG, "socket的连接状态为isconnect = "+mManager.isConnect());
+                    Log.i(TAG, "socket的连接状态为isconnect = " + mManager.isConnect());
                 }
                 break;
             case 4405:
                 resetSocket();
                 break;
             case 4406:
+                if (getTopActivity() != null && !getTopActivity().contains("WxchatActivity")) {
+                    startActivity(new Intent().setAction("com.ctyon.shawn.MESSAGE_TIP").setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                }
                 break;
-            default:break;
+            default:
+                break;
         }
     }
 
@@ -813,7 +827,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
         super.onDestroy();
         getContentResolver().unregisterContentObserver(mPicpathObserver);
         mHandler.removeCallbacksAndMessages(null);
-        mPicpathObserver=null;
+        mPicpathObserver = null;
         RxTimeUtil.cancel();
         //add by shipeixian for close manager begin
         if (mManager != null) {
@@ -838,7 +852,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
             for (String item : sosNumbers) {
                 sosString += item + "/";
             }
-            Settings.Global.putString(getContentResolver(),"socket_client_sos_number", sosString);
+            Settings.Global.putString(getContentResolver(), "socket_client_sos_number", sosString);
         } catch (Exception e) {
 
         }
@@ -862,9 +876,9 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
     //add by shipeixian for location end
 
     //add by shipeixian for force stop self begin
-    private void forceStopPackage(String packageName){
+    private void forceStopPackage(String packageName) {
         try {
-            android.app.ActivityManager mActivityManager = (android.app.ActivityManager)getSystemService(Context.ACTIVITY_SERVICE);
+            android.app.ActivityManager mActivityManager = (android.app.ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
             java.lang.reflect.Method forceStopPackageMethod = Class.forName("android.app.ActivityManager").getMethod("forceStopPackage", String.class);
             forceStopPackageMethod.setAccessible(true);
             forceStopPackageMethod.invoke(mActivityManager, packageName);
@@ -987,7 +1001,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
          */
         public void onProviderEnabled(String provider) {
             Location location = locationManager.getLastKnownLocation(provider);
-            Log.i(TAG, "GPS开启时触发 "+location.getLatitude()+"-"+location.getLongitude());
+            Log.i(TAG, "GPS开启时触发 " + location.getLatitude() + "-" + location.getLongitude());
             updateGpsData(location);
         }
 
@@ -1090,6 +1104,37 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
             }
         }
         return result;
+    }
+
+    private void sendNotification() {
+        /*NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
+        Notification notification = builder.setContentTitle("")
+                .setDefaults(Notification.DEFAULT_LIGHTS).setSmallIcon(R.mipmap.icon_notification)
+                .setAutoCancel(false)
+                .setPriority(Notification.PRIORITY_MAX)
+                .build();
+
+        notificationManager.notify(4444, notification);*/
+    }
+
+    private void cancelNotification() {
+        /*NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        notificationManager.cancel(4444);*/
+    }
+
+    private void showMessageToast() {
+        if (getTopActivity() != null && !getTopActivity().contains("WxchatActivity")) {
+            TastyToast.makeText(getApplicationContext(), "您有新的微聊消息!", TastyToast.LENGTH_SHORT, TastyToast.SUCCESS).setGravity(Gravity.CENTER, 0, 0);
+        }
+    }
+
+    private String getTopActivity() {
+        List<ActivityManager.RunningTaskInfo> runningTaskInfos = activityManager.getRunningTasks(1) ;
+        if(runningTaskInfos != null)
+            return (runningTaskInfos.get(0).topActivity).toString() ;
+        else
+            return null ;
     }
 
 }
