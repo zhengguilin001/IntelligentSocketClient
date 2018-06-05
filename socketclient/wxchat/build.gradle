@@ -58,4 +58,5 @@ dependencies {
     annotationProcessor "android.arch.lifecycle:compiler:1.0.0"
     api project(':voice')
     implementation project(':phone')
+
 }

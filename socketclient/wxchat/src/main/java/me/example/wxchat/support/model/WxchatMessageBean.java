@@ -101,6 +101,27 @@ public class WxchatMessageBean {
     //    保留字段5
     private String value5;
 
+    //add by shipeixian begin
+    private String secid;
+
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getSecid() {
+        return secid;
+    }
+
+    public void setSecid(String secid) {
+        this.secid = secid;
+    }
+    //add by shipeixian end
 
     public MessageType getMessageType() {
         return messageType;

@@ -79,8 +79,16 @@
             android:layout_alignRight="@id/cell_hantu_voice_level_relativelayout"
             />
 
+        <View
+            android:id="@+id/unreadMessage"
+            android:layout_toRightOf="@id/cell_hantu_voice_duringtime_textview"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="@mipmap/icon_message_unread"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="35dp"
 
+            />
     </RelativeLayout>
-
 
 </LinearLayout>

@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Handler;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,11 +20,15 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
+import com.wx.common.support.utils.DataUtils;
 
 import java.util.List;
 import me.example.wxchat.R;
+import me.example.wxchat.support.model.WeChatMessage;
 import me.example.wxchat.support.model.WxchatMessageBean;
+import me.example.wxchat.support.persistence.DbUtils;
 import me.example.wxchat.support.widget.BubbleImageView;
+import me.xmai.global.config.Constants;
 
 /**
  * Created by Administrator on 2018/3/16.
@@ -144,6 +149,10 @@ public class WxchatAdapter extends RecyclerView.Adapter<WxchatAdapter.WxchatHold
             final AnimationDrawable animationDrawable = (AnimationDrawable) newHolder.cellHantuVoiceAniotionImageView.getDrawable();
             newHolder.cellHantuVoiceLevelRelativelayout.setOnClickListener(view -> {
 
+                //add by shipeixian begin
+                newHolder.unreadMessage.setVisibility(View.GONE);
+                //add by shipeixian end
+
                 if (animationDrawable.isRunning()){
                     animationDrawable.stop();
                 }
@@ -172,6 +181,13 @@ public class WxchatAdapter extends RecyclerView.Adapter<WxchatAdapter.WxchatHold
 
                 return true;
             });
+            if (wechatMessageBean.getReadStatus() == WxchatMessageBean.MessageReadStatus.UnRead) {
+                Log.i("shipeixian", "未读消息");
+                newHolder.unreadMessage.setVisibility(View.VISIBLE);
+            } else {
+                Log.i("shipeixian", "已读消息");
+                newHolder.unreadMessage.setVisibility(View.GONE);
+            }
         }else if(holder instanceof ImageHantuChatHolder){
             ImageHantuChatHolder newHolder=(ImageHantuChatHolder)holder;
 
@@ -476,6 +492,7 @@ public class WxchatAdapter extends RecyclerView.Adapter<WxchatAdapter.WxchatHold
         RelativeLayout cellHantuVoiceLevelRelativelayout;
         ImageView cellHantuVoiceAniotionImageView;
         TextView cellHantuVoiceDuringtimeTextview;
+        View unreadMessage;
 
         public VoiceHantuChatHolder(View itemView) {
             super(itemView);
@@ -485,6 +502,7 @@ public class WxchatAdapter extends RecyclerView.Adapter<WxchatAdapter.WxchatHold
             cellHantuVoiceLevelRelativelayout=itemView.findViewById(R.id.cell_hantu_voice_level_relativelayout);
             cellHantuVoiceAniotionImageView=itemView.findViewById( R.id.cell_hantu_voice_aniotion_imageview);
             cellHantuVoiceDuringtimeTextview=itemView.findViewById( R.id.cell_hantu_voice_duringtime_textview);
+            unreadMessage = itemView.findViewById(R.id.unreadMessage);
         }
     }
     final class ImageHantuChatHolder extends WxchatHolder {

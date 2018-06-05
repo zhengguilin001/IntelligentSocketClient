@@ -7,12 +7,12 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.PowerManager;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -29,6 +29,7 @@ public class NewMessageTipActivity extends Activity {
     private Button showMsg, cancelTip;
     private PowerManager.WakeLock mWakelock;
     private PowerManager powerManager;
+    private MediaPlayer mediaPlayer;
 
     private Handler handler = new Handler() {
         @Override
@@ -102,6 +103,8 @@ public class NewMessageTipActivity extends Activity {
         IntentFilter intentFilter = new IntentFilter(Intent.ACTION_SCREEN_OFF);
         registerReceiver(screenReceiver, intentFilter);
 
+        mediaPlayer = MediaPlayer.create(this, R.raw.test);
+        mediaPlayer.start();
     }
 
     @Override
@@ -141,6 +144,11 @@ public class NewMessageTipActivity extends Activity {
             mWakelock.release();
         }
         super.onDestroy();
+        if (mediaPlayer != null) {
+            //释放mp
+            mediaPlayer.stop();
+            mediaPlayer.release();
+        }
     }
 
     private void sendKeyEvent(final int keyCode) {

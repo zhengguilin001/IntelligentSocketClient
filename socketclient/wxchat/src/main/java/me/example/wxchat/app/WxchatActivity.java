@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
@@ -154,6 +155,11 @@ public class WxchatActivity extends AppCompatActivity implements WxchatAdapter.W
                     wmb.setImageUrl(m.getImageUrl());
                     wmb.setLogoUrl(m.getLogoUrl());
                     wmb.setValue1(m.getValue1());
+                    //add by shipeixian begin
+                    wmb.setId(m.getId());
+                    wmb.setSecid(m.getSecid());
+                    wmb.setValue2(m.getValue2());
+                    //add by shipeixian end
                 ll.add(wmb);
             }
             Log.d("521", "onStart: mList"+ll.size());
@@ -184,6 +190,26 @@ public class WxchatActivity extends AppCompatActivity implements WxchatAdapter.W
                     }
                 });
             }
+            //add by shipeixian begin
+            if (wmb.getReadStatus() == WxchatMessageBean.MessageReadStatus.UnRead) {
+                WeChatMessage bean = new WeChatMessage();
+                bean.setId(wmb.getId());
+                bean.setMessageType(WxchatMessageBean.MessageType.Voice.ordinal());
+                bean.setMessageSenderType(WxchatMessageBean.MessageSenderType.Parents.ordinal());
+                bean.setMessageReadStatus(WxchatMessageBean.MessageReadStatus.Read.ordinal());
+                bean.setSecid(wmb.getSecid());
+                try {
+                    bean.setMessageTime(DataUtils.stringToLong(wmb.getMessageTime(),"yyyy-MM-dd HH:mm"));
+                } catch (Exception e) {
+
+                }
+                bean.setShowMeaageTime(true);
+                bean.setValue1(wmb.getValue1());
+                bean.setDuringTime(wmb.getDuringTime());
+                bean.setValue2(wmb.getValue2());
+                DbUtils.insertMsg(getApplicationContext(), bean);
+            }
+            //add by shipeixian end
         }else if(wmb.getMessageType()==WxchatMessageBean.MessageType.Text){
 
         }

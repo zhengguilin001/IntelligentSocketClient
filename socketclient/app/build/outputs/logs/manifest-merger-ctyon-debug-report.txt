@@ -55,8 +55,6 @@ INJECTED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifes
 		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:4:5-37
 		INJECTED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml
 		INJECTED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml
-	android:sharedUserId
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:5:5-46
 	android:versionName
 		INJECTED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml
 		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:2:1-110:12
