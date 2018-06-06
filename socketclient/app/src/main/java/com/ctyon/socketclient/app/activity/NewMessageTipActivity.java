@@ -12,7 +12,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.PowerManager;
+import android.os.SystemClock;
 import android.support.annotation.Nullable;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -48,6 +50,11 @@ public class NewMessageTipActivity extends Activity {
         public void onReceive(Context context, Intent intent) {
             if (intent.getAction().equals(Intent.ACTION_SCREEN_OFF)) {
                 NewMessageTipActivity.this.finish();
+            } else if (intent.getAction().equals(Intent.ACTION_SCREEN_ON)){
+                sendTouchEvent();
+                /*KeyguardManager km= (KeyguardManager) getSystemService(Context.KEYGUARD_SERVICE);
+                //这里参数”unLock”作为调试时LogCat中的Tag
+                KeyguardManager.KeyguardLock kl = km.newKeyguardLock("unLock");*/
             }
         }
     }
@@ -96,11 +103,13 @@ public class NewMessageTipActivity extends Activity {
 
         powerManager = (PowerManager) getSystemService(Context.POWER_SERVICE);
         if (!powerManager.isScreenOn()) {
-            mWakelock = powerManager.newWakeLock(PowerManager.ACQUIRE_CAUSES_WAKEUP|PowerManager.SCREEN_DIM_WAKE_LOCK,"SimpleTimer");
+           // mWakelock = powerManager.newWakeLock(PowerManager.ACQUIRE_CAUSES_WAKEUP|PowerManager.SCREEN_DIM_WAKE_LOCK,"SimpleTimer");
         }
 
         screenReceiver = new ScreenReceiver();
-        IntentFilter intentFilter = new IntentFilter(Intent.ACTION_SCREEN_OFF);
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(Intent.ACTION_SCREEN_ON);
+        intentFilter.addAction(Intent.ACTION_SCREEN_OFF);
         registerReceiver(screenReceiver, intentFilter);
 
         mediaPlayer = MediaPlayer.create(this, R.raw.test);
@@ -115,10 +124,25 @@ public class NewMessageTipActivity extends Activity {
         } catch (Exception e) {
 
         }
-        if (mWakelock != null) {
+        if (!powerManager.isScreenOn()) {
+            sendKeyEvent(26);
+            handler.sendEmptyMessageDelayed(4444, 10000);
+            /*handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    KeyguardManager km= (KeyguardManager) getSystemService(Context.KEYGUARD_SERVICE);
+                    //这里参数”unLock”作为调试时LogCat中的Tag
+                    KeyguardManager.KeyguardLock kl = km.newKeyguardLock("unLock");
+                    kl.reenableKeyguard();
+                }
+            }, 9800);*/
+        }
+        /*if (mWakelock != null) {
             mWakelock.acquire();
+            sendTouchEvent();
+            handler.sendEmptyMessageDelayed(4444, 10000);
             //键盘锁管理器对象
-            KeyguardManager km= (KeyguardManager) getSystemService(Context.KEYGUARD_SERVICE);
+            *//*KeyguardManager km= (KeyguardManager) getSystemService(Context.KEYGUARD_SERVICE);
             //这里参数”unLock”作为调试时LogCat中的Tag
             KeyguardManager.KeyguardLock kl = km.newKeyguardLock("unLock");
             kl.disableKeyguard();  //解锁
@@ -128,8 +152,8 @@ public class NewMessageTipActivity extends Activity {
                 public void run() {
                     kl.reenableKeyguard();
                 }
-            }, 9500);
-        }
+            }, 9500);*//*
+        }*/
     }
 
     @Override
@@ -140,6 +164,8 @@ public class NewMessageTipActivity extends Activity {
 
     @Override
     protected void onDestroy() {
+
+
         if (mWakelock != null) {
             mWakelock.release();
         }
@@ -160,5 +186,23 @@ public class NewMessageTipActivity extends Activity {
                 instrumentation.sendKeyDownUpSync(keyCode);
             }
         }).start();
+    }
+
+    private void sendTouchEvent() {
+        /*final Instrumentation instrumentation = new Instrumentation();
+        instrumentation.sendPointerSync(MotionEvent.obtain(SystemClock.uptimeMillis(), SystemClock.uptimeMillis(), MotionEvent.ACTION_DOWN, 100, 120, 0,0,0,0,0,0,0));// OK
+        instrumentation.sendPointerSync(MotionEvent.obtain(SystemClock.uptimeMillis(), SystemClock.uptimeMillis(), MotionEvent.ACTION_MOVE, 150, 120, 0,0,0,0,0,0,0));*/
+        try {
+            Runtime.getRuntime().exec("input swipe 50 50 150 50");
+        }catch (Exception e) {
+
+        }
+        /*new Thread(new Runnable() {
+
+            @Override
+            public void run () {
+                instrumentation.sendPointerSync(MotionEvent.obtain(SystemClock.uptimeMillis(), SystemClock.uptimeMillis(), MotionEvent.ACTION_MOVE, 50, 50, 50));
+            }
+        }).start();*/
     }
 }

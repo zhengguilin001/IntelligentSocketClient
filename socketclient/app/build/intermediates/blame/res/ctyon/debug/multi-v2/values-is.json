@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/shipeixian/Projects/socketclient/app/build/intermediates/incremental/mergeCtyonDebugResources/merged.dir/values-is/values-is.xml",
+            "outputFile": "/home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/build/intermediates/incremental/mergeCtyonDebugResources/merged.dir/values-is/values-is.xml",
             "map": [
                 {
                     "source": "/home/shipeixian/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/543713d1a909b42c07daf70035a30008/res/values-is/values-is.xml",

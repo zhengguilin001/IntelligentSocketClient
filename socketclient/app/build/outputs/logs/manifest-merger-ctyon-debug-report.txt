@@ -1,33 +1,33 @@
 -- Merging decision tree log ---
 meta-data#CHANNEL
-INJECTED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:42:5-44:44
+INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:42:5-44:44
 	android:value
-		INJECTED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:44:9-41
+		INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:44:9-41
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:43:9-31
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:43:9-31
 manifest
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:2:1-110:12
-INJECTED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:2:1-110:12
-INJECTED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:2:1-110:12
-INJECTED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:2:1-110:12
-MERGED from [:location] /home/shipeixian/Projects/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-40:12
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-110:12
+INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-110:12
+INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-110:12
+INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-110:12
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-40:12
 MERGED from [com.github.hss01248:NotifyUtil:1.0.1] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/NotifyUtil-1.0.1.aar/64540cee893e286178ab9e12e6feb3f0/AndroidManifest.xml:2:1-17:12
-MERGED from [:wxchat] /home/shipeixian/Projects/socketclient/wxchat/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-42:12
-MERGED from [:common] /home/shipeixian/Projects/socketclient/common/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:wxchat] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/wxchat/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-42:12
+MERGED from [:common] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/common/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [com.sdsmdg.tastytoast:tastytoast:0.1.1] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/tastytoast-0.1.1.aar/13e183e20854aff33ec384e05e565455/AndroidManifest.xml:2:1-14:12
-MERGED from [:socket] /home/shipeixian/Projects/socketclient/socket/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-11:12
-MERGED from [:voice] /home/shipeixian/Projects/socketclient/voice/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-15:12
-MERGED from [:phone] /home/shipeixian/Projects/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-25:12
-MERGED from [:camera] /home/shipeixian/Projects/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-46:12
-MERGED from [:global] /home/shipeixian/Projects/socketclient/global/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:socket] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/socket/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:voice] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/voice/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-15:12
+MERGED from [:phone] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-25:12
+MERGED from [:camera] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-46:12
+MERGED from [:global] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/global/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:design:26.1.0] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/65167dd07c067b2951d81df254ee7327/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:appcompat-v7:26.1.0] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/543713d1a909b42c07daf70035a30008/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/23d86d850d030318e127f4bb0ef3814d/AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/d62fd3638d736efc37a186674b334580/AndroidManifest.xml:17:1-28:12
 MERGED from [com.jakewharton:butterknife:8.8.1] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/butterknife-8.8.1.aar/958d37071f04648e2a1660659455bad6/AndroidManifest.xml:2:1-7:12
-MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:2:1-207:12
-MERGED from [:LibMarsdaemon:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/LibMarsdaemon.aar/587fa1922180a956ff83ffd33003ec4a/AndroidManifest.xml:2:1-17:12
+MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:2:1-207:12
+MERGED from [:LibMarsdaemon:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/LibMarsdaemon.aar/864ece048e0951bb535cb3c2e6ef40cb/AndroidManifest.xml:2:1-17:12
 MERGED from [io.reactivex.rxjava2:rxandroid:2.0.2] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/rxandroid-2.0.2.aar/24176344a528fbacd47dbf20574518f9/AndroidManifest.xml:15:1-21:12
 MERGED from [android.arch.persistence.room:rxjava2:1.0.0] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/rxjava2-1.0.0.aar/1411a597045aca0512690fb3b6102442/AndroidManifest.xml:17:1-24:12
 MERGED from [com.snappydb:snappydb-lib:0.5.2] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/snappydb-lib-0.5.2.aar/6b15a78daea57699631d2b469c45c56c/AndroidManifest.xml:2:1-13:12
@@ -48,211 +48,213 @@ MERGED from [com.android.support:support-compat:26.1.0] /home/shipeixian/.gradle
 MERGED from [android.arch.lifecycle:runtime:1.0.3] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/5eac6832f82618fad35b2f235ecde8f8/AndroidManifest.xml:17:1-24:12
 MERGED from [com.lzy.net:okserver:2.0.5] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/okserver-2.0.5.aar/411a751041ce7e49f0f58912d1af2457/AndroidManifest.xml:17:1-27:12
 MERGED from [com.lzy.net:okgo:3.0.4] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/okgo-3.0.4.aar/44c8b7a08e2fb1509bad315ffb486acc/AndroidManifest.xml:17:1-31:12
-INJECTED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:2:1-110:12
-INJECTED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:2:1-110:12
-INJECTED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:2:1-110:12
+INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-110:12
+INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-110:12
+INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-110:12
 	package
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:4:5-37
-		INJECTED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml
-		INJECTED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:4:5-37
+		INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml
+		INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml
+	android:sharedUserId
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:5:5-46
 	android:versionName
-		INJECTED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:2:1-110:12
-		INJECTED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml
+		INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-110:12
+		INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml
 	xmlns:tools
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:3:5-51
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:3:5-51
 	android:versionCode
-		INJECTED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:2:1-110:12
-		INJECTED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml
+		INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-110:12
+		INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:11-69
 uses-permission#android.permission.READ_PHONE_STATE
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:7:5-75
-MERGED from [:location] /home/shipeixian/Projects/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:23:5-75
-MERGED from [:location] /home/shipeixian/Projects/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:23:5-75
-MERGED from [:phone] /home/shipeixian/Projects/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:12:5-75
-MERGED from [:phone] /home/shipeixian/Projects/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:12:5-75
-MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:11:5-75
-MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:11:5-75
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:7:5-75
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:23:5-75
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:23:5-75
+MERGED from [:phone] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:12:5-75
+MERGED from [:phone] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:12:5-75
+MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:11:5-75
+MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:11:5-75
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:7:22-72
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:7:22-72
 uses-permission#android.permission.INTERNET
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:8:5-67
-MERGED from [:location] /home/shipeixian/Projects/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:21:5-67
-MERGED from [:location] /home/shipeixian/Projects/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:21:5-67
-MERGED from [:socket] /home/shipeixian/Projects/socketclient/socket/build/intermediates/manifests/full/debug/AndroidManifest.xml:8:5-67
-MERGED from [:socket] /home/shipeixian/Projects/socketclient/socket/build/intermediates/manifests/full/debug/AndroidManifest.xml:8:5-67
-MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:12:5-67
-MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:12:5-67
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:8:5-67
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:21:5-67
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:21:5-67
+MERGED from [:socket] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/socket/build/intermediates/manifests/full/debug/AndroidManifest.xml:8:5-67
+MERGED from [:socket] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/socket/build/intermediates/manifests/full/debug/AndroidManifest.xml:8:5-67
+MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:12:5-67
+MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:12:5-67
 MERGED from [com.lzy.net:okgo:3.0.4] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/okgo-3.0.4.aar/44c8b7a08e2fb1509bad315ffb486acc/AndroidManifest.xml:26:5-67
 MERGED from [com.lzy.net:okgo:3.0.4] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/okgo-3.0.4.aar/44c8b7a08e2fb1509bad315ffb486acc/AndroidManifest.xml:26:5-67
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:8:22-64
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:8:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:9:5-79
-MERGED from [:location] /home/shipeixian/Projects/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:15:5-79
-MERGED from [:location] /home/shipeixian/Projects/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:15:5-79
-MERGED from [:socket] /home/shipeixian/Projects/socketclient/socket/build/intermediates/manifests/full/debug/AndroidManifest.xml:9:5-79
-MERGED from [:socket] /home/shipeixian/Projects/socketclient/socket/build/intermediates/manifests/full/debug/AndroidManifest.xml:9:5-79
-MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:13:5-79
-MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:13:5-79
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:9:5-79
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:15:5-79
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:15:5-79
+MERGED from [:socket] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/socket/build/intermediates/manifests/full/debug/AndroidManifest.xml:9:5-79
+MERGED from [:socket] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/socket/build/intermediates/manifests/full/debug/AndroidManifest.xml:9:5-79
+MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:13:5-79
+MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:13:5-79
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:9:22-76
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:9:22-76
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:10:5-76
-MERGED from [:location] /home/shipeixian/Projects/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:17:5-76
-MERGED from [:location] /home/shipeixian/Projects/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:17:5-76
-MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:14:5-76
-MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:14:5-76
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:10:5-76
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:17:5-76
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:17:5-76
+MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:14:5-76
+MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:14:5-76
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:10:22-73
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:10:22-73
 uses-permission#android.permission.READ_LOGS
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:11:5-68
-MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:15:5-68
-MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:15:5-68
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:11:5-68
+MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:15:5-68
+MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:15:5-68
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:11:22-65
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:11:22-65
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:12:5-81
-MERGED from [:location] /home/shipeixian/Projects/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:25:5-81
-MERGED from [:location] /home/shipeixian/Projects/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:25:5-81
-MERGED from [:wxchat] /home/shipeixian/Projects/socketclient/wxchat/build/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-81
-MERGED from [:wxchat] /home/shipeixian/Projects/socketclient/wxchat/build/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-81
-MERGED from [:voice] /home/shipeixian/Projects/socketclient/voice/build/intermediates/manifests/full/debug/AndroidManifest.xml:12:5-81
-MERGED from [:voice] /home/shipeixian/Projects/socketclient/voice/build/intermediates/manifests/full/debug/AndroidManifest.xml:12:5-81
-MERGED from [:camera] /home/shipeixian/Projects/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:13:5-81
-MERGED from [:camera] /home/shipeixian/Projects/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:13:5-81
-MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:16:5-81
-MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:16:5-81
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:12:5-81
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:25:5-81
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:25:5-81
+MERGED from [:wxchat] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/wxchat/build/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-81
+MERGED from [:wxchat] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/wxchat/build/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-81
+MERGED from [:voice] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/voice/build/intermediates/manifests/full/debug/AndroidManifest.xml:12:5-81
+MERGED from [:voice] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/voice/build/intermediates/manifests/full/debug/AndroidManifest.xml:12:5-81
+MERGED from [:camera] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:13:5-81
+MERGED from [:camera] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:13:5-81
+MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:16:5-81
+MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:16:5-81
 MERGED from [com.lzy.net:okgo:3.0.4] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/okgo-3.0.4.aar/44c8b7a08e2fb1509bad315ffb486acc/AndroidManifest.xml:28:5-81
 MERGED from [com.lzy.net:okgo:3.0.4] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/okgo-3.0.4.aar/44c8b7a08e2fb1509bad315ffb486acc/AndroidManifest.xml:28:5-81
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:12:22-78
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:12:22-78
 uses-permission#android.permission.REQUEST_INSTALL_PACKAGES
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:13:5-83
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:13:5-83
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:13:22-80
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:13:22-80
 uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:14:5-84
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:14:5-84
 MERGED from [com.lzy.net:okgo:3.0.4] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/okgo-3.0.4.aar/44c8b7a08e2fb1509bad315ffb486acc/AndroidManifest.xml:29:5-84
 MERGED from [com.lzy.net:okgo:3.0.4] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/okgo-3.0.4.aar/44c8b7a08e2fb1509bad315ffb486acc/AndroidManifest.xml:29:5-84
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:14:22-81
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:14:22-81
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:15:5-80
-MERGED from [:voice] /home/shipeixian/Projects/socketclient/voice/build/intermediates/manifests/full/debug/AndroidManifest.xml:13:5-80
-MERGED from [:voice] /home/shipeixian/Projects/socketclient/voice/build/intermediates/manifests/full/debug/AndroidManifest.xml:13:5-80
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:15:5-80
+MERGED from [:voice] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/voice/build/intermediates/manifests/full/debug/AndroidManifest.xml:13:5-80
+MERGED from [:voice] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/voice/build/intermediates/manifests/full/debug/AndroidManifest.xml:13:5-80
 MERGED from [com.lzy.net:okgo:3.0.4] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/okgo-3.0.4.aar/44c8b7a08e2fb1509bad315ffb486acc/AndroidManifest.xml:27:5-80
 MERGED from [com.lzy.net:okgo:3.0.4] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/okgo-3.0.4.aar/44c8b7a08e2fb1509bad315ffb486acc/AndroidManifest.xml:27:5-80
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:15:22-77
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:15:22-77
 uses-permission#android.permission.RECORD_AUDIO
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:16:5-71
-MERGED from [:voice] /home/shipeixian/Projects/socketclient/voice/build/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-71
-MERGED from [:voice] /home/shipeixian/Projects/socketclient/voice/build/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-71
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:16:5-71
+MERGED from [:voice] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/voice/build/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-71
+MERGED from [:voice] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/voice/build/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-71
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:16:22-68
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:16:22-68
 uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:17:5-81
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:17:5-81
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:17:22-78
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:17:22-78
 uses-permission#android.permission.WRITE_SETTINGS
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:18:5-73
-MERGED from [:phone] /home/shipeixian/Projects/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:15:5-73
-MERGED from [:phone] /home/shipeixian/Projects/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:15:5-73
-MERGED from [:camera] /home/shipeixian/Projects/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:20:5-73
-MERGED from [:camera] /home/shipeixian/Projects/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:20:5-73
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:18:5-73
+MERGED from [:phone] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:15:5-73
+MERGED from [:phone] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:15:5-73
+MERGED from [:camera] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:20:5-73
+MERGED from [:camera] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:20:5-73
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:18:22-70
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:18:22-70
 uses-permission#android.permission.READ_SETTINGS
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:19:5-72
-MERGED from [:camera] /home/shipeixian/Projects/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:21:5-72
-MERGED from [:camera] /home/shipeixian/Projects/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:21:5-72
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:19:5-72
+MERGED from [:camera] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:21:5-72
+MERGED from [:camera] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:21:5-72
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:19:22-69
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:19:22-69
 uses-permission#android.permission.WRITE_CONTACTS
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:20:5-73
-MERGED from [:phone] /home/shipeixian/Projects/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:19:5-73
-MERGED from [:phone] /home/shipeixian/Projects/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:19:5-73
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:20:5-73
+MERGED from [:phone] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:19:5-73
+MERGED from [:phone] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:19:5-73
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:20:22-70
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:20:22-70
 uses-permission#android.permission.READ_CONTACTS
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:21:5-72
-MERGED from [:phone] /home/shipeixian/Projects/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:14:5-72
-MERGED from [:phone] /home/shipeixian/Projects/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:14:5-72
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:21:5-72
+MERGED from [:phone] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:14:5-72
+MERGED from [:phone] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:14:5-72
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:21:22-69
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:21:22-69
 uses-permission#android.permission.SET_TIME_ZONE
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:22:5-72
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:22:5-72
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:22:22-69
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:22:22-69
 uses-permission#android.permission.ACCESS_NOTIFICATION_POLICY
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:23:5-85
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:23:5-85
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:23:22-82
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:23:22-82
 uses-permission#android.permission.GET_TASKS
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:24:5-67
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:24:5-67
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:24:22-65
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:24:22-65
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:25:5-78
-MERGED from [:location] /home/shipeixian/Projects/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:13:5-79
-MERGED from [:location] /home/shipeixian/Projects/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:13:5-79
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:25:5-78
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:13:5-79
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:13:5-79
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:25:22-76
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:25:22-76
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:26:5-80
-MERGED from [:location] /home/shipeixian/Projects/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-81
-MERGED from [:location] /home/shipeixian/Projects/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-81
-MERGED from [:phone] /home/shipeixian/Projects/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-81
-MERGED from [:phone] /home/shipeixian/Projects/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-81
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:26:5-80
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-81
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-81
+MERGED from [:phone] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-81
+MERGED from [:phone] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-81
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:26:22-78
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:26:22-78
 uses-permission#android.permission.WRITE_SECURE_SETTINGS
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:27:5-80
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:27:5-80
 	tools:ignore
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:40:9-44
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:40:9-44
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:27:22-77
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:27:22-77
 uses-permission#android.permission.CHANGE_WIFI_STATE
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:29:5-75
-MERGED from [:location] /home/shipeixian/Projects/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:19:5-76
-MERGED from [:location] /home/shipeixian/Projects/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:19:5-76
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:29:5-75
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:19:5-76
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:19:5-76
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:29:22-73
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:29:22-73
 uses-permission#android.permission.CHANGE_WIFI_MULTICAST_STATE
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:30:5-85
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:30:5-85
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:30:22-83
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:30:22-83
 uses-permission#android.permission.DISABLE_KEYGUARD
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:31:5-75
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:31:5-75
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:31:22-72
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:31:22-72
 uses-permission#android.permission.WAKE_LOCK
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:32:5-68
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:32:5-68
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:32:22-65
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:32:22-65
 uses-permission#android.permission.SHUTDOWN
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:35:5-37:47
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:35:5-37:47
 	tools:ignore
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:37:9-44
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:37:9-44
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:36:9-51
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:36:9-51
 application
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:47:5-108:19
-MERGED from [:location] /home/shipeixian/Projects/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:32:5-38:19
-MERGED from [:location] /home/shipeixian/Projects/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:32:5-38:19
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:47:5-108:19
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:32:5-38:19
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:32:5-38:19
 MERGED from [com.github.hss01248:NotifyUtil:1.0.1] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/NotifyUtil-1.0.1.aar/64540cee893e286178ab9e12e6feb3f0/AndroidManifest.xml:11:5-15:19
 MERGED from [com.github.hss01248:NotifyUtil:1.0.1] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/NotifyUtil-1.0.1.aar/64540cee893e286178ab9e12e6feb3f0/AndroidManifest.xml:11:5-15:19
-MERGED from [:wxchat] /home/shipeixian/Projects/socketclient/wxchat/build/intermediates/manifests/full/debug/AndroidManifest.xml:13:5-40:19
-MERGED from [:wxchat] /home/shipeixian/Projects/socketclient/wxchat/build/intermediates/manifests/full/debug/AndroidManifest.xml:13:5-40:19
+MERGED from [:wxchat] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/wxchat/build/intermediates/manifests/full/debug/AndroidManifest.xml:13:5-40:19
+MERGED from [:wxchat] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/wxchat/build/intermediates/manifests/full/debug/AndroidManifest.xml:13:5-40:19
 MERGED from [com.sdsmdg.tastytoast:tastytoast:0.1.1] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/tastytoast-0.1.1.aar/13e183e20854aff33ec384e05e565455/AndroidManifest.xml:11:5-12:19
 MERGED from [com.sdsmdg.tastytoast:tastytoast:0.1.1] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/tastytoast-0.1.1.aar/13e183e20854aff33ec384e05e565455/AndroidManifest.xml:11:5-12:19
-MERGED from [:phone] /home/shipeixian/Projects/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:21:5-23:19
-MERGED from [:phone] /home/shipeixian/Projects/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:21:5-23:19
-MERGED from [:camera] /home/shipeixian/Projects/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:23:5-44:19
-MERGED from [:camera] /home/shipeixian/Projects/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:23:5-44:19
+MERGED from [:phone] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:21:5-23:19
+MERGED from [:phone] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:21:5-23:19
+MERGED from [:camera] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:23:5-44:19
+MERGED from [:camera] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:23:5-44:19
 MERGED from [com.android.support:design:26.1.0] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/65167dd07c067b2951d81df254ee7327/AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:design:26.1.0] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/65167dd07c067b2951d81df254ee7327/AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:appcompat-v7:26.1.0] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/543713d1a909b42c07daf70035a30008/AndroidManifest.xml:25:5-29:19
@@ -261,10 +263,10 @@ MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/shipe
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/23d86d850d030318e127f4bb0ef3814d/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/d62fd3638d736efc37a186674b334580/AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/d62fd3638d736efc37a186674b334580/AndroidManifest.xml:22:5-26:19
-MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:19:5-205:19
-MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:19:5-205:19
-MERGED from [:LibMarsdaemon:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/LibMarsdaemon.aar/587fa1922180a956ff83ffd33003ec4a/AndroidManifest.xml:11:5-15:19
-MERGED from [:LibMarsdaemon:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/LibMarsdaemon.aar/587fa1922180a956ff83ffd33003ec4a/AndroidManifest.xml:11:5-15:19
+MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:19:5-205:19
+MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:19:5-205:19
+MERGED from [:LibMarsdaemon:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/LibMarsdaemon.aar/864ece048e0951bb535cb3c2e6ef40cb/AndroidManifest.xml:11:5-15:19
+MERGED from [:LibMarsdaemon:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/LibMarsdaemon.aar/864ece048e0951bb535cb3c2e6ef40cb/AndroidManifest.xml:11:5-15:19
 MERGED from [com.snappydb:snappydb-lib:0.5.2] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/snappydb-lib-0.5.2.aar/6b15a78daea57699631d2b469c45c56c/AndroidManifest.xml:11:5-20
 MERGED from [com.snappydb:snappydb-lib:0.5.2] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/snappydb-lib-0.5.2.aar/6b15a78daea57699631d2b469c45c56c/AndroidManifest.xml:11:5-20
 MERGED from [com.android.support:transition:26.1.0] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/b2e0515fb33f6f4400bec2585196c04b/AndroidManifest.xml:22:5-26:19
@@ -288,139 +290,139 @@ MERGED from [com.android.support:support-vector-drawable:26.1.0] /home/shipeixia
 MERGED from [com.android.support:support-compat:26.1.0] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/81e2db3afa336e04cee60aa58f71a5f7/AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:support-compat:26.1.0] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/81e2db3afa336e04cee60aa58f71a5f7/AndroidManifest.xml:25:5-29:19
 	android:supportsRtl
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:53:9-35
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:53:9-35
 	android:label
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:51:9-41
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:51:9-41
 	android:roundIcon
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:52:9-54
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:52:9-54
 	android:icon
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:50:9-43
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:50:9-43
 	android:allowBackup
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:49:9-35
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:49:9-35
 	android:theme
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:54:9-40
-		REJECTED from [:wxchat] /home/shipeixian/Projects/socketclient/wxchat/build/intermediates/manifests/full/debug/AndroidManifest.xml:19:9-40
-		REJECTED from [:camera] /home/shipeixian/Projects/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:29:9-40
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:54:9-40
+		REJECTED from [:wxchat] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/wxchat/build/intermediates/manifests/full/debug/AndroidManifest.xml:19:9-40
+		REJECTED from [:camera] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:29:9-40
 	tools:replace
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:55:9-38
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:55:9-38
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:48:9-28
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:48:9-28
 activity#com.ctyon.socketclient.app.activity.MainActivity
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:56:9-67:20
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:56:9-67:20
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:56:19-60
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:56:19-60
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:57:13-66:29
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:57:13-66:29
 action#android.intent.action.MAIN
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:58:17-69
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:58:17-69
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:58:25-66
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:58:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:65:17-77
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:65:17-77
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:65:27-74
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:65:27-74
 activity#com.ctyon.socketclient.app.activity.NewMessageTipActivity
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:69:9-74:20
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:69:9-74:20
 	android:launchMode
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:69:132-162
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:69:132-162
 	android:configChanges
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:69:70-131
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:69:70-131
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:69:19-69
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:69:19-69
 intent-filter#android.intent.category.DEFAULT+com.ctyon.shawn.MESSAGE_TIP
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:70:13-73:29
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:70:13-73:29
 action#com.ctyon.shawn.MESSAGE_TIP
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:71:17-70
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:71:17-70
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:71:25-67
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:71:25-67
 category#android.intent.category.DEFAULT
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:72:17-76
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:72:17-76
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:72:27-73
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:72:27-73
 activity#com.tencent.bugly.beta.ui.BetaActivity
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:76:9-79:64
-MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:22:9-26:56
-MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:22:9-26:56
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:76:9-79:64
+MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:22:9-26:56
+MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:22:9-26:56
 	android:configChanges
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:78:13-81
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:78:13-81
 	android:theme
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:79:13-61
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:79:13-61
 	tools:replace
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:26:13-53
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:26:13-53
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:77:13-66
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:77:13-66
 receiver#com.ctyon.socketclient.app.receive.BootBroadcastReceiver
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:81:9-92:20
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:81:9-92:20
 	android:enabled
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:83:13-35
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:83:13-35
 	android:exported
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:84:13-36
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:84:13-36
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:82:13-62
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:82:13-62
 intent-filter#android.intent.action.BOOT_COMPLETED+android.intent.category.HOME+android.net.conn.CONNECTIVITY_CHANGE
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:85:13-91:29
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:85:13-91:29
 	android:priority
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:86:17-40
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:86:17-40
 action#android.intent.action.BOOT_COMPLETED
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:87:17-79
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:87:17-79
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:87:25-76
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:87:25-76
 action#android.net.conn.CONNECTIVITY_CHANGE
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:88:17-79
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:88:17-79
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:88:25-76
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:88:25-76
 category#android.intent.category.HOME
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:90:17-72
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:90:17-72
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:90:27-70
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:90:27-70
 service#com.ctyon.socketclient.app.server.SocketService
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:95:9-98:39
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:95:9-98:39
 	android:enabled
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:97:13-35
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:97:13-35
 	android:exported
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:98:13-36
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:98:13-36
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:96:13-53
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:96:13-53
 service#com.ctyon.socketclient.app.server.SocketServiceB
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:99:9-102:39
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:99:9-102:39
 	android:enabled
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:101:13-35
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:101:13-35
 	android:exported
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:102:13-36
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:102:13-36
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:100:13-54
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:100:13-54
 receiver#com.ctyon.socketclient.app.receive.SocketReceiverB
-ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:104:9-107:48
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:104:9-107:48
 	android:enabled
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:106:13-35
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:106:13-35
 	android:exported
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:107:13-36
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:107:13-36
 	android:name
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml:105:13-56
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:105:13-56
 uses-sdk
-INJECTED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml
-INJECTED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml
-MERGED from [:location] /home/shipeixian/Projects/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [:location] /home/shipeixian/Projects/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml
+INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.hss01248:NotifyUtil:1.0.1] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/NotifyUtil-1.0.1.aar/64540cee893e286178ab9e12e6feb3f0/AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.hss01248:NotifyUtil:1.0.1] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/NotifyUtil-1.0.1.aar/64540cee893e286178ab9e12e6feb3f0/AndroidManifest.xml:7:5-9:41
-MERGED from [:wxchat] /home/shipeixian/Projects/socketclient/wxchat/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [:wxchat] /home/shipeixian/Projects/socketclient/wxchat/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [:common] /home/shipeixian/Projects/socketclient/common/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [:common] /home/shipeixian/Projects/socketclient/common/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:wxchat] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/wxchat/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:wxchat] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/wxchat/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:common] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/common/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:common] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/common/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [com.sdsmdg.tastytoast:tastytoast:0.1.1] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/tastytoast-0.1.1.aar/13e183e20854aff33ec384e05e565455/AndroidManifest.xml:7:5-9:41
 MERGED from [com.sdsmdg.tastytoast:tastytoast:0.1.1] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/tastytoast-0.1.1.aar/13e183e20854aff33ec384e05e565455/AndroidManifest.xml:7:5-9:41
-MERGED from [:socket] /home/shipeixian/Projects/socketclient/socket/build/intermediates/manifests/full/debug/AndroidManifest.xml:4:5-6:41
-MERGED from [:socket] /home/shipeixian/Projects/socketclient/socket/build/intermediates/manifests/full/debug/AndroidManifest.xml:4:5-6:41
-MERGED from [:voice] /home/shipeixian/Projects/socketclient/voice/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [:voice] /home/shipeixian/Projects/socketclient/voice/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [:phone] /home/shipeixian/Projects/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [:phone] /home/shipeixian/Projects/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [:camera] /home/shipeixian/Projects/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:8:5-10:41
-MERGED from [:camera] /home/shipeixian/Projects/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:8:5-10:41
-MERGED from [:global] /home/shipeixian/Projects/socketclient/global/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [:global] /home/shipeixian/Projects/socketclient/global/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:socket] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/socket/build/intermediates/manifests/full/debug/AndroidManifest.xml:4:5-6:41
+MERGED from [:socket] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/socket/build/intermediates/manifests/full/debug/AndroidManifest.xml:4:5-6:41
+MERGED from [:voice] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/voice/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:voice] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/voice/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:phone] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:phone] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:camera] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:8:5-10:41
+MERGED from [:camera] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:8:5-10:41
+MERGED from [:global] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/global/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:global] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/global/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:design:26.1.0] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/65167dd07c067b2951d81df254ee7327/AndroidManifest.xml:21:5-23:62
 MERGED from [com.android.support:design:26.1.0] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/65167dd07c067b2951d81df254ee7327/AndroidManifest.xml:21:5-23:62
 MERGED from [com.android.support:appcompat-v7:26.1.0] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/543713d1a909b42c07daf70035a30008/AndroidManifest.xml:21:5-23:78
@@ -431,10 +433,10 @@ MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/shipeixian/.gradl
 MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/d62fd3638d736efc37a186674b334580/AndroidManifest.xml:20:5-44
 MERGED from [com.jakewharton:butterknife:8.8.1] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/butterknife-8.8.1.aar/958d37071f04648e2a1660659455bad6/AndroidManifest.xml:5:5-43
 MERGED from [com.jakewharton:butterknife:8.8.1] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/butterknife-8.8.1.aar/958d37071f04648e2a1660659455bad6/AndroidManifest.xml:5:5-43
-MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:6:5-8:41
-MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:6:5-8:41
-MERGED from [:LibMarsdaemon:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/LibMarsdaemon.aar/587fa1922180a956ff83ffd33003ec4a/AndroidManifest.xml:7:5-9:41
-MERGED from [:LibMarsdaemon:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/LibMarsdaemon.aar/587fa1922180a956ff83ffd33003ec4a/AndroidManifest.xml:7:5-9:41
+MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:6:5-8:41
+MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:6:5-8:41
+MERGED from [:LibMarsdaemon:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/LibMarsdaemon.aar/864ece048e0951bb535cb3c2e6ef40cb/AndroidManifest.xml:7:5-9:41
+MERGED from [:LibMarsdaemon:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/LibMarsdaemon.aar/864ece048e0951bb535cb3c2e6ef40cb/AndroidManifest.xml:7:5-9:41
 MERGED from [io.reactivex.rxjava2:rxandroid:2.0.2] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/rxandroid-2.0.2.aar/24176344a528fbacd47dbf20574518f9/AndroidManifest.xml:19:5-43
 MERGED from [io.reactivex.rxjava2:rxandroid:2.0.2] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/rxandroid-2.0.2.aar/24176344a528fbacd47dbf20574518f9/AndroidManifest.xml:19:5-43
 MERGED from [android.arch.persistence.room:rxjava2:1.0.0] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/rxjava2-1.0.0.aar/1411a597045aca0512690fb3b6102442/AndroidManifest.xml:20:5-22:41
@@ -475,94 +477,94 @@ MERGED from [com.lzy.net:okserver:2.0.5] /home/shipeixian/.gradle/caches/transfo
 MERGED from [com.lzy.net:okserver:2.0.5] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/okserver-2.0.5.aar/411a751041ce7e49f0f58912d1af2457/AndroidManifest.xml:23:5-25:41
 MERGED from [com.lzy.net:okgo:3.0.4] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/okgo-3.0.4.aar/44c8b7a08e2fb1509bad315ffb486acc/AndroidManifest.xml:22:5-24:41
 MERGED from [com.lzy.net:okgo:3.0.4] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/okgo-3.0.4.aar/44c8b7a08e2fb1509bad315ffb486acc/AndroidManifest.xml:22:5-24:41
-INJECTED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml
-INJECTED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml
+INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml
+INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml
 	tools:overrideLibrary
 		ADDED from [com.android.support:design:26.1.0] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/65167dd07c067b2951d81df254ee7327/AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
-		INJECTED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml
-		INJECTED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml
+		INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml
+		INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml
-		ADDED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml
-		INJECTED from /home/shipeixian/Projects/socketclient/app/src/main/AndroidManifest.xml
+		INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml
+		INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml
 uses-permission#android.permission.ACCESS_LOCATION_EXTRA_COMMANDS
-ADDED from [:location] /home/shipeixian/Projects/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:27:5-89
+ADDED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:27:5-89
 	android:name
-		ADDED from [:location] /home/shipeixian/Projects/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:27:22-86
+		ADDED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:27:22-86
 uses-permission#android.permission.BLUETOOTH
-ADDED from [:location] /home/shipeixian/Projects/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:29:5-68
+ADDED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:29:5-68
 	android:name
-		ADDED from [:location] /home/shipeixian/Projects/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:29:22-65
+		ADDED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:29:22-65
 uses-permission#android.permission.BLUETOOTH_ADMIN
-ADDED from [:location] /home/shipeixian/Projects/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:30:5-74
+ADDED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:30:5-74
 	android:name
-		ADDED from [:location] /home/shipeixian/Projects/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:30:22-71
+		ADDED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:30:22-71
 meta-data#com.amap.api.v2.apikey
-ADDED from [:location] /home/shipeixian/Projects/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:33:9-35:64
+ADDED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:33:9-35:64
 	android:value
-		ADDED from [:location] /home/shipeixian/Projects/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:35:13-61
+		ADDED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:35:13-61
 	android:name
-		ADDED from [:location] /home/shipeixian/Projects/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:34:13-50
+		ADDED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:34:13-50
 service#com.amap.api.location.APSService
-ADDED from [:location] /home/shipeixian/Projects/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:37:9-68
+ADDED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:37:9-68
 	android:name
-		ADDED from [:location] /home/shipeixian/Projects/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:37:18-65
+		ADDED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:37:18-65
 activity#me.example.wxchat.app.WxchatActivity
-ADDED from [:wxchat] /home/shipeixian/Projects/socketclient/wxchat/build/intermediates/manifests/full/debug/AndroidManifest.xml:20:9-39:20
+ADDED from [:wxchat] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/wxchat/build/intermediates/manifests/full/debug/AndroidManifest.xml:20:9-39:20
 	android:launchMode
-		ADDED from [:wxchat] /home/shipeixian/Projects/socketclient/wxchat/build/intermediates/manifests/full/debug/AndroidManifest.xml:22:13-48
+		ADDED from [:wxchat] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/wxchat/build/intermediates/manifests/full/debug/AndroidManifest.xml:22:13-48
 	android:theme
-		ADDED from [:wxchat] /home/shipeixian/Projects/socketclient/wxchat/build/intermediates/manifests/full/debug/AndroidManifest.xml:23:13-69
+		ADDED from [:wxchat] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/wxchat/build/intermediates/manifests/full/debug/AndroidManifest.xml:23:13-69
 	android:name
-		ADDED from [:wxchat] /home/shipeixian/Projects/socketclient/wxchat/build/intermediates/manifests/full/debug/AndroidManifest.xml:21:13-64
+		ADDED from [:wxchat] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/wxchat/build/intermediates/manifests/full/debug/AndroidManifest.xml:21:13-64
 intent-filter#android.intent.action.CTYON_WXCHAT+android.intent.action.MAIN+android.intent.category.DEFAULT
-ADDED from [:wxchat] /home/shipeixian/Projects/socketclient/wxchat/build/intermediates/manifests/full/debug/AndroidManifest.xml:24:13-38:29
+ADDED from [:wxchat] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/wxchat/build/intermediates/manifests/full/debug/AndroidManifest.xml:24:13-38:29
 action#android.intent.action.CTYON_WXCHAT
-ADDED from [:wxchat] /home/shipeixian/Projects/socketclient/wxchat/build/intermediates/manifests/full/debug/AndroidManifest.xml:34:17-77
+ADDED from [:wxchat] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/wxchat/build/intermediates/manifests/full/debug/AndroidManifest.xml:34:17-77
 	android:name
-		ADDED from [:wxchat] /home/shipeixian/Projects/socketclient/wxchat/build/intermediates/manifests/full/debug/AndroidManifest.xml:34:25-74
+		ADDED from [:wxchat] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/wxchat/build/intermediates/manifests/full/debug/AndroidManifest.xml:34:25-74
 uses-permission#android.permission.SEND_SMS
-ADDED from [:phone] /home/shipeixian/Projects/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:13:5-67
+ADDED from [:phone] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:13:5-67
 	android:name
-		ADDED from [:phone] /home/shipeixian/Projects/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:13:22-64
+		ADDED from [:phone] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:13:22-64
 uses-permission#android.permission.CALL_PHONE
-ADDED from [:phone] /home/shipeixian/Projects/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:16:5-69
+ADDED from [:phone] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:16:5-69
 	android:name
-		ADDED from [:phone] /home/shipeixian/Projects/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:16:22-66
+		ADDED from [:phone] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:16:22-66
 uses-permission#android.permission.READ_CALENDAR
-ADDED from [:phone] /home/shipeixian/Projects/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:17:5-72
+ADDED from [:phone] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:17:5-72
 	android:name
-		ADDED from [:phone] /home/shipeixian/Projects/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:17:22-69
+		ADDED from [:phone] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:17:22-69
 uses-permission#android.permission.WRITE_CALENDAR
-ADDED from [:phone] /home/shipeixian/Projects/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:18:5-73
+ADDED from [:phone] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:18:5-73
 	android:name
-		ADDED from [:phone] /home/shipeixian/Projects/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:18:22-70
+		ADDED from [:phone] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:18:22-70
 activity#com.xmaihh.phone.app.activity.MainActivity
-ADDED from [:phone] /home/shipeixian/Projects/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:22:9-79
+ADDED from [:phone] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:22:9-79
 	android:name
-		ADDED from [:phone] /home/shipeixian/Projects/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:22:19-76
+		ADDED from [:phone] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:22:19-76
 uses-permission#android.permission.CAMERA
-ADDED from [:camera] /home/shipeixian/Projects/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:12:5-65
+ADDED from [:camera] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:12:5-65
 	android:name
-		ADDED from [:camera] /home/shipeixian/Projects/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:12:22-62
+		ADDED from [:camera] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:12:22-62
 uses-feature#android.hardware.camera
-ADDED from [:camera] /home/shipeixian/Projects/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:15:5-60
+ADDED from [:camera] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:15:5-60
 	android:name
-		ADDED from [:camera] /home/shipeixian/Projects/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:15:19-57
+		ADDED from [:camera] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:15:19-57
 uses-feature#android.hardware.camera.autofocus
-ADDED from [:camera] /home/shipeixian/Projects/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:16:5-18:36
+ADDED from [:camera] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:16:5-18:36
 	android:required
-		ADDED from [:camera] /home/shipeixian/Projects/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:18:9-33
+		ADDED from [:camera] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:18:9-33
 	android:name
-		ADDED from [:camera] /home/shipeixian/Projects/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:17:9-57
+		ADDED from [:camera] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:17:9-57
 activity#com.example.camera.CameraActivity
-ADDED from [:camera] /home/shipeixian/Projects/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:30:9-43:20
+ADDED from [:camera] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:30:9-43:20
 	android:theme
-		ADDED from [:camera] /home/shipeixian/Projects/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:32:13-52
+		ADDED from [:camera] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:32:13-52
 	android:name
-		ADDED from [:camera] /home/shipeixian/Projects/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:31:13-61
+		ADDED from [:camera] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:31:13-61
 meta-data#android.support.VERSION
 ADDED from [com.android.support:design:26.1.0] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/65167dd07c067b2951d81df254ee7327/AndroidManifest.xml:26:9-28:38
 MERGED from [com.android.support:appcompat-v7:26.1.0] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/543713d1a909b42c07daf70035a30008/AndroidManifest.xml:26:9-28:38
@@ -592,369 +594,369 @@ MERGED from [com.android.support:support-compat:26.1.0] /home/shipeixian/.gradle
 	android:name
 		ADDED from [com.android.support:design:26.1.0] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/65167dd07c067b2951d81df254ee7327/AndroidManifest.xml:27:13-51
 provider#com.tencent.bugly.beta.utils.BuglyFileProvider
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:28:9-38:20
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:28:9-38:20
 	android:grantUriPermissions
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:32:13-47
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:32:13-47
 	android:authorities
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:30:13-64
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:30:13-64
 	android:exported
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:31:13-37
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:31:13-37
 	tools:replace
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:33:13-74
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:33:13-74
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:29:13-74
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:29:13-74
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:34:13-37:49
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:34:13-37:49
 	android:resource
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:36:17-55
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:36:17-55
 	tools:replace
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:37:17-46
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:37:17-46
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:35:17-67
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:35:17-67
 service#com.tencent.bugly.beta.tinker.TinkerResultService
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:40:9-42:40
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:40:9-42:40
 	android:exported
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:42:13-37
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:42:13-37
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:41:13-77
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:41:13-77
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$STDStub_00
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:44:9-95
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:44:9-95
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:44:19-92
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:44:19-92
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$STDStub_01
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:45:9-95
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:45:9-95
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:45:19-92
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:45:19-92
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$STDStub_02
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:46:9-95
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:46:9-95
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:46:19-92
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:46:19-92
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$STDStub_03
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:47:9-95
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:47:9-95
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:47:19-92
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:47:19-92
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$STDStub_04
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:48:9-95
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:48:9-95
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:48:19-92
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:48:19-92
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$STDStub_05
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:49:9-95
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:49:9-95
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:49:19-92
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:49:19-92
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$STDStub_06
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:50:9-95
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:50:9-95
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:50:19-92
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:50:19-92
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$STDStub_07
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:51:9-95
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:51:9-95
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:51:19-92
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:51:19-92
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$STDStub_08
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:52:9-95
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:52:9-95
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:52:19-92
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:52:19-92
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$STDStub_09
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:53:9-95
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:53:9-95
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:53:19-92
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:53:19-92
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$STDStub_00_T
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:54:9-56:64
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:54:9-56:64
 	android:theme
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:56:13-61
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:56:13-61
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:55:13-88
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:55:13-88
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$STDStub_01_T
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:57:9-59:64
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:57:9-59:64
 	android:theme
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:59:13-61
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:59:13-61
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:58:13-88
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:58:13-88
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$STDStub_02_T
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:60:9-62:64
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:60:9-62:64
 	android:theme
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:62:13-61
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:62:13-61
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:61:13-88
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:61:13-88
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SGTStub_00
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:63:9-65:46
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:63:9-65:46
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:65:13-43
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:65:13-43
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:64:13-86
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:64:13-86
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SGTStub_01
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:66:9-68:46
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:66:9-68:46
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:68:13-43
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:68:13-43
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:67:13-86
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:67:13-86
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SGTStub_02
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:69:9-71:46
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:69:9-71:46
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:71:13-43
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:71:13-43
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:70:13-86
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:70:13-86
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SGTStub_03
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:72:9-74:46
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:72:9-74:46
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:74:13-43
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:74:13-43
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:73:13-86
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:73:13-86
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SGTStub_04
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:75:9-77:46
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:75:9-77:46
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:77:13-43
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:77:13-43
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:76:13-86
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:76:13-86
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SGTStub_05
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:78:9-80:46
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:78:9-80:46
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:80:13-43
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:80:13-43
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:79:13-86
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:79:13-86
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SGTStub_06
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:81:9-83:46
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:81:9-83:46
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:83:13-43
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:83:13-43
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:82:13-86
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:82:13-86
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SGTStub_07
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:84:9-86:46
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:84:9-86:46
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:86:13-43
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:86:13-43
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:85:13-86
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:85:13-86
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SGTStub_08
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:87:9-89:46
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:87:9-89:46
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:89:13-43
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:89:13-43
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:88:13-86
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:88:13-86
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SGTStub_09
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:90:9-92:46
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:90:9-92:46
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:92:13-43
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:92:13-43
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:91:13-86
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:91:13-86
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SGTStub_00_T
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:93:9-96:64
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:93:9-96:64
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:95:13-43
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:95:13-43
 	android:theme
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:96:13-61
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:96:13-61
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:94:13-88
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:94:13-88
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SGTStub_01_T
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:97:9-100:64
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:97:9-100:64
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:99:13-43
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:99:13-43
 	android:theme
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:100:13-61
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:100:13-61
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:98:13-88
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:98:13-88
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SGTStub_02_T
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:101:9-104:64
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:101:9-104:64
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:103:13-43
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:103:13-43
 	android:theme
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:104:13-61
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:104:13-61
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:102:13-88
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:102:13-88
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SGTKStub_00
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:105:9-107:47
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:105:9-107:47
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:107:13-44
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:107:13-44
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:106:13-87
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:106:13-87
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SGTKStub_01
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:108:9-110:47
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:108:9-110:47
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:110:13-44
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:110:13-44
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:109:13-87
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:109:13-87
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SGTKStub_02
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:111:9-113:47
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:111:9-113:47
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:113:13-44
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:113:13-44
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:112:13-87
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:112:13-87
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SGTKStub_03
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:114:9-116:47
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:114:9-116:47
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:116:13-44
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:116:13-44
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:115:13-87
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:115:13-87
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SGTKStub_04
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:117:9-119:47
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:117:9-119:47
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:119:13-44
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:119:13-44
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:118:13-87
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:118:13-87
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SGTKStub_05
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:120:9-122:47
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:120:9-122:47
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:122:13-44
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:122:13-44
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:121:13-87
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:121:13-87
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SGTKStub_06
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:123:9-125:47
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:123:9-125:47
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:125:13-44
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:125:13-44
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:124:13-87
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:124:13-87
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SGTKStub_07
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:126:9-128:47
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:126:9-128:47
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:128:13-44
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:128:13-44
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:127:13-87
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:127:13-87
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SGTKStub_08
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:129:9-131:47
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:129:9-131:47
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:131:13-44
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:131:13-44
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:130:13-87
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:130:13-87
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SGTKStub_09
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:132:9-134:47
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:132:9-134:47
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:134:13-44
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:134:13-44
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:133:13-87
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:133:13-87
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SGTKStub_00_T
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:135:9-138:64
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:135:9-138:64
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:137:13-44
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:137:13-44
 	android:theme
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:138:13-61
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:138:13-61
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:136:13-89
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:136:13-89
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SGTKStub_01_T
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:139:9-142:64
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:139:9-142:64
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:141:13-44
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:141:13-44
 	android:theme
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:142:13-61
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:142:13-61
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:140:13-89
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:140:13-89
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SGTKStub_02_T
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:143:9-146:64
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:143:9-146:64
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:145:13-44
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:145:13-44
 	android:theme
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:146:13-61
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:146:13-61
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:144:13-89
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:144:13-89
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SIStub_00
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:147:9-149:51
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:147:9-149:51
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:149:13-48
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:149:13-48
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:148:13-85
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:148:13-85
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SIStub_01
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:150:9-152:51
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:150:9-152:51
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:152:13-48
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:152:13-48
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:151:13-85
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:151:13-85
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SIStub_02
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:153:9-155:51
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:153:9-155:51
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:155:13-48
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:155:13-48
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:154:13-85
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:154:13-85
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SIStub_03
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:156:9-158:51
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:156:9-158:51
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:158:13-48
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:158:13-48
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:157:13-85
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:157:13-85
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SIStub_04
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:159:9-161:51
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:159:9-161:51
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:161:13-48
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:161:13-48
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:160:13-85
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:160:13-85
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SIStub_05
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:162:9-164:51
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:162:9-164:51
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:164:13-48
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:164:13-48
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:163:13-85
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:163:13-85
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SIStub_06
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:165:9-167:51
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:165:9-167:51
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:167:13-48
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:167:13-48
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:166:13-85
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:166:13-85
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SIStub_07
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:168:9-170:51
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:168:9-170:51
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:170:13-48
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:170:13-48
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:169:13-85
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:169:13-85
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SIStub_08
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:171:9-173:51
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:171:9-173:51
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:173:13-48
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:173:13-48
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:172:13-85
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:172:13-85
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SIStub_09
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:174:9-176:51
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:174:9-176:51
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:176:13-48
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:176:13-48
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:175:13-85
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:175:13-85
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SIStub_00_T
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:177:9-180:64
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:177:9-180:64
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:179:13-48
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:179:13-48
 	android:theme
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:180:13-61
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:180:13-61
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:178:13-87
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:178:13-87
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SIStub_01_T
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:181:9-184:64
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:181:9-184:64
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:183:13-48
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:183:13-48
 	android:theme
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:184:13-61
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:184:13-61
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:182:13-87
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:182:13-87
 activity#com.tencent.tinker.loader.hotplug.ActivityStubs$SIStub_02_T
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:185:9-188:64
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:185:9-188:64
 	android:launchMode
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:187:13-48
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:187:13-48
 	android:theme
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:188:13-61
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:188:13-61
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:186:13-87
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:186:13-87
 meta-data#tinker_version
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:190:9-192:37
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:190:9-192:37
 	android:value
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:192:13-34
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:192:13-34
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:191:13-42
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:191:13-42
 service#com.tencent.tinker.lib.service.TinkerPatchService
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:194:9-197:40
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:194:9-197:40
 	android:process
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:197:13-37
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:197:13-37
 	android:exported
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:196:13-37
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:196:13-37
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:195:13-77
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:195:13-77
 service#com.tencent.tinker.lib.service.TinkerPatchService$InnerService
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:198:9-201:40
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:198:9-201:40
 	android:process
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:201:13-37
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:201:13-37
 	android:exported
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:200:13-37
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:200:13-37
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:199:13-90
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:199:13-90
 service#com.tencent.tinker.lib.service.DefaultTinkerResultService
-ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:202:9-204:40
+ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:202:9-204:40
 	android:exported
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:204:13-37
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:204:13-37
 	android:name
-		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/AndroidManifest.xml:203:13-85
+		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:203:13-85
 provider#android.arch.lifecycle.ProcessLifecycleOwnerInitializer
 ADDED from [android.arch.lifecycle:extensions:1.0.0] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/extensions-1.0.0.aar/8b62e3cfdc66271c3f53e5044022a252/AndroidManifest.xml:25:9-29:43
 	android:authorities

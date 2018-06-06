@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="bugly_crashreport_upgrade-1.3.4:@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/228921894e02df59dd19e5f3c331ea8b/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

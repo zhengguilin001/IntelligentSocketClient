@@ -50,7 +50,7 @@ android {
     // 以上为开启Java8 lambda表达式
 
     //多渠道、多环境打包配置
-    productFlavors {sssssss
+    productFlavors {
         ctyon {
             // 每个环境包名不同
             applicationId "com.ctyon.socketclient"

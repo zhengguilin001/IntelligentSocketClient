@@ -142,7 +142,7 @@ public class Constants {
         interface SETTINGS{
             String GLOBAL_CITY  = "socket_client_city";                 //当前城市
             String GLOBAL_WEATHER = "socket_client_weather";            //天气数据
-            String GLOBAL_TOKEN = "socket_client_token";                //token值
+            String GLOBAL_TOKEN = "socket_client_shawn_token";                //token值
             String GLOBAL_PIC_PATH = "socket_client_picture_path";      //静默拍照路径
             String GLOBAL_ALARM = "socket_client_alarm";                //定时提醒
             String GLOBAL_DISTURB ="socket_client_disturb";             //免打扰设置

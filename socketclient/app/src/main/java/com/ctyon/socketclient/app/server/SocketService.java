@@ -31,6 +31,7 @@ import com.ctyon.socketclient.R;
 import com.ctyon.socketclient.app.network.NetBroadcastReceiver;
 import com.ctyon.socketclient.app.network.NetEvent;
 import com.ctyon.socketclient.project.model.AlarmModel;
+import com.ctyon.socketclient.project.model.ContactJson;
 import com.ctyon.socketclient.project.senddata.RedirectException;
 import com.ctyon.socketclient.project.senddata.publish.PulseData;
 import com.ctyon.socketclient.project.senddata.publish.SendData;
@@ -70,6 +71,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
@@ -129,6 +131,11 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
     public void onCreate() {
         super.onCreate();
         Log.i(TAG, "SocketService oncreate() begin");
+        if (isServiceRunning("com.ctyon.socketclient.app.server.SocketService")) {
+            Log.i(TAG, "SocketService 已经在运行了 stopself");
+            stopSelf();
+            return;
+        }
         mHandler = new SafeHandler<SocketService>(this);
         activityManager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
         //registerContentObserver();
@@ -303,7 +310,26 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                             if (mManager != null && mManager.isConnect()) {
                                 mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_SET_CONTACT_S, ident + ""));
                             }
-                            int index = jsonObject.get(Constants.MODEL.DATA.DATA_INEDX).getAsInt();
+                            Gson gson = new Gson();
+                            ContactJson contactJson = gson.fromJson(str, ContactJson.class);
+                            List<ContactJson.ContactBean> contactBeans = contactJson.getContact();
+                            if (contactBeans != null && contactBeans.size() > 0) {
+                                String contactsResult = "";
+                                for (ContactJson.ContactBean bean : contactBeans) {
+                                    contactsResult += bean.getName()+","+bean.getPhone()+"/";
+                                }
+                                Intent addContactIntent = new Intent();
+                                addContactIntent.putExtra("contacts", contactsResult);
+                                addContactIntent.setAction("com.ctyon.shawn.ADD_CONTACT");
+                                sendBroadcast(addContactIntent);
+                                Log.i(TAG, contactsResult);
+                            } else {
+                                Intent addContactIntent = new Intent();
+                                addContactIntent.putExtra("contacts", "");
+                                addContactIntent.setAction("com.ctyon.shawn.ADD_CONTACT");
+                                sendBroadcast(addContactIntent);
+                            }
+                            /*int index = jsonObject.get(Constants.MODEL.DATA.DATA_INEDX).getAsInt();
                             int last = jsonObject.get(Constants.MODEL.DATA.DATA_LAST).getAsInt();
                             JsonArray jsonArray = jsonObject.get(Constants.MODEL.DATA.DATA_CONTACT).getAsJsonArray();
                             JsonObject cj = jsonArray.get(index).getAsJsonObject();
@@ -311,11 +337,12 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                             String cj_phone = cj.get(Constants.MODEL.DATA.DATA_PHONE).getAsString();
                             //ContactUtils.addContact(App.getsContext(),cj_name,cj_phone);
                             Intent addContactIntent = new Intent();
-                            addContactIntent.putExtra("contact_name", cj_name);
-                            addContactIntent.putExtra("contact_number", cj_phone);
+                            //addContactIntent.putExtra("contact_name", cj_name);
+                            //addContactIntent.putExtra("contact_number", cj_phone);
+                            addContactIntent.putExtra("contact_json", str);
                             addContactIntent.setAction("com.ctyon.shawn.ADD_CONTACT");
                             sendBroadcast(addContactIntent);
-                            //IToast.show("通讯录号码设置");
+                            //IToast.show("通讯录号码设置");*/
                             break;
                         case Constants.COMMON.TYPE.TYPE_VOICE_MESSAGE:
 //                        {"type":10,"ident":226201,"id":"5ab49367c493a9055a9344dc","url":"http://devicetest.iot08.com/static/message/fe801c53132108ecc9781e9e.amr","duration":8,"size":14022}
@@ -410,12 +437,12 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                                 mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_TIMER_REMIND, ident + ""));
                                 //mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_TIMER_REMIND));
                             }
-                            Gson gson = new Gson();
+                            Gson gson2 = new Gson();
                             String alarmArgs = "";
                             Intent alarmIntent = new Intent();
                             alarmIntent.setAction("com.ctyon.shawn.SET_ALARM");
                             try {
-                                AlarmModel alarmModel = gson.fromJson(alarm, AlarmModel.class);
+                                AlarmModel alarmModel = gson2.fromJson(alarm, AlarmModel.class);
                                 List<AlarmModel.AlarmBean> alarmBeans = alarmModel.getAlarm();
                                 if (alarmBeans != null) {
                                     for (AlarmModel.AlarmBean itemBean : alarmBeans) {
@@ -521,7 +548,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                             if (mManager != null && mManager.isConnect()) {
                                 mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_DEVICE_TOKEN, ident + ""));
                             }
-                            Settings.Global.putString(getContentResolver(), "socket_client_token", deviceToken);
+                            Settings.Global.putString(getContentResolver(), "socket_client_shawn_token", deviceToken);
                             //startActivity
                             Intent qrcodeIntent = new Intent();
                             qrcodeIntent.setClassName("com.ctyon.watch", "com.ctyon.watch.ui.activity.QrcodeActivity");
@@ -1107,7 +1134,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
     }
 
     private void sendNotification() {
-        /*NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
         Notification notification = builder.setContentTitle("")
                 .setDefaults(Notification.DEFAULT_LIGHTS).setSmallIcon(R.mipmap.icon_notification)
@@ -1115,12 +1142,12 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                 .setPriority(Notification.PRIORITY_MAX)
                 .build();
 
-        notificationManager.notify(4444, notification);*/
+        notificationManager.notify(4444, notification);
     }
 
     private void cancelNotification() {
-        /*NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        notificationManager.cancel(4444);*/
+        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        notificationManager.cancel(4444);
     }
 
     private void showMessageToast() {
@@ -1135,6 +1162,24 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
             return (runningTaskInfos.get(0).topActivity).toString() ;
         else
             return null ;
+    }
+
+    /**
+     * 判断服务是否开启
+     *
+     * @return
+     */
+    public boolean isServiceRunning(String ServiceName) {
+        if (("").equals(ServiceName) || ServiceName == null)
+            return false;
+        ActivityManager myManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+        ArrayList<ActivityManager.RunningServiceInfo> runningService = (ArrayList<ActivityManager.RunningServiceInfo>) myManager.getRunningServices(30);
+        for (int i = 0; i < runningService.size(); i++) {
+            if (runningService.get(i).service.getClassName().toString().equals(ServiceName)) {
+                return true;
+            }
+        }
+        return false;
     }
 
 }

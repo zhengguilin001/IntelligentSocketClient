@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ctyon.socketclient"
+    android:sharedUserId="android.uid.system"
     android:versionCode="2"
     android:versionName="1.0.1" >
 
     <uses-sdk
         android:minSdkVersion="22"
         android:targetSdkVersion="26" />
-    <!-- android:sharedUserId="android.uid.system"> -->
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -64,7 +64,6 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity android:name="com.ctyon.socketclient.app.activity.MainActivity" >
             <intent-filter>
