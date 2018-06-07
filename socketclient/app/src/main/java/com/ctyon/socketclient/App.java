@@ -1,5 +1,6 @@
 package com.ctyon.socketclient;
 
+import android.app.Application;
 import android.content.Context;
 import android.os.Environment;
 import android.os.Message;
@@ -29,7 +30,7 @@ import me.xmai.global.config.Constants;
  * Created by Administrator on 2018/3/9.
  */
 
-public class App extends DaemonApplication{
+public class App extends Application {
     private static Context sContext;
     private OkUpload okUpload;
     private OkDownload okDownload;
@@ -46,10 +47,10 @@ public class App extends DaemonApplication{
      *
      * @param base
      */
-    @Override
+   /* @Override
     public void attachBaseContextByDaemon(Context base) {
         super.attachBaseContextByDaemon(base);
-    }
+    }*/
 
     @Override
     public void onCreate() {
@@ -75,6 +76,7 @@ public class App extends DaemonApplication{
         okUpload = OkUpload.getInstance();
         //定义最大支持上传并发
         okUpload.getThreadPool().setCorePoolSize(1);
+        Log.i("shipeixian", "SocketClient Application oncreate");
     }
 
 
@@ -84,8 +86,9 @@ public class App extends DaemonApplication{
      * @return
      * 进程保护相关,当socket进程１挂掉后,进程2监测并拉起
      */
-    @Override
+   /* @Override
     protected DaemonConfigurations getDaemonConfigurations() {
+        Log.i("shipeixian", "socket进程１挂掉后,进程2监测并拉起");
         DaemonConfigurations.DaemonConfiguration configuration1 = new DaemonConfigurations.DaemonConfiguration(
                 "com.ctyon.socketclient:process1",
                 SocketService.class.getCanonicalName(),
@@ -114,12 +117,12 @@ public class App extends DaemonApplication{
         @Override
         public void onWatchDaemonDaed() {
         }
-    }
+    }*/
 
     //低内存时执行
     @Override
     public void onLowMemory() {
         super.onLowMemory();
-        System.gc();
+        //System.gc();
     }
 }

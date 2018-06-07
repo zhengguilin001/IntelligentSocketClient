@@ -32,6 +32,8 @@ public class NewMessageTipActivity extends Activity {
     private PowerManager.WakeLock mWakelock;
     private PowerManager powerManager;
     private MediaPlayer mediaPlayer;
+    //private KeyguardManager km;
+    //private KeyguardManager.KeyguardLock kl;
 
     private Handler handler = new Handler() {
         @Override
@@ -40,6 +42,9 @@ public class NewMessageTipActivity extends Activity {
                 if (powerManager.isScreenOn()) {
                     sendKeyEvent(26);
                 }
+            }
+            if (msg.what == 5555) {
+                NewMessageTipActivity.this.finish();
             }
         }
     };
@@ -51,10 +56,7 @@ public class NewMessageTipActivity extends Activity {
             if (intent.getAction().equals(Intent.ACTION_SCREEN_OFF)) {
                 NewMessageTipActivity.this.finish();
             } else if (intent.getAction().equals(Intent.ACTION_SCREEN_ON)){
-                sendTouchEvent();
-                /*KeyguardManager km= (KeyguardManager) getSystemService(Context.KEYGUARD_SERVICE);
-                //这里参数”unLock”作为调试时LogCat中的Tag
-                KeyguardManager.KeyguardLock kl = km.newKeyguardLock("unLock");*/
+                //sendTouchEvent();
             }
         }
     }
@@ -88,7 +90,7 @@ public class NewMessageTipActivity extends Activity {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                finish();
+                NewMessageTipActivity.this.finish();
             }
         });
 
@@ -105,6 +107,9 @@ public class NewMessageTipActivity extends Activity {
         if (!powerManager.isScreenOn()) {
            // mWakelock = powerManager.newWakeLock(PowerManager.ACQUIRE_CAUSES_WAKEUP|PowerManager.SCREEN_DIM_WAKE_LOCK,"SimpleTimer");
         }
+
+        /*km= (KeyguardManager) getSystemService(Context.KEYGUARD_SERVICE);
+        kl = km.newKeyguardLock("unLock");*/
 
         screenReceiver = new ScreenReceiver();
         IntentFilter intentFilter = new IntentFilter();
@@ -127,6 +132,7 @@ public class NewMessageTipActivity extends Activity {
         if (!powerManager.isScreenOn()) {
             sendKeyEvent(26);
             handler.sendEmptyMessageDelayed(4444, 10000);
+            sendTouchEvent();
             /*handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -193,10 +199,24 @@ public class NewMessageTipActivity extends Activity {
         instrumentation.sendPointerSync(MotionEvent.obtain(SystemClock.uptimeMillis(), SystemClock.uptimeMillis(), MotionEvent.ACTION_DOWN, 100, 120, 0,0,0,0,0,0,0));// OK
         instrumentation.sendPointerSync(MotionEvent.obtain(SystemClock.uptimeMillis(), SystemClock.uptimeMillis(), MotionEvent.ACTION_MOVE, 150, 120, 0,0,0,0,0,0,0));*/
         try {
-            Runtime.getRuntime().exec("input swipe 50 50 150 50");
+            Runtime.getRuntime().exec("input swipe 50 50 100 50");
         }catch (Exception e) {
 
         }
+        /*Instrumentation inst = new Instrumentation();
+        long dowTime = SystemClock.uptimeMillis();
+        inst.sendPointerSync(MotionEvent.obtain(dowTime,dowTime,
+                MotionEvent.ACTION_DOWN, 50, 100,0));
+        inst.sendPointerSync(MotionEvent.obtain(dowTime,dowTime,
+                MotionEvent.ACTION_MOVE, 50, 100,0));
+        inst.sendPointerSync(MotionEvent.obtain(dowTime,dowTime+20,
+                MotionEvent.ACTION_MOVE, 50+20, 100,0));
+        inst.sendPointerSync(MotionEvent.obtain(dowTime,dowTime+30,
+                MotionEvent.ACTION_MOVE, 50+40, 100,0));
+        inst.sendPointerSync(MotionEvent.obtain(dowTime,dowTime+40,
+                MotionEvent.ACTION_MOVE, 50+60, 100,0));
+        inst.sendPointerSync(MotionEvent.obtain(dowTime,dowTime+40,
+                MotionEvent.ACTION_UP, 50+60, 100,0));*/
         /*new Thread(new Runnable() {
 
             @Override
@@ -205,4 +225,5 @@ public class NewMessageTipActivity extends Activity {
             }
         }).start();*/
     }
+
 }

@@ -336,18 +336,18 @@ public class OkSocketOptions {
 
     public static OkSocketOptions getDefault() {
         OkSocketOptions okOptions = new OkSocketOptions();
-        okOptions.mBackgroundLiveMinute = 10;
+        okOptions.mBackgroundLiveMinute = 60;
         okOptions.mPulseFrequency = 5 * 1000;
         okOptions.mIOThreadMode = IOThreadMode.DUPLEX;
         okOptions.mHeaderProtocol = new DefaultNormalHeaderProtocol();
         okOptions.mMaxReadDataMB = 10;
-        okOptions.mConnectTimeoutSecond = 10;
+        okOptions.mConnectTimeoutSecond = 15;
         okOptions.mSendSinglePackageBytes = 2048;
         okOptions.mReadSingleTimeBufferBytes = 2048;
         okOptions.mReadByteOrder = ByteOrder.BIG_ENDIAN;
         okOptions.mWriteOrder = ByteOrder.BIG_ENDIAN;
         okOptions.isConnectionHolden = true;
-        okOptions.mPulseFeedLoseTimes = 5;
+        okOptions.mPulseFeedLoseTimes = 1;
         okOptions.mReconnectionManager = new DefaultReconnectManager();
         okOptions.mSSLConfig = null;
         return okOptions;

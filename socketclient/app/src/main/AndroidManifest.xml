@@ -85,7 +85,7 @@
             <intent-filter
                 android:priority="1000">
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <!--<action android:name="android.net.conn.CONNECTIVITY_CHANGE" />-->
                 <!--<action android:name="android.media.AUDIO_BECOMING_NOISY" />-->
                 <category android:name="android.intent.category.HOME"/>
             </intent-filter>

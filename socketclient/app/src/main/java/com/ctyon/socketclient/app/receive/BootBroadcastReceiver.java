@@ -16,7 +16,8 @@ import com.ctyon.socketclient.app.server.SocketService;
  * #<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
  */
 public class BootBroadcastReceiver extends BroadcastReceiver {
-    private static final String TAG = BootBroadcastReceiver.class.getSimpleName();
+    //private static final String TAG = BootBroadcastReceiver.class.getSimpleName();
+    private static final String TAG = "shipeixian";
     private static final String ACTION_BOOT = "android.intent.action.BOOT_COMPLETED";
 
     @Override
@@ -29,11 +30,11 @@ public class BootBroadcastReceiver extends BroadcastReceiver {
             Log.i(TAG, "BootBroadcastReceiver onReceive(), Do thing!");
             context.startService(new Intent(context, SocketService.class));
         }else if (intent.getAction().equals(ConnectivityManager.CONNECTIVITY_ACTION)) {
-            Log.d(TAG, "onReceive: "+"网络发生变化");
-            context.startService(new Intent(context,SocketService.class));
+            //Log.d(TAG, "onReceive: "+"网络发生变化");
+            //context.startService(new Intent(context,SocketService.class));
         }else if(intent.getAction().equals(android.media.AudioManager.ACTION_AUDIO_BECOMING_NOISY)){
-            Log.d(TAG, "onReceive: "+"监测开机铃声，当launcher还没有完全启动时该广播已经发出");
-            context.startService(new Intent(context, SocketService.class));
+            //Log.d(TAG, "onReceive: "+"监测开机铃声，当launcher还没有完全启动时该广播已经发出");
+            //context.startService(new Intent(context, SocketService.class));
         }
     }
 
@@ -67,4 +68,5 @@ public class BootBroadcastReceiver extends BroadcastReceiver {
         }
         return netType;
     }
+
 }

@@ -42,6 +42,7 @@
                 <!--添加以上隐式启动action-->
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

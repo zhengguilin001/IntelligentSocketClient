@@ -19,8 +19,10 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.IBinder;
 import android.os.Message;
+import android.os.Process;
 import android.provider.Settings;
 import android.support.v4.app.NotificationCompat;
+import android.telecom.TelecomManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
@@ -37,6 +39,7 @@ import com.ctyon.socketclient.project.senddata.publish.PulseData;
 import com.ctyon.socketclient.project.senddata.publish.SendData;
 import com.ctyon.socketclient.project.support.MyHeaderProtocol;
 import com.ctyon.socketclient.project.support.observer.SettingsObserver;
+import com.ctyon.socketclient.project.util.GpsTool;
 import com.ctyon.socketclient.project.util.IToast;
 import com.example.camera.CameraActivity;
 import com.example.location.AMapLocationImp;
@@ -131,8 +134,8 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
     public void onCreate() {
         super.onCreate();
         Log.i(TAG, "SocketService oncreate() begin");
-        if (isServiceRunning("com.ctyon.socketclient.app.server.SocketService")) {
-            Log.i(TAG, "SocketService 已经在运行了 stopself");
+        if (isApplicationDoubleRunning("com.ctyon.socketclient")) {
+            Log.i(TAG, "SocketService重复运行 stopself "+Process.myPid());
             stopSelf();
             return;
         }
@@ -143,6 +146,12 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
         //add by shipeixian on 2018-05-24 begin
         registerReceivers();
         //add by shipeixian on 2018-05-24 end
+
+        try {
+            GpsTool.toggleGps(getApplicationContext(), false);
+        } catch (Exception e) {
+
+        }
         Log.i(TAG, "SocketService oncreate(...) end");
 
     }
@@ -190,7 +199,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
         //基于当前参配对象构建一个参配建造者类
         OkSocketOptions.Builder builder = new OkSocketOptions.Builder(mOkOptions);
         //修改参配设置
-        builder.setPulseFrequency(9 * 60 * 1000); // 默认心跳 60s
+        builder.setPulseFrequency(60 * 1000); // 默认心跳 60s
         builder.setHeaderProtocol(new MyHeaderProtocol());
         //建造一个新的参配对象并且付给通道
         mManager.option(builder.build());
@@ -603,6 +612,13 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
 
         @Override
         public void onSocketDisconnection(Context context, ConnectionInfo info, String action, Exception e) {
+            mHandler.removeMessages(4400);
+            mHandler.removeMessages(4401);
+            mHandler.removeMessages(4402);
+            mHandler.removeMessages(4403);
+            mHandler.removeMessages(4404);
+            mHandler.removeMessages(4405);
+            mHandler.removeMessages(4406);
             if (e != null) {
                 if (e instanceof RedirectException) {
                     Log.i(TAG, "正在重定向连接...");
@@ -610,11 +626,8 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                     mManager.connect();
                 } else {
                     Log.i(TAG, "异常断开:" + e.getMessage());
-                    mHandler.removeMessages(4400);
-                    mHandler.removeMessages(4401);
-                    mHandler.removeMessages(4402);
-                    mHandler.removeMessages(4403);
-                    if (e.getMessage().equals("environmental disconnect")) {
+                    reconnectSocket();
+                    /*if (e.getMessage().equals("environmental disconnect")) {
                         //nager.disConnect();
                         mHandler.postDelayed(new Runnable() {
                             @Override
@@ -623,6 +636,10 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                             }
                         }, 5000);
                     }
+                    if (e.getMessage().contains("feed dog on time")) {
+                        Log.i(TAG, "异常断开:feed dog on time resetsocket");
+                        reconnectSocket();
+                    }*/
                     /*if (e.getMessage().equals("environmental disconnect") || e.getMessage().equals("java.net.SocketException: sendto failed: EPIPE (Broken pipe)")) {
                         mManager.disConnect();
                         mHandler.postDelayed(new Runnable() {
@@ -654,6 +671,9 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
         public void onSocketConnectionFailed(Context context, ConnectionInfo info, String action, Exception e) {
             String str = info.getIp() + info.getPort() + action + e.toString();
             Log.i(TAG, "onSocketConnectionFailed: 服务器连接失败" + str);
+            if (str.contains("Socket Closed")) {
+                reconnectSocket();
+            }
             //失败重连次数自增，当重连失败3次，则重置socket，10分钟后尝试再连接
             connectFailedCount++;
             if (connectFailedCount == 3) {
@@ -663,7 +683,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                     mManager = null;
                 }
                 connectFailedCount = 0;
-                mHandler.sendEmptyMessageDelayed(4405, 10 * 60 * 1000);
+                mHandler.sendEmptyMessageDelayed(4405, 60 * 1000);
             }
         }
     };
@@ -797,33 +817,13 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                     }
                     //如果申请登录，10秒内还没有登录，则重新连接
                     if (msg.arg1 == 1) {
-                        mHandler.removeMessages(4400);
-                        mHandler.removeMessages(4401);
-                        mHandler.removeMessages(4402);
-                        mHandler.removeMessages(4403);
-                        mManager.disConnect();
-                        mHandler.postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                mManager.connect();
-                            }
-                        }, 5000);
+                        reconnectSocket();
                     } else {
                         if (mManager != null && mManager.isConnect()) {
                             resendCodeCount++;
                             //如果重发了三次还不行，则重连
-                            if (resendCodeCount == 4) {
-                                mHandler.removeMessages(4400);
-                                mHandler.removeMessages(4401);
-                                mHandler.removeMessages(4402);
-                                mHandler.removeMessages(4403);
-                                mManager.disConnect();
-                                mHandler.postDelayed(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        mManager.connect();
-                                    }
-                                }, 5000);
+                            if (resendCodeCount == 3) {
+                                reconnectSocket();
                             } else {
                                 try {
                                     mManager.send(new SendData(msg.arg1));
@@ -837,7 +837,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                 }
                 break;
             case 4405:
-                resetSocket();
+                reconnectSocket();
                 break;
             case 4406:
                 if (getTopActivity() != null && !getTopActivity().contains("WxchatActivity")) {
@@ -930,11 +930,15 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                 }
                 break;
             case -1://没有网络
-                if (mManager != null) {
-                    mManager.unRegisterReceiver(adapter);
-                    mManager.disConnect();
-                    mManager = null;
-                    mHandler.removeCallbacksAndMessages(null);
+                try {
+                    if (mManager != null ) {
+                        mManager.unRegisterReceiver(adapter);
+                        mManager.disConnect();
+                        mManager = null;
+                        mHandler.removeCallbacksAndMessages(null);
+                    }
+                } catch (Exception e) {
+
                 }
                 Log.i(TAG, "网络状态无网络");
                 break;
@@ -1181,5 +1185,41 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
         }
         return false;
     }
+
+    public boolean isApplicationDoubleRunning(String packagename) {
+        ActivityManager am = (ActivityManager)getSystemService(Context.ACTIVITY_SERVICE);
+        List<ActivityManager.RunningAppProcessInfo> mRunningProcess = am.getRunningAppProcesses();
+        for (ActivityManager.RunningAppProcessInfo amProcess : mRunningProcess){
+            if(amProcess.processName.equals(packagename)){
+                if (Process.myPid() != amProcess.pid) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    /**
+     * 重连socket
+     */
+    private void reconnectSocket() {
+        try {
+            if (mManager != null ) {
+                mManager.unRegisterReceiver(adapter);
+                mManager.disConnect();
+                mManager = null;
+                mHandler.removeCallbacksAndMessages(null);
+            }
+        } catch (Exception e2) {
+
+        }
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                resetSocket();
+            }
+        }, 5000);
+    }
+
 
 }
