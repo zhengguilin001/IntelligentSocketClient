@@ -58,7 +58,7 @@ public class App extends Application {
         //初始化一个socket
         OkSocket.initialize(this, true);
         //初始化Buglly上报
-        Bugly.init(getApplicationContext(), BuildConfig.BUGLLYAPPID, false);
+        //Bugly.init(getApplicationContext(), BuildConfig.BUGLLYAPPID, false);
         //初始化Stetho数据库
         Stetho.initialize(
                 Stetho.newInitializerBuilder(this)

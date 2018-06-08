@@ -23,6 +23,8 @@
     "type":30
 }
 
+{ }
+
  {"ident":467674,"alarm":[{"duration":0.0,"week":"1111111","size":0,"start":"08:05","text":"闹钟","status":1},{"duration":0.0,eek":"0000000","size":0,"start":"08:00","text":"闹钟","status":1}],"imei":"C5B20180200030","type":30}
 
 

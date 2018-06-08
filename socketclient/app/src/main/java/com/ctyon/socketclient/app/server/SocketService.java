@@ -15,6 +15,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.location.LocationProvider;
 import android.net.ConnectivityManager;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.IBinder;
@@ -148,7 +149,14 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
         //add by shipeixian on 2018-05-24 end
 
         try {
+            //关闭GPS
             GpsTool.toggleGps(getApplicationContext(), false);
+            //关闭wifi
+            WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
+            wifiManager.setWifiEnabled(false);
+            if (!wifiManager.isWifiEnabled()) {
+                Log.i(TAG, "wifi是关闭的");
+            }
         } catch (Exception e) {
 
         }
@@ -575,30 +583,34 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
             String str = new String(data.parse(), Charset.forName("utf-8"));
             Log.i(TAG, "onSocketWriteResponse: " + str);
             //add by shipeixian for record the response time begin
-            String[] splitString = str.split("\"type\":");
-            String[] subSplitString = splitString[1].split(",");
-            int typeValue = 0;
-            if (subSplitString[0].contains("}")) {
-                String rawStr = subSplitString[0].replace("}", "");
-                typeValue = Integer.parseInt(rawStr);
-            } else {
-                typeValue = Integer.parseInt(subSplitString[0]);
+            try {
+                String[] splitString = str.split("\"type\":");
+                String[] subSplitString = splitString[1].split(",");
+                int typeValue = 0;
+                if (subSplitString[0].contains("}")) {
+                    String rawStr = subSplitString[0].replace("}", "");
+                    typeValue = Integer.parseInt(rawStr);
+                } else {
+                    typeValue = Integer.parseInt(subSplitString[0]);
+                }
+                if (typeValue % 2 != 0) {
+                    mHandler.removeMessages(4404);
+                    isWaitingServerResponse = true;
+                    final int typeArgsValue = typeValue;
+                    mHandler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            Message message = mHandler.obtainMessage();
+                            message.what = 4404;
+                            message.arg1 = typeArgsValue;
+                            mHandler.sendMessage(message);
+                        }
+                    }, 10 * 1000);
+                }
+                Log.i(TAG, "type = " + typeValue);
+            } catch (Exception e) {
+
             }
-            if (typeValue % 2 != 0) {
-                mHandler.removeMessages(4404);
-                isWaitingServerResponse = true;
-                final int typeArgsValue = typeValue;
-                mHandler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        Message message = mHandler.obtainMessage();
-                        message.what = 4404;
-                        message.arg1 = typeArgsValue;
-                        mHandler.sendMessage(message);
-                    }
-                }, 10 * 1000);
-            }
-            Log.i(TAG, "type = " + typeValue);
             //add by shipeixian for record the response time end
         }
 
@@ -671,7 +683,8 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
         public void onSocketConnectionFailed(Context context, ConnectionInfo info, String action, Exception e) {
             String str = info.getIp() + info.getPort() + action + e.toString();
             Log.i(TAG, "onSocketConnectionFailed: 服务器连接失败" + str);
-            if (str.contains("Socket Closed")) {
+            reconnectSocket();
+            /*if (str.contains("Socket Closed")) {
                 reconnectSocket();
             }
             //失败重连次数自增，当重连失败3次，则重置socket，10分钟后尝试再连接
@@ -684,7 +697,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                 }
                 connectFailedCount = 0;
                 mHandler.sendEmptyMessageDelayed(4405, 60 * 1000);
-            }
+            }*/
         }
     };
 
@@ -734,7 +747,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                     String path = (String) msg.obj;
                     PostRequest<String> postRequest = OkGo.<String>post(Constants.COMMON.Url.sendImage)
                             .params("imei", DeviceUtils.getIMEI(this))
-                            //.params("imei", "C5B20180200030")
+                            //.params("imei", "C5B20180200007")
                             .params("token", Settings.Global.getString(getContentResolver(),
                                     Constants.MODEL.SETTINGS.GLOBAL_TOKEN))
                             .params("content", new File(path))
@@ -833,7 +846,6 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                             }
                         }
                     }
-                    Log.i(TAG, "socket的连接状态为isconnect = " + mManager.isConnect());
                 }
                 break;
             case 4405:

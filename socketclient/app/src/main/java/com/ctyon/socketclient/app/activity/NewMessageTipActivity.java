@@ -181,6 +181,10 @@ public class NewMessageTipActivity extends Activity {
             mediaPlayer.stop();
             mediaPlayer.release();
         }
+
+        if (screenReceiver != null) {
+            unregisterReceiver(screenReceiver);
+        }
     }
 
     private void sendKeyEvent(final int keyCode) {

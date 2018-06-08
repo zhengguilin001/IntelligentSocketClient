@@ -58,24 +58,28 @@ public class InitTimetoTakePic {
 	{
 		@Override
 		public void handleMessage(Message msg) {
-			switch(msg.what)
-			{
-			case 1:
-				 Log.v(TAG, "开始拍照");
-				 initCarema();
-				break;
-			case 2:
-				mCamera.autoFocus(new AutoFocusCallback() {
-		            
-		            @Override
-		            public void onAutoFocus(boolean success, Camera camera) {
-		                // 从Camera捕获图片
-		            	Log.v(TAG, "自动聚焦111"+success);
-		            	mCamera.takePicture(null, null, mPicture);
+			try {
+				switch(msg.what)
+				{
+					case 1:
+						Log.v(TAG, "开始拍照");
+						initCarema();
+						break;
+					case 2:
+						mCamera.autoFocus(new AutoFocusCallback() {
+
+							@Override
+							public void onAutoFocus(boolean success, Camera camera) {
+								// 从Camera捕获图片
+								Log.v(TAG, "自动聚焦111"+success);
+								mCamera.takePicture(null, null, mPicture);
 //		            	mHandler.sendEmptyMessageDelayed(1, 5*1000);
-		            }
-		        });
-				break;
+							}
+						});
+						break;
+				}
+			} catch (Exception e) {
+
 			}
 		}
 	};
