@@ -157,9 +157,12 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
             if (!wifiManager.isWifiEnabled()) {
                 Log.i(TAG, "wifi是关闭的");
             }
+            //还未登录，取消登录通知图标
+            cancelNotification();
         } catch (Exception e) {
 
         }
+
         Log.i(TAG, "SocketService oncreate(...) end");
 
     }
@@ -188,6 +191,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
     }
 
     private void resetSocket() {
+        cancelNotification();
         //add by shipeixian on 2018-05-24 begin
         if (mHandler != null) {
             mHandler.removeMessages(4400);
@@ -747,7 +751,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                     String path = (String) msg.obj;
                     PostRequest<String> postRequest = OkGo.<String>post(Constants.COMMON.Url.sendImage)
                             .params("imei", DeviceUtils.getIMEI(this))
-                            //.params("imei", "C5B20180200007")
+                            //.params("imei", "C5B20180200030")
                             .params("token", Settings.Global.getString(getContentResolver(),
                                     Constants.MODEL.SETTINGS.GLOBAL_TOKEN))
                             .params("content", new File(path))
@@ -880,6 +884,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
         if (locationManager != null) {
             locationManager.removeUpdates(locationListener);
         }
+        cancelNotification();
         Log.i(TAG, "SocketService onDestroy");
     }
 
@@ -953,6 +958,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
 
                 }
                 Log.i(TAG, "网络状态无网络");
+                cancelNotification();
                 break;
         }
     }
@@ -1150,20 +1156,24 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
     }
 
     private void sendNotification() {
-        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        Settings.Global.putInt(getContentResolver(), "isSocketLogin", 1);
+        /*NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
         Notification notification = builder.setContentTitle("")
                 .setDefaults(Notification.DEFAULT_LIGHTS).setSmallIcon(R.mipmap.icon_notification)
                 .setAutoCancel(false)
                 .setPriority(Notification.PRIORITY_MAX)
                 .build();
+        notification.flags |= Notification.FLAG_ONGOING_EVENT;
+        notification.flags |= Notification.FLAG_NO_CLEAR;
 
-        notificationManager.notify(4444, notification);
+        notificationManager.notify(4444, notification);*/
     }
 
     private void cancelNotification() {
-        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        notificationManager.cancel(4444);
+        Settings.Global.putInt(getContentResolver(), "isSocketLogin", 0);
+       /* NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        notificationManager.cancel(4444);*/
     }
 
     private void showMessageToast() {
