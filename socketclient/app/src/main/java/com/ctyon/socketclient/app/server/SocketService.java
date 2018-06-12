@@ -33,6 +33,7 @@ import com.ctyon.socketclient.BuildConfig;
 import com.ctyon.socketclient.R;
 import com.ctyon.socketclient.app.network.NetBroadcastReceiver;
 import com.ctyon.socketclient.app.network.NetEvent;
+import com.ctyon.socketclient.app.network.NetUtil;
 import com.ctyon.socketclient.project.model.AlarmModel;
 import com.ctyon.socketclient.project.model.ContactJson;
 import com.ctyon.socketclient.project.senddata.RedirectException;
@@ -191,6 +192,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
     }
 
     private void resetSocket() {
+
         cancelNotification();
         //add by shipeixian on 2018-05-24 begin
         if (mHandler != null) {
@@ -198,9 +200,29 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
             mHandler.removeMessages(4401);
             mHandler.removeMessages(4402);
             mHandler.removeMessages(4403);
+            mHandler.removeMessages(4404);
             mHandler.removeMessages(4405);
         }
         //add by shipeixian on 2018-05-24 end
+
+        //没写imei号，则return
+        String imei = DeviceUtils.getIMEI(App.getsContext());
+        if (imei.startsWith("0")&&imei.endsWith("0")){
+            return;
+        }
+        //如果没有网络,return
+        if (NetUtil.getNetWorkState(getApplicationContext()) == -1) {
+            return;
+        }
+        //判断网络信号强度,如果没有信号return
+        try {
+            if (Settings.Global.getInt(getContentResolver(), "socket_signal_level", 0) != 1) {
+                mHandler.sendEmptyMessageDelayed(4405, 10000);
+                return;
+            }
+        } catch (Exception e) {
+
+        }
 
         //连接参数设置(IP,端口号),这也是一个连接的唯一标识,不同连接,该参数中的两个值至少有其一不一样
         info = new ConnectionInfo(BuildConfig.HOST, BuildConfig.PORT);
@@ -750,8 +772,8 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                 if (msg.obj instanceof String) {
                     String path = (String) msg.obj;
                     PostRequest<String> postRequest = OkGo.<String>post(Constants.COMMON.Url.sendImage)
-                            .params("imei", DeviceUtils.getIMEI(this))
-                            //.params("imei", "C5B20180200030")
+                            //.params("imei", DeviceUtils.getIMEI(this))
+                            .params("imei", "C5B20180200030")
                             .params("token", Settings.Global.getString(getContentResolver(),
                                     Constants.MODEL.SETTINGS.GLOBAL_TOKEN))
                             .params("content", new File(path))

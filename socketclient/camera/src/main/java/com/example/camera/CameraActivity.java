@@ -41,7 +41,6 @@ public class CameraActivity extends Activity implements InitTimetoTakePic.takePi
         //创建定时拍照任务
         InitTimetoTakePic itt = InitTimetoTakePic.getInstance(CameraActivity.this,this);
         itt.initView(fl_preview);
-        itt.start();
     }
 
     @Override
