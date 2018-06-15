@@ -25,19 +25,31 @@ import me.xmai.global.config.Constants;
  */
 public class InitTimetoTakePic {
 
-	private static InitTimetoTakePic mInstance;
+	//private static InitTimetoTakePic mInstance;
+	private  InitTimetoTakePic mInstance;
 	Activity mContext;
 	static FrameLayout mSurfaceViewFrame;
 	private static Camera mCamera;
     private static CameraPreview mPreview;
 	private static takePicCallback mTakePicCallback;
     
-	static String TAG = InitTimetoTakePic.class.getSimpleName();
+	//static String TAG = InitTimetoTakePic.class.getSimpleName();
+	static String TAG = "shipeixian";
 	private InitTimetoTakePic(Activity context)
 	{
 		this.mContext = context;
+
 	}
-	public synchronized static InitTimetoTakePic getInstance(Activity context,takePicCallback tpicCallback)
+
+	//add by shipeixian begin
+	public InitTimetoTakePic(Activity context, takePicCallback tpicCallback) {
+		this.mContext = context;
+		mInstance = new InitTimetoTakePic(context);
+		mTakePicCallback=tpicCallback;
+	}
+	//add by shipeixian end
+
+	/*public synchronized static InitTimetoTakePic getInstance(Activity context,takePicCallback tpicCallback)
 	{
 		if(mInstance ==null)
 		{
@@ -46,10 +58,11 @@ public class InitTimetoTakePic {
 		}
 		mTakePicCallback=tpicCallback;
 		return mInstance;
-	}
+	}*/
 	public void initView(FrameLayout surfaceViewFrame)
 	{
 		mSurfaceViewFrame = surfaceViewFrame;
+		start();
 	}
 	/**
 	 * 启动定时拍照并上传功能
@@ -62,11 +75,11 @@ public class InitTimetoTakePic {
 				switch(msg.what)
 				{
 					case 1:
-						Log.v(TAG, "开始拍照");
+						Log.i(TAG, "开始拍照");
 						initCarema();
 						break;
 					case 2:
-						mCamera.autoFocus(new AutoFocusCallback() {
+						/*mCamera.autoFocus(new AutoFocusCallback() {
 
 							@Override
 							public void onAutoFocus(boolean success, Camera camera) {
@@ -75,31 +88,34 @@ public class InitTimetoTakePic {
 								mCamera.takePicture(null, null, mPicture);
 //		            	mHandler.sendEmptyMessageDelayed(1, 5*1000);
 							}
-						});
+						});*/
+						mCamera.takePicture(null, null, mPicture);
 						break;
 				}
 			} catch (Exception e) {
-
+				e.printStackTrace();
+				Log.i(TAG, e.toString());
 			}
 		}
 	};
 	public void start()
 	{
+		Log.i(TAG, "CAMARA 初始化");
 		mHandler.sendEmptyMessageDelayed(1, 3*1000); //7s 后开始启动相机
 	}
 	private void initCarema() {
-		Log.v(TAG, "initCarema");
+		Log.i(TAG, "initCarema");
 		if(mCamera==null)
 		{
-			Log.v(TAG, "camera=null");
+			Log.i(TAG, "camera=null");
 			mCamera = getCameraInstance();
 			mPreview = new CameraPreview(mContext, mCamera);
 			mSurfaceViewFrame.removeAllViews();
 			mSurfaceViewFrame.addView(mPreview);
 		}
-		Log.v(TAG, mCamera==null ?"mCamera is null":"mCamera is not null");
+		Log.i(TAG, mCamera==null ?"mCamera is null":"mCamera is not null");
 		mCamera.startPreview();
-        mHandler.sendEmptyMessageDelayed(2, 3*1000); //3s后拍照
+        mHandler.sendEmptyMessageDelayed(2, 5*1000); //3s后拍照
 	}
 	/** 检测设备是否存在Camera硬件 */
     private boolean checkCameraHardware(Context context) {
@@ -125,7 +141,7 @@ public class InitTimetoTakePic {
             mParameters.setPictureSize(ms.get(0).width, ms.get(0).height);  //默认最大拍照取最大清晰度的照片
             c.setParameters(mParameters);
         } catch (Exception e) {
-            Log.d(TAG, "打开Camera失败失败");
+            Log.i(TAG, "打开Camera失败失败");
         }
         return c; 
     }
@@ -146,17 +162,18 @@ public class InitTimetoTakePic {
                 FileOutputStream fos = new FileOutputStream(pictureFile);
                 fos.write(data);
                 fos.close();
-                Log.d(TAG, "保存图成功"+pictureFile.getAbsolutePath());
+                Log.i(TAG, "保存图成功"+pictureFile.getAbsolutePath());
                 mTakePicCallback.takePicSuccess(pictureFile.getAbsolutePath());
             } catch (Exception e) {
-                Log.d(TAG, "保存图片失败");
+                Log.i(TAG, "保存图片失败");
                 mTakePicCallback.takePicFailed(e.toString());
                 e.printStackTrace();
             }
-            releaseCarema();
+            mCamera.startPreview();
+            //releaseCarema();
         }
     };
-    public void releaseCarema(){
+    public static void releaseCarema(){
     	if(mCamera!=null){
             mCamera.stopPreview();
             mCamera.release();

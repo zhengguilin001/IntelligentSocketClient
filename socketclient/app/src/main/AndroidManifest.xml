@@ -106,6 +106,8 @@
             android:name=".app.receive.SocketReceiverB"
             android:enabled="true"
             android:exported="true"></receiver>
+
+        <activity android:name=".app.activity.CameraActivity" android:theme="@style/OnePixelActivity"/>
     </application>
 
 </manifest>

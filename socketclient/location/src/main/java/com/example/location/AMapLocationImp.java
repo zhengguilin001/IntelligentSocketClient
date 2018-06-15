@@ -87,6 +87,7 @@ public class AMapLocationImp {
                 Log.d(TAG, "gcj2转换为gps坐标: 经度=" + gpsData[0]+",纬度="+gpsData[1]);
                 Message message = new Message();
                 message.obj = gpsData[0] + "/" + gpsData[1];
+                //message.obj = aMapLocation.getLongitude() + "/" + aMapLocation.getLatitude();
                 message.what = 4400;
                 mHandler.sendMessage(message);
                 //mHandler.obtainMessage(4400).sendToTarget();

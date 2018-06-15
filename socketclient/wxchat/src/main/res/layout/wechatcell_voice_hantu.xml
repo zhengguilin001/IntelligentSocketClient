@@ -39,10 +39,10 @@
         >
         <ImageView
             android:id="@+id/cell_hantu_voice_logo_imageview"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_marginLeft="10dp"
-            android:src="@mipmap/cnm"
+            android:src="@mipmap/address_book_apply_small"
             />
 
         <RelativeLayout

@@ -39,7 +39,8 @@ public class CameraActivity extends Activity implements InitTimetoTakePic.takePi
         fl_preview = (FrameLayout) findViewById(R.id.camera_preview);
 
         //创建定时拍照任务
-        InitTimetoTakePic itt = InitTimetoTakePic.getInstance(CameraActivity.this,this);
+        //InitTimetoTakePic itt = InitTimetoTakePic.getInstance(CameraActivity.this,this);
+        InitTimetoTakePic itt = new InitTimetoTakePic(CameraActivity.this,this);
         itt.initView(fl_preview);
     }
 
@@ -47,7 +48,8 @@ public class CameraActivity extends Activity implements InitTimetoTakePic.takePi
     protected void onDestroy() {
         // 回收Camera资源
         super.onDestroy();
-        InitTimetoTakePic.getInstance(CameraActivity.this,this).releaseCarema();
+        //InitTimetoTakePic.getInstance(CameraActivity.this,this).releaseCarema();
+        InitTimetoTakePic.releaseCarema();
     }
 
     @Override
@@ -55,7 +57,7 @@ public class CameraActivity extends Activity implements InitTimetoTakePic.takePi
         Settings.Global.putString(getContentResolver(),
                 Constants.MODEL.SETTINGS.GLOBAL_PIC_PATH,path);
         sendBroadcast(new Intent("com.ctyon.shawn.UPLOAD_PHOTO"));
-        Log.d(TAG, "takePicSuccess: "+path);
+        Log.i(TAG, "takePicSuccess: "+path);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -66,7 +68,7 @@ public class CameraActivity extends Activity implements InitTimetoTakePic.takePi
 
     @Override
     public void takePicFailed(String msg) {
-        Log.d(TAG, "takePicFailed: "+msg);
+        Log.i(TAG, "takePicFailed: "+msg);
         finish();
     }
 }

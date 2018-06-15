@@ -38,11 +38,11 @@
         >
         <ImageView
             android:id="@+id/cell_user_image_logo_imageview"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_marginRight="10dp"
             android:layout_alignParentRight="true"
-            android:src="@mipmap/cnm"
+            android:src="@mipmap/address_book_friend_big"
             />
 
         <RelativeLayout

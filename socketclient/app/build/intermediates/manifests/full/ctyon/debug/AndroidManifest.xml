@@ -121,6 +121,10 @@
             android:enabled="true"
             android:exported="true" />
 
+        <activity
+            android:name="com.ctyon.socketclient.app.activity.CameraActivity"
+            android:theme="@style/OnePixelActivity" />
+
         <meta-data
             android:name="com.amap.api.v2.apikey"
             android:value="a951d23c47853b33478af10349cb7396" />

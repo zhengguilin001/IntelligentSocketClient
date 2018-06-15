@@ -117,8 +117,6 @@ public class NewMessageTipActivity extends Activity {
         intentFilter.addAction(Intent.ACTION_SCREEN_OFF);
         registerReceiver(screenReceiver, intentFilter);
 
-        mediaPlayer = MediaPlayer.create(this, R.raw.test);
-        mediaPlayer.start();
     }
 
     @Override
@@ -159,6 +157,17 @@ public class NewMessageTipActivity extends Activity {
                     kl.reenableKeyguard();
                 }
             }, 9500);*//*
+        }*/
+        /*if (mediaPlayer == null) {
+            mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.test);
+            mediaPlayer.start();
+        } else {
+            if (!mediaPlayer.isPlaying()) {
+                mediaPlayer.release();
+                mediaPlayer = null;
+                mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.test);
+                mediaPlayer.start();
+            }
         }*/
     }
 

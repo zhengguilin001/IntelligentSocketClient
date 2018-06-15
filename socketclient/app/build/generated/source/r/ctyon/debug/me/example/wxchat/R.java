@@ -929,24 +929,26 @@ public final class R {
         public static final int wechatcell_voice_user = 0x7f0a0056;
     }
     public static final class mipmap {
-        public static final int chatlogo1 = 0x7f0c0000;
-        public static final int chatlogo2 = 0x7f0c0001;
-        public static final int cnm = 0x7f0c0002;
-        public static final int ic_launcher = 0x7f0c0003;
-        public static final int ic_launcher_round = 0x7f0c0004;
-        public static final int icon_message_unread = 0x7f0c0006;
-        public static final int wechat_resendbut5 = 0x7f0c0009;
-        public static final int wechatback1 = 0x7f0c000a;
-        public static final int wechatback1cover = 0x7f0c000b;
-        public static final int wechatback2 = 0x7f0c000c;
-        public static final int wechatback2cover = 0x7f0c000d;
-        public static final int wechatimg = 0x7f0c000e;
-        public static final int wechatvoice3 = 0x7f0c000f;
-        public static final int wechatvoice3_0 = 0x7f0c0010;
-        public static final int wechatvoice3_1 = 0x7f0c0011;
-        public static final int wechatvoice4 = 0x7f0c0012;
-        public static final int wechatvoice4_0 = 0x7f0c0013;
-        public static final int wechatvoice4_1 = 0x7f0c0014;
+        public static final int address_book_apply_small = 0x7f0c0000;
+        public static final int address_book_friend_big = 0x7f0c0001;
+        public static final int chatlogo1 = 0x7f0c0002;
+        public static final int chatlogo2 = 0x7f0c0003;
+        public static final int cnm = 0x7f0c0004;
+        public static final int ic_launcher = 0x7f0c0005;
+        public static final int ic_launcher_round = 0x7f0c0006;
+        public static final int icon_message_unread = 0x7f0c0008;
+        public static final int wechat_resendbut5 = 0x7f0c000b;
+        public static final int wechatback1 = 0x7f0c000c;
+        public static final int wechatback1cover = 0x7f0c000d;
+        public static final int wechatback2 = 0x7f0c000e;
+        public static final int wechatback2cover = 0x7f0c000f;
+        public static final int wechatimg = 0x7f0c0010;
+        public static final int wechatvoice3 = 0x7f0c0011;
+        public static final int wechatvoice3_0 = 0x7f0c0012;
+        public static final int wechatvoice3_1 = 0x7f0c0013;
+        public static final int wechatvoice4 = 0x7f0c0014;
+        public static final int wechatvoice4_0 = 0x7f0c0015;
+        public static final int wechatvoice4_1 = 0x7f0c0016;
     }
     public static final class string {
         public static final int abc_action_bar_home_description = 0x7f0e0000;

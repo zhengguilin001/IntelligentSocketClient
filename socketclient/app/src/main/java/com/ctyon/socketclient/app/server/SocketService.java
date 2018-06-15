@@ -14,6 +14,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.location.LocationProvider;
+import android.media.MediaPlayer;
 import android.net.ConnectivityManager;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
@@ -27,6 +28,7 @@ import android.telecom.TelecomManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
+import android.widget.ImageView;
 
 import com.ctyon.socketclient.App;
 import com.ctyon.socketclient.BuildConfig;
@@ -34,6 +36,7 @@ import com.ctyon.socketclient.R;
 import com.ctyon.socketclient.app.network.NetBroadcastReceiver;
 import com.ctyon.socketclient.app.network.NetEvent;
 import com.ctyon.socketclient.app.network.NetUtil;
+import com.ctyon.socketclient.app.receive.ScreenReceiver;
 import com.ctyon.socketclient.project.model.AlarmModel;
 import com.ctyon.socketclient.project.model.ContactJson;
 import com.ctyon.socketclient.project.senddata.RedirectException;
@@ -114,11 +117,18 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
 
     private ActivityManager activityManager;
 
+    private MediaPlayer mediaPlayer;
+
 
     /**
      * 监控网络的广播
      */
     private NetBroadcastReceiver netBroadcastReceiver;
+
+    /**
+     * 监控亮灭屏的广播
+     */
+    private ScreenReceiver screenReceiver;
 
     //add by shipeixian on 2018-05-24 end
 
@@ -189,6 +199,14 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
             //设置监听
             netBroadcastReceiver.setNetEvent(this);
         }
+
+        if (screenReceiver == null) {
+            screenReceiver = new ScreenReceiver();
+            IntentFilter filter = new IntentFilter();
+            filter.addAction(Intent.ACTION_SCREEN_ON);
+            filter.addAction(Intent.ACTION_SCREEN_OFF);
+            registerReceiver(screenReceiver, filter);
+        }
     }
 
     private void resetSocket() {
@@ -206,23 +224,23 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
         //add by shipeixian on 2018-05-24 end
 
         //没写imei号，则return
-        String imei = DeviceUtils.getIMEI(App.getsContext());
+        /*String imei = DeviceUtils.getIMEI(App.getsContext());
         if (imei.startsWith("0")&&imei.endsWith("0")){
             return;
-        }
+        }*/
         //如果没有网络,return
         if (NetUtil.getNetWorkState(getApplicationContext()) == -1) {
             return;
         }
         //判断网络信号强度,如果没有信号return
-        try {
+        /*try {
             if (Settings.Global.getInt(getContentResolver(), "socket_signal_level", 0) != 1) {
                 mHandler.sendEmptyMessageDelayed(4405, 10000);
                 return;
             }
         } catch (Exception e) {
 
-        }
+        }*/
 
         //连接参数设置(IP,端口号),这也是一个连接的唯一标识,不同连接,该参数中的两个值至少有其一不一样
         info = new ConnectionInfo(BuildConfig.HOST, BuildConfig.PORT);
@@ -394,6 +412,17 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                             if (mManager != null && mManager.isConnect()) {
                                 mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_VOICE_MESSAGE, ident + ""));
                             }
+                            if (mediaPlayer == null) {
+                                mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.test);
+                                mediaPlayer.start();
+                            } else {
+                                if (!mediaPlayer.isPlaying()) {
+                                    mediaPlayer.release();
+                                    mediaPlayer = null;
+                                    mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.test);
+                                    mediaPlayer.start();
+                                }
+                            }
                             WeChatMessage bean = new WeChatMessage();
                             bean.setMessageType(WxchatMessageBean.MessageType.Voice.ordinal());
                             bean.setMessageSenderType(WxchatMessageBean.MessageSenderType.Parents.ordinal());
@@ -507,6 +536,17 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                             Log.i("shipeixian", "您有一条新消息(文字)");
                             if (mManager != null && mManager.isConnect()) {
                                 mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_TEXT_MESSAGE, ident + ""));
+                            }
+                            if (mediaPlayer == null) {
+                                mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.test);
+                                mediaPlayer.start();
+                            } else {
+                                if (!mediaPlayer.isPlaying()) {
+                                    mediaPlayer.release();
+                                    mediaPlayer = null;
+                                    mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.test);
+                                    mediaPlayer.start();
+                                }
                             }
                             WeChatMessage wcm = new WeChatMessage();
                             wcm.setSecid(jsonObject.get(Constants.MODEL.DATA.DATA_ID).getAsString());
@@ -766,14 +806,14 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                 PowerUtils.shutdown();
                 break;
             case Constants.COMMON.MSG.MSG_REMOTE_PHOTO:
-                startActivity(new Intent(this, CameraActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                startActivity(new Intent(this, com.ctyon.socketclient.app.activity.CameraActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                 break;
             case Constants.COMMON.MSG.MSG_UPLOAD_PHOTO:
                 if (msg.obj instanceof String) {
                     String path = (String) msg.obj;
                     PostRequest<String> postRequest = OkGo.<String>post(Constants.COMMON.Url.sendImage)
-                            //.params("imei", DeviceUtils.getIMEI(this))
-                            .params("imei", "C5B20180200030")
+                            .params("imei", DeviceUtils.getIMEI(this))
+                            //.params("imei", "C5B20180200030")
                             .params("token", Settings.Global.getString(getContentResolver(),
                                     Constants.MODEL.SETTINGS.GLOBAL_TOKEN))
                             .params("content", new File(path))
@@ -901,6 +941,9 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
         if (netBroadcastReceiver != null) {
             //注销广播
             unregisterReceiver(netBroadcastReceiver);
+        }
+        if (screenReceiver != null) {
+            unregisterReceiver(screenReceiver);
         }
         //add by shipeixian for close manager end
         if (locationManager != null) {
@@ -1264,6 +1307,5 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
             }
         }, 5000);
     }
-
 
 }

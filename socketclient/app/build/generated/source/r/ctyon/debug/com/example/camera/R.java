@@ -660,7 +660,6 @@ public final class R {
         public static final int basic = 0x7f080021;
         public static final int blocking = 0x7f080024;
         public static final int buttonPanel = 0x7f080029;
-        public static final int camera_preview = 0x7f08002b;
         public static final int cancel_action = 0x7f08002d;
         public static final int chains = 0x7f08005a;
         public static final int checkbox = 0x7f08005b;
@@ -800,8 +799,8 @@ public final class R {
         public static final int tooltip = 0x7f0a004f;
     }
     public static final class mipmap {
-        public static final int ic_launcher = 0x7f0c0003;
-        public static final int ic_launcher_round = 0x7f0c0004;
+        public static final int ic_launcher = 0x7f0c0005;
+        public static final int ic_launcher_round = 0x7f0c0006;
     }
     public static final class string {
         public static final int abc_action_bar_home_description = 0x7f0e0000;
