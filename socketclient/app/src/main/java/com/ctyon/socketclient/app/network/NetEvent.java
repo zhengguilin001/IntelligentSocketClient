@@ -7,4 +7,5 @@ package com.ctyon.socketclient.app.network;
 public interface NetEvent {
     void onNetChange(int netMobile);
     void onUploadPhoto();
+    void onUnbindWatch();
 }

@@ -197,6 +197,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
             IntentFilter filter = new IntentFilter();
             filter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
             filter.addAction("com.ctyon.shawn.UPLOAD_PHOTO");
+            filter.addAction("unbind_watch");
             registerReceiver(netBroadcastReceiver, filter);
             //设置监听
             netBroadcastReceiver.setNetEvent(this);
@@ -647,6 +648,9 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                             qrcodeIntent.setClassName("com.ctyon.watch", "com.ctyon.watch.ui.activity.QrcodeActivity");
                             startActivity(qrcodeIntent);
                             break;
+                        case Constants.COMMON.TYPE.TYPE_MASTER_UNTIE:
+                            Log.i("shipeixian", "服务器响应，解绑手表成功");
+                            break;
                         default:
                             break;
                     }
@@ -822,8 +826,8 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                 if (msg.obj instanceof String) {
                     String path = (String) msg.obj;
                     PostRequest<String> postRequest = OkGo.<String>post(Constants.COMMON.Url.sendImage)
-                            //.params("imei", DeviceUtils.getIMEI(this))
-                            .params("imei", "C5B20180200030")
+                            .params("imei", DeviceUtils.getIMEI(this))
+                            //.params("imei", "C5B20180200030")
                             .params("token", Settings.Global.getString(getContentResolver(),
                                     Constants.MODEL.SETTINGS.GLOBAL_TOKEN))
                             .params("content", new File(path))
@@ -894,9 +898,9 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                 }
                 break;
             case 4403:
-                //默认省电模式，每一小时上传一次定位
+                //默认正常模式，每10分钟上传一次定位
                 startLocationWithNetwork();
-                mHandler.sendEmptyMessageDelayed(4403, 60 * 60 * 1000);
+                mHandler.sendEmptyMessageDelayed(4403, 10 * 60 * 1000);
                 break;
             case 4404:
                 if (isWaitingServerResponse) {
@@ -1046,6 +1050,13 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
             message.what = Constants.COMMON.MSG.MSG_UPLOAD_PHOTO;
             message.obj = picPath;
             mHandler.sendMessage(message);
+        }
+    }
+
+    @Override
+    public void onUnbindWatch() {
+        if (mManager != null && mManager.isConnect()) {
+            mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_MASTER_UNTIE));
         }
     }
 

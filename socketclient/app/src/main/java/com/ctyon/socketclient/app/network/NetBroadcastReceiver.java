@@ -28,6 +28,11 @@ public class NetBroadcastReceiver extends BroadcastReceiver {
                 netEvent.onUploadPhoto();
             }
         }
+        if ("unbind_watch".equals(intent.getAction())) {
+            if (netEvent != null) {
+                netEvent.onUnbindWatch();
+            }
+        }
     }
 
     public void setNetEvent(NetEvent netEvent) {
