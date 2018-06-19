@@ -1,0 +1,80 @@
+<resources>
+    <string name="app_name">Watch</string>
+    <string name="mon">周一</string>
+    <string name="tue">周二</string>
+    <string name="wed">周三</string>
+    <string name="thu">周四</string>
+    <string name="fri">周五</string>
+    <string name="sat">周六</string>
+    <string name="sun">周日</string>
+    <string name="cycle_sure">确定</string>
+    <string name="vibration">震动</string>
+    <string name="ring">铃声</string>
+    <string name="ring_and_vibration">铃声和震动</string>
+    <string name="cancel">取消</string>
+    <string name="sure">确定</string>
+    <string name="repeat">重复</string>
+    <string name="choose_time">选择时间</string>
+    <string name="alarm_ring">铃声</string>
+    <string name="hour">时</string>
+    <string name="minute">分</string>
+    <string name="alarm_once">只响一次</string>
+    <string name="alarm_everyday">每天</string>
+    <string name="alarm_am">上午</string>
+    <string name="alarm_pm">下午</string>
+    <string name="alarm_create">创建一个新闹钟</string>
+    <string name="alarm_create_back">返回</string>
+    <string name="alarm_close">关闭闹钟</string>
+    <string name="alarm_little_sleep">继续小睡一会</string>
+
+
+    <string name="eight1">8</string>
+    <string name="nine1">9</string>
+
+    <string name="zero1">0</string>
+    <string name="multiple">*</string>
+    <string name="minus">-</string>
+    <string name="plus">+</string>
+    <string name="equal">=</string>
+    <string name="nulls"> </string>
+    <string name="dot">.</string>
+    <string name="divide">/</string>
+
+    <string name="openCallPermission">为了使用拨号功能请在设置中打开拨号权限</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="eight">8*</string>
+    <string name="nine">9#</string>
+    <string name="zero">0+</string>
+    <string name="am">上午</string>
+    <string name="pm">下午</string>
+    <string name="no_call_log">无通话记录</string>
+    <string name="H">时</string>
+    <string name="M">分</string>
+    <string name="S">秒</string>
+    <string name="MS">00分00秒</string>
+    <string name="contacts">联系人</string>
+    <string name="no_contact">无联系人</string>
+    <string name="find">查找</string>
+    <string name="addContact">新建</string>
+    <string name="unknownContact">未知联系人</string>
+    <string name="conversations">短信</string>
+    <string name="no_conversation">无会话</string>
+    <string name="newMessage">新建信息</string>
+    <string name="deleting">删除中</string>
+    <string name="sent_successfully">发送成功</string>
+    <string name="sent_failed">发送失败</string>
+    <string name="input_content">输入短信内容</string>
+    <string name="send">发送</string>
+    <string name="please_input_message_first">请输入要发送的信息后再发送！</string>
+    <string name="album">相册</string>
+    <string name="call_log">通话记录</string>
+    <string name="alarm_clock">闹钟</string>
+    <string name="forbid_use">上课禁用</string>
+    <string name="forbid_use_tip">解禁用需家长控制方可解禁</string>
+</resources>

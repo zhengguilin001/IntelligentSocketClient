@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/table2"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+    >
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:visibility="gone"
+        android:id="@+id/factorial"
+        android:layout_weight="1"
+        android:background="@drawable/keyboard"/>
+    <Button
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:id="@+id/power"
+
+        android:layout_weight="1"
+        android:background="@drawable/keyboard"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:visibility="gone"
+        android:id="@+id/sqrt"
+
+        android:layout_weight="1"
+        android:background="@drawable/keyboard"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:id="@+id/pi"
+
+        android:textAllCaps="false"
+
+        android:background="@drawable/keyboard"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:id="@+id/empty2"
+        android:background="@drawable/keyboard"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+
+    >
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:id="@+id/sin"
+
+        android:textAllCaps="false"
+        android:layout_weight="1"
+        android:background="@drawable/keyboard"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:id="@+id/left_parentheses"
+
+        android:layout_weight="1"
+        android:background="@drawable/keyboard"/>
+    <Button
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:id="@+id/right_parentheses"
+
+        android:layout_weight="1"
+        android:background="@drawable/keyboard"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:id="@+id/e"
+
+        android:textAllCaps="false"
+        android:layout_weight="1"
+        android:background="@drawable/keyboard"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:id="@+id/delete2"
+
+        android:layout_weight="1"
+        android:background="@drawable/keyboard"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+    >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:id="@+id/ln"
+
+            android:textAllCaps="false"
+            android:layout_weight="1"
+            android:background="@drawable/keyboard" />
+        <Button
+
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/one2"
+            android:text="@string/one"
+            android:layout_weight="1"
+            android:background="@drawable/keyboard" />
+        <Button
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/two2"
+            android:text="@string/two"
+            android:layout_weight="1"
+            android:background="@drawable/keyboard"/>
+        <Button
+
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/three2"
+            android:text="@string/three"
+            android:layout_weight="1"
+            android:background="@drawable/keyboard" />
+
+
+        <Button
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/plus2"
+            android:background="@drawable/keyboard_normal"
+            android:layout_weight="1"
+            android:text="@string/plus"/>
+
+
+    </LinearLayout>
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="40dp"
+       android:orientation="horizontal"
+   >
+    <Button
+        android:layout_width="1dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:id="@+id/tan"
+        android:textAllCaps="false"
+        android:layout_weight="1"
+        android:background="@drawable/keyboard" />
+
+    <Button
+        android:layout_width="1dp"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/four2"
+        android:background="@drawable/keyboard"
+        android:layout_weight="1"
+        android:text="@string/four" />
+    <Button
+        android:layout_width="1dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/five2"
+        android:text="@string/five"
+        android:layout_weight="1"
+        android:background="@drawable/keyboard" />
+    <Button
+        android:layout_width="1dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/six2"
+        android:text="@string/six"
+        android:layout_weight="1"
+        android:background="@drawable/keyboard" />
+
+        <Button
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/minus2"
+            android:text="@string/minus"
+            android:layout_weight="1"
+            android:background="@drawable/keyboard" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+    >
+        <Button
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:id="@+id/cos"
+
+            android:textAllCaps="false"
+            android:layout_weight="1"
+            android:background="@drawable/keyboard"/>
+        <Button
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/seven2"
+            android:text="@string/seven"
+            android:layout_weight="1"
+            android:background="@drawable/keyboard" />
+        <Button
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/eight2"
+            android:text="@string/eight1"
+            android:layout_weight="1"
+            android:background="@drawable/keyboard" />
+        <Button
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/nine2"
+            android:text="@string/nine1"
+            android:layout_weight="1"
+            android:background="@drawable/keyboard"/>
+        <Button
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/multiple2"
+            android:text="@string/multiple"
+            android:layout_weight="1"
+            android:background="@drawable/keyboard" />
+
+    </LinearLayout>
+
+ <LinearLayout
+
+     android:layout_width="match_parent"
+     android:layout_height="40dp"
+     android:orientation="horizontal"
+
+ >
+        <Button
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:id="@+id/log"
+            android:textAllCaps="false"
+            android:layout_weight="1"
+            android:background="@drawable/keyboard" />
+
+        <Button
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/dot2"
+            android:text="@string/dot"
+            android:layout_weight="1"
+            android:background="@drawable/keyboard"/>
+        <Button
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/zero2"
+            android:text="@string/zero1"
+            android:layout_weight="1"
+            android:background="@drawable/keyboard"/>
+        <Button
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/equal2"
+            android:background="@drawable/keyboard_equal"
+            android:layout_weight="1"
+            android:text="@string/equal"
+            />
+
+        <Button
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/divide2"
+            android:text="@string/divide"
+            android:layout_weight="1"
+            android:background="@drawable/keyboard" />
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

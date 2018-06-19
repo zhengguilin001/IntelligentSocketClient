@@ -46,7 +46,8 @@ public class Constants {
             int TYPE_REMOTE_PHOTO = 36;   //远程拍照功能
             int TYPE_TIMER_LOCK = 42;      //设置终端定时上传定位
             int TYPE_CALL_STRATEGY = 24;   //拒绝陌生人来电设置
-            int TYPE_MASTER_CLEAR = 44;    //恢复手表出厂设置
+            int TYPE_MASTER_CLEAR = 44;    //恢复手表出厂设置(服务器下发)
+            int TYPE_MASTER_UNTIE = 45;    //恢复APP出厂设置,即解绑(手表主动上传)
             int TYPE_DEVICE_TOKEN = 46;    //设备验证码
         }
 

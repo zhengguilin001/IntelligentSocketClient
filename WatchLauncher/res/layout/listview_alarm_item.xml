@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="60dp"
+    android:background="#ffffff">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/iv_alarm_list"
+            android:src="@mipmap/alarm_created_icon"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="5dp"
+            android:layout_gravity="center_vertical"/>
+        <TextView
+            android:id="@+id/tv_alarm_list"
+            android:text="@string/alarm_everyday"
+            android:layout_marginLeft="10dp"
+            android:textSize="25sp"
+            android:textColor="@color/black_33"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical" />
+        <TextView
+            android:id="@+id/tv_apm"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_alarm_week"
+            android:gravity="right"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#373c3d"
+            android:layout_gravity="center_vertical|right"
+            android:maxLines="3" />
+    </LinearLayout>
+
+</LinearLayout>

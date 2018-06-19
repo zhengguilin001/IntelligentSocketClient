@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/shutter_button_pressed"
+    android:oneshot="true" >
+
+    <item
+        android:drawable="@mipmap/shutter_button_0"
+        android:duration="33"/>
+    <item
+        android:drawable="@mipmap/shutter_button_1"
+        android:duration="33"/>
+    <item
+        android:drawable="@mipmap/shutter_button_2"
+        android:duration="33"/>
+    <item
+        android:drawable="@mipmap/shutter_button_3"
+        android:duration="33"/>
+    <item
+        android:drawable="@mipmap/shutter_button_4"
+        android:duration="33"/>
+    <item
+        android:drawable="@mipmap/shutter_button_5"
+        android:duration="33"/>
+    <item
+        android:drawable="@mipmap/shutter_button_6"
+        android:duration="33"/>
+    <item
+        android:drawable="@mipmap/shutter_button_5"
+        android:duration="33"/>
+    <item
+        android:drawable="@mipmap/shutter_button_4"
+        android:duration="33"/>
+    <item
+        android:drawable="@mipmap/shutter_button_3"
+        android:duration="33"/>
+    <item
+        android:drawable="@mipmap/shutter_button_2"
+        android:duration="33"/>
+    <item
+        android:drawable="@mipmap/shutter_button_1"
+        android:duration="33"/>
+    <item
+        android:drawable="@mipmap/shutter_button_0"
+        android:duration="33"/>
+
+</animation-list>

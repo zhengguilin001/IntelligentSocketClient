@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.ctyon.watch.ui.activity.AlarmListActivity"
+    android:background="#ebebeb">
+
+   <RelativeLayout 
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#373c3d">
+
+        <ImageView
+            android:id="@+id/backIcon"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:background="@mipmap/icon_back_arrow"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="25sp"
+            android:text="@string/alarm_clock"
+            android:textStyle="bold"
+            android:textColor="#ffffff"/>
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:background="@null"/>
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:background="@mipmap/icon_add"/>
+
+         <Button
+            android:id="@+id/addAlarm"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@null"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/tv_list_back"
+            android:layout_margin="8dp"
+            android:layout_alignParentLeft="true"
+            android:text="@string/alarm_create_back"
+            android:textSize="24sp"
+            android:textColor="@color/black_33"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/ll_create_alarm"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titleBar">
+
+    <LinearLayout
+        android:id="@+id/create_alarm"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+        <ImageView
+            android:src="@mipmap/alarm_add_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="@string/alarm_create"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+        <TextView style="@style/horizontal_line_style"/>
+        <ListView
+            android:id="@+id/alarm_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <TextView style="@style/horizontal_line_style"/>
+    </LinearLayout>
+
+    <TextView 
+        android:id="@+id/tv_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textSize="20sp"
+        android:visibility="gone" />
+    
+</RelativeLayout>

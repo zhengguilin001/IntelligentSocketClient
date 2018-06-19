@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/all_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_create_back"
+            android:layout_margin="8dp"
+            android:layout_alignParentLeft="true"
+            android:text="@string/alarm_create_back"
+            android:textSize="24sp"
+            android:textColor="@color/black_33"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_create_sure"
+            android:layout_margin="8dp"
+            android:textSize="24sp"
+            android:textColor="@color/black_33"
+            android:layout_alignParentRight="true"
+            android:text="@string/sure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/date_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="8dp"
+        android:textSize="20sp"
+        android:paddingTop="8dp"
+        android:text="@string/choose_time"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/line_and_outline_grey"/>
+
+    <RelativeLayout
+        android:id="@+id/repeat_rl"
+        style="@style/item_style"
+        >
+
+        <TextView
+            android:id="@+id/tv_repeat"
+            style="@style/item_text_style"
+            android:layout_alignParentLeft="true"
+            android:text="@string/repeat"/>
+
+        <RelativeLayout
+            android:layout_toRightOf="@+id/tv_repeat"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_repeat_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:ellipsize="end"
+                android:text="@string/repeat"
+                android:layout_marginRight="5dp"
+                android:layout_alignParentRight="true"
+                android:drawableRight="@mipmap/personal_item_arrow"
+                android:textColor="@color/black_33"
+                android:textSize="14sp"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line_and_outline_grey"/>
+
+    <RelativeLayout
+        android:id="@+id/ring_rl"
+        style="@style/item_style"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/ring_tv"
+            style="@style/item_text_style"
+            android:layout_alignParentLeft="true"
+            android:text="@string/alarm_ring"/>
+
+        <TextView
+            android:id="@+id/tv_ring_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:drawableRight="@mipmap/personal_item_arrow"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/black_33"
+            android:textSize="16sp"/>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line_and_outline_grey"
+        android:visibility="gone"/>
+
+</LinearLayout>

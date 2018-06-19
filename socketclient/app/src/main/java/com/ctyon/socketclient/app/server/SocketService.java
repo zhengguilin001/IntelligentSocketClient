@@ -119,6 +119,8 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
 
     private MediaPlayer mediaPlayer;
 
+    private String addContactDataStr = "";
+
 
     /**
      * 监控网络的广播
@@ -380,12 +382,20 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                                     contactsResult += bean.getName()+","+bean.getPhone()+"/";
                                 }
                                 Intent addContactIntent = new Intent();
-                                addContactIntent.putExtra("contacts", contactsResult);
-                                addContactIntent.setAction("com.ctyon.shawn.ADD_CONTACT");
-                                sendBroadcast(addContactIntent);
-                                Log.i(TAG, contactsResult);
+                                addContactDataStr += contactsResult;
+                                mHandler.postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        addContactIntent.putExtra("contacts", addContactDataStr);
+                                        addContactIntent.setAction("com.ctyon.shawn.ADD_CONTACT");
+                                        sendBroadcast(addContactIntent);
+                                        addContactDataStr = "";
+                                        Log.i(TAG, addContactDataStr);
+                                    }
+                                }, 2000);
                             } else {
                                 Intent addContactIntent = new Intent();
+                                addContactDataStr = "";
                                 addContactIntent.putExtra("contacts", "");
                                 addContactIntent.setAction("com.ctyon.shawn.ADD_CONTACT");
                                 sendBroadcast(addContactIntent);
@@ -812,8 +822,8 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                 if (msg.obj instanceof String) {
                     String path = (String) msg.obj;
                     PostRequest<String> postRequest = OkGo.<String>post(Constants.COMMON.Url.sendImage)
-                            .params("imei", DeviceUtils.getIMEI(this))
-                            //.params("imei", "C5B20180200030")
+                            //.params("imei", DeviceUtils.getIMEI(this))
+                            .params("imei", "C5B20180200030")
                             .params("token", Settings.Global.getString(getContentResolver(),
                                     Constants.MODEL.SETTINGS.GLOBAL_TOKEN))
                             .params("content", new File(path))

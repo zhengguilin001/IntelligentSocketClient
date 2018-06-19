@@ -1,0 +1,99 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="#ffffff"
+    android:layout_height="match_parent">
+    <TextView style="@style/horizontal_line_style" />
+    <RelativeLayout
+        android:id="@+id/rl_head"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_height="30dp">
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:layout_alignParentLeft="true"
+            android:text="@string/cancel"
+            android:textSize="18sp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_sure"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/colorPrimary"
+            android:text="@string/sure"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_head"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:id="@+id/ll_apm"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_margin="5dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/tv_am"
+                android:text="@string/alarm_am"
+                android:background="@drawable/keyboard_equal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_pm"
+                android:layout_marginTop="10dp"
+                android:text="@string/alarm_pm"
+                android:background="@drawable/keyboard_equal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+        <com.ctyon.watch.ui.view.TimePickerView
+            android:id="@+id/hour_pv"
+            android:layout_marginLeft="1dp"
+            android:layout_width="80dp"
+            android:layout_toRightOf="@+id/ll_apm"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/hour_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/hour_pv"
+            android:layout_marginLeft="1dp"
+            android:layout_centerVertical="true"
+            android:text="@string/hour"
+            android:textColor="@color/black_33"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <com.ctyon.watch.ui.view.TimePickerView
+            android:id="@+id/minute_pv"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/minute_tv" />
+
+        <TextView
+            android:id="@+id/minute_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp"
+            android:text="@string/minute"
+            android:textColor="@color/black_33"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,5 +1,6 @@
 package com.ctyon.socketclient.project.senddata.publish;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.os.SystemClock;
 import android.util.Log;
@@ -49,10 +50,10 @@ public class SendData implements ISendable {
                         imei = DeviceUtils.getIMSI(App.getsContext());
                     }
                     //记得改回去
-                    jsonObject.put(Constants.MODEL.DATA.DATA_IMEI, imei);
-                    //jsonObject.put(Constants.MODEL.DATA.DATA_IMEI, "C5B20180200030");
-                    //jsonObject.put(Constants.MODEL.DATA.DATA_IMSI, "460110869360288");
-                    jsonObject.put(Constants.MODEL.DATA.DATA_IMSI, DeviceUtils.getIMSI(App.getsContext()));
+                    //jsonObject.put(Constants.MODEL.DATA.DATA_IMEI, imei);
+                    jsonObject.put(Constants.MODEL.DATA.DATA_IMEI, "C5B20180200030");
+                    jsonObject.put(Constants.MODEL.DATA.DATA_IMSI, "460110869360288");
+                    //jsonObject.put(Constants.MODEL.DATA.DATA_IMSI, DeviceUtils.getIMSI(App.getsContext()));
                     jsonObject.put(Constants.MODEL.DATA.DATA_MODULES, DeviceUtils.hasModuleSupport(App.getsContext()));
                     jsonObject.put(Constants.MODEL.DATA.DATA_HEARTBEAT, 60);
                     jsonObject.put(Constants.MODEL.DATA.DATA_TYPE, Constants.COMMON.TYPE.TYPE_LOGIN);
@@ -367,6 +368,16 @@ public class SendData implements ISendable {
                 try {
                     jsonObject.put(Constants.MODEL.DATA.DATA_TYPE,Constants.COMMON.TYPE.TYPE_DEVICE_TOKEN);
                     jsonObject.put(Constants.MODEL.DATA.DATA_IDENT,Integer.parseInt(args[0]));
+                    str = jsonObject.toString();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                break;
+            case Constants.COMMON.TYPE.TYPE_MASTER_UNTIE:
+                //构造解绑数据
+                try {
+                    jsonObject.put(Constants.MODEL.DATA.DATA_TYPE,Constants.COMMON.TYPE.TYPE_MASTER_UNTIE);
+                    jsonObject.put(Constants.MODEL.DATA.DATA_IDENT,random.nextInt(999999));
                     str = jsonObject.toString();
                 } catch (JSONException e) {
                     e.printStackTrace();

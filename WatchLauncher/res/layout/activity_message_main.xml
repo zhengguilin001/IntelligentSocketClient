@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:background="@color/titleBarBackground"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/conversations"
+            android:textSize="@dimen/text_size_26sp"
+            android:textColor="@android:color/white"
+            />
+        <!--<ImageButton
+            android:id="@+id/ibMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:padding="4dp"
+            android:src="@mipmap/menu"
+            android:background="@drawable/selector_yellow_bg"
+            />-->
+    </RelativeLayout>
+    <ListView
+        android:id="@+id/lvConversation"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:listSelector="@drawable/selector_yellow_bg"
+        >
+
+    </ListView>
+    <LinearLayout
+        android:id="@+id/llNoConversation"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:visibility="gone"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_conversation"
+            android:textColor="@color/textHintColor"
+            android:drawableTop="@mipmap/icon_empty"
+            android:gravity="center_horizontal"
+            />
+    </LinearLayout>
+
+    <com.ctyon.watch.ui.view.IconButton
+        android:id="@+id/btnNewMsg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:text="@string/newMessage"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_26sp"
+        android:drawableLeft="@mipmap/icon_add_msg"
+        app:iconPadding="6dp"
+        android:background="@drawable/selector_new_msg"
+        android:textAllCaps="false"
+        />
+
+
+
+</LinearLayout>

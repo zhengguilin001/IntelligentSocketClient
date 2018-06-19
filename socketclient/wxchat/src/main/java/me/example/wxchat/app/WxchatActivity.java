@@ -227,8 +227,8 @@ public class WxchatActivity extends AppCompatActivity implements WxchatAdapter.W
                 if (smg.obj instanceof WeChatMessage){
                     WeChatMessage m = (WeChatMessage) smg.obj;
                     PostRequest<String> postRequest = OkGo.<String>post(Constants.COMMON.Url.sendVoice)
-                            .params("imei", DeviceUtils.getIMEI(this))
-                            //.params("imei", "C5B20180200030")
+                            //.params("imei", DeviceUtils.getIMEI(this))
+                            .params("imei", "C5B20180200030")
                             .params("token", Settings.Global.getString(getContentResolver(),
                                     Constants.MODEL.SETTINGS.GLOBAL_TOKEN))
                             .params("content",new File(m.getVoiceUrl()))

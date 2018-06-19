@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ebebeb">
+
+    <RelativeLayout 
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#373c3d">
+
+        <ImageView
+            android:id="@+id/backIcon"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:background="@mipmap/icon_back_arrow"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="25sp"
+            android:text="@string/call_log"
+            android:textStyle="bold"
+            android:textColor="#ffffff"/>
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:background="@null"/>
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/lvCallLogs"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:listSelector="@drawable/selector_yellow_bg"
+        >
+    </ListView>
+    <LinearLayout
+        android:id="@+id/llNoCallLog"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:visibility="gone"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_call_log"
+            android:textColor="@color/textHintColor"
+            android:gravity="center_horizontal"
+            android:textSize="20sp"/>
+    </LinearLayout>
+</LinearLayout>

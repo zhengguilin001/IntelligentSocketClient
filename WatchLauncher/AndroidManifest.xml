@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ctyon.watch"
+    android:sharedUserId="android.uid.system">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_OWNER_DATA" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.CALL_PRIVILEGED" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.MOUNT_FORMAT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:name=".App"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ui.activity.GuideActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/FullScreenActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.activity.MainActivity">
+
+        </activity>
+        <activity android:name=".ui.activity.CameraActivity" />
+        <activity android:name=".ui.activity.CreateAlarmActivity"/>
+        <activity android:name=".ui.activity.AlarmListActivity"/>
+        <activity android:name=".ui.activity.ClockAlarmActivity"/>
+        <activity android:name=".ui.activity.DialerActivity" android:theme="@style/FullScreenActivity"/>
+        <activity android:name=".ui.activity.calllogs.CalllogActivity"/>
+        <activity android:name=".ui.activity.contact.ContactMainActivity" android:theme="@style/FullScreenActivity"/>
+        <activity android:name=".ui.activity.contact.ContactActivity" android:theme="@style/FullScreenActivity"/>
+
+        <activity android:name=".ui.activity.calculator.CalculatorActivity">
+
+        </activity>
+        <activity android:name=".ui.activity.gallery.PickPictureActivity">
+
+        </activity>
+
+        <receiver android:name=".broadcast.ReBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="com.ctyon.shawn.SMS.SENT"/>
+                <action android:name="com.ctyon.shawn.SMS.DELIVERY"/>
+                <category android:name="android.intent.category.HOME" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".broadcast.AlarmReceiver">
+            <intent-filter>
+                <action android:name="android.action.alarm_receive_ring"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".broadcast.MyBrocastReceiver">
+            <intent-filter>
+                <action android:name="com.ctyon.shawn.SET_ALARM"></action>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".ui.activity.ForbidUseActivity" android:theme="@style/FullScreenActivity"/>
+
+        <activity android:name=".ui.activity.QrcodeActivity" android:theme="@style/FullScreenActivity" android:launchMode="singleTop" android:exported="true">
+            <intent-filter>
+                <action android:name="com.ctyon.shawn.QRCODE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <service android:name="com.ctyon.watch.service.ContactsService" />
+    </application>
+
+</manifest>

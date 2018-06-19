@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <LinearLayout
+        android:id="@+id/ll_alarm_time"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        >
+        <TextView
+            android:id="@+id/alarm_now_time"
+            android:textSize="40sp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <TextView
+            android:id="@+id/alarm_is_pm"
+            android:textSize="20sp"
+            android:layout_marginLeft="30dp"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tv_alarm_title"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/keyImpPressed"
+        android:textSize="22sp"
+        android:layout_below="@id/ll_alarm_time"
+        android:maxLines="2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"/>
+    <TextView
+        android:id="@+id/alarm_little_sleep"
+        android:textSize="26sp"
+        android:layout_marginBottom="10dp"
+        android:layout_above="@+id/btn_alarm_cancel"
+        android:layout_centerHorizontal="true"
+        android:focusable="true"
+        android:clickable="true"
+        android:textColor="@color/white"
+        android:text="@string/alarm_little_sleep"
+        android:background="@drawable/keyboard_equal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <TextView
+        android:id="@+id/btn_alarm_cancel"
+        android:layout_centerHorizontal="true"
+        android:text="@string/alarm_close"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+        android:textSize="28sp"
+        android:padding="5dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:textColor="@color/white"
+        android:background="@drawable/keyboard_equal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
