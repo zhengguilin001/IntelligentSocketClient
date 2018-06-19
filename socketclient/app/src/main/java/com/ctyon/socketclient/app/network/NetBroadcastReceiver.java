@@ -33,6 +33,11 @@ public class NetBroadcastReceiver extends BroadcastReceiver {
                 netEvent.onUnbindWatch();
             }
         }
+        if ("show_imed".equals(intent.getAction())) {
+            if (netEvent != null) {
+                netEvent.onShowImed();
+            }
+        }
     }
 
     public void setNetEvent(NetEvent netEvent) {

@@ -124,6 +124,10 @@
         <activity
             android:name="com.ctyon.socketclient.app.activity.CameraActivity"
             android:theme="@style/OnePixelActivity" />
+        <activity
+            android:name="com.ctyon.socketclient.app.activity.ShowImedActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTop" />
 
         <meta-data
             android:name="com.amap.api.v2.apikey"

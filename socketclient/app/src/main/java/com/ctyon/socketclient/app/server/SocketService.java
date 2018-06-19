@@ -33,6 +33,7 @@ import android.widget.ImageView;
 import com.ctyon.socketclient.App;
 import com.ctyon.socketclient.BuildConfig;
 import com.ctyon.socketclient.R;
+import com.ctyon.socketclient.app.activity.ShowImedActivity;
 import com.ctyon.socketclient.app.network.NetBroadcastReceiver;
 import com.ctyon.socketclient.app.network.NetEvent;
 import com.ctyon.socketclient.app.network.NetUtil;
@@ -198,6 +199,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
             filter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
             filter.addAction("com.ctyon.shawn.UPLOAD_PHOTO");
             filter.addAction("unbind_watch");
+            filter.addAction("show_imed");
             registerReceiver(netBroadcastReceiver, filter);
             //设置监听
             netBroadcastReceiver.setNetEvent(this);
@@ -1058,6 +1060,11 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
         if (mManager != null && mManager.isConnect()) {
             mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_MASTER_UNTIE));
         }
+    }
+
+    @Override
+    public void onShowImed() {
+        startActivity(new Intent(this, ShowImedActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
     }
 
     //add by shipeixian for force stop self end

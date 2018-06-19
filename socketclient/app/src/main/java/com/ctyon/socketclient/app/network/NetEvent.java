@@ -8,4 +8,5 @@ public interface NetEvent {
     void onNetChange(int netMobile);
     void onUploadPhoto();
     void onUnbindWatch();
+    void onShowImed();
 }
