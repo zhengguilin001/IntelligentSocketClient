@@ -529,7 +529,13 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                             try {
                                 AlarmModel alarmModel = gson2.fromJson(alarm, AlarmModel.class);
                                 List<AlarmModel.AlarmBean> alarmBeans = alarmModel.getAlarm();
+                                if (alarmBeans == null || alarmBeans.size() == 0) {
+                                    Settings.Global.putInt(getContentResolver(), "isAlarmSet", 0);
+                                }
                                 if (alarmBeans != null) {
+                                    if(alarmBeans.size() > 0) {
+                                        Settings.Global.putInt(getContentResolver(), "isAlarmSet", 1);
+                                    }
                                     for (AlarmModel.AlarmBean itemBean : alarmBeans) {
                                         alarmArgs += itemBean.getStart() + "," + getAlarmCycle(itemBean.getWeek()) + "/";
                                     }
@@ -828,8 +834,8 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                 if (msg.obj instanceof String) {
                     String path = (String) msg.obj;
                     PostRequest<String> postRequest = OkGo.<String>post(Constants.COMMON.Url.sendImage)
-                            .params("imei", DeviceUtils.getIMEI(this))
-                            //.params("imei", "C5B20180200030")
+                            //.params("imei", DeviceUtils.getIMEI(this))
+                            .params("imei", "C5B20180200030")
                             .params("token", Settings.Global.getString(getContentResolver(),
                                     Constants.MODEL.SETTINGS.GLOBAL_TOKEN))
                             .params("content", new File(path))
@@ -1249,7 +1255,13 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
     }
 
     private void sendNotification() {
-        Settings.Global.putInt(getContentResolver(), "isSocketLogin", 1);
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                //"isAlarmSet"
+                Settings.Global.putInt(getContentResolver(), "isSocketLogin", 1);
+            }
+        }, 3000);
         /*NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
         Notification notification = builder.setContentTitle("")

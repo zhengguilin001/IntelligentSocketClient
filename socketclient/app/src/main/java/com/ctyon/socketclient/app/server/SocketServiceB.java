@@ -17,6 +17,7 @@ import java.util.List;
 
 public class SocketServiceB extends Service {
     public SocketServiceB() {
+
     }
 
     @Override

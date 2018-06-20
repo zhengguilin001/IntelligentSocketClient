@@ -50,10 +50,10 @@ public class SendData implements ISendable {
                         imei = DeviceUtils.getIMSI(App.getsContext());
                     }
                     //记得改回去
-                    jsonObject.put(Constants.MODEL.DATA.DATA_IMEI, imei);
-                    //jsonObject.put(Constants.MODEL.DATA.DATA_IMEI, "C5B20180200030");
-                    //jsonObject.put(Constants.MODEL.DATA.DATA_IMSI, "460110869360288");
-                    jsonObject.put(Constants.MODEL.DATA.DATA_IMSI, DeviceUtils.getIMSI(App.getsContext()));
+                    //jsonObject.put(Constants.MODEL.DATA.DATA_IMEI, imei);
+                    jsonObject.put(Constants.MODEL.DATA.DATA_IMEI, "C5B20180200030");
+                    jsonObject.put(Constants.MODEL.DATA.DATA_IMSI, "460110869360288");
+                    //jsonObject.put(Constants.MODEL.DATA.DATA_IMSI, DeviceUtils.getIMSI(App.getsContext()));
                     jsonObject.put(Constants.MODEL.DATA.DATA_MODULES, DeviceUtils.hasModuleSupport(App.getsContext()));
                     jsonObject.put(Constants.MODEL.DATA.DATA_HEARTBEAT, 60);
                     jsonObject.put(Constants.MODEL.DATA.DATA_TYPE, Constants.COMMON.TYPE.TYPE_LOGIN);

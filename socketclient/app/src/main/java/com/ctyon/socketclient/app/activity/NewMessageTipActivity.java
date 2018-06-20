@@ -21,6 +21,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 import com.ctyon.socketclient.R;
+import com.ctyon.socketclient.project.util.ScreenUtils;
 
 /**
  * Created by shipeixian on 18-6-1.
@@ -75,6 +76,13 @@ public class NewMessageTipActivity extends Activity {
         int flag= WindowManager.LayoutParams.FLAG_FULLSCREEN;
         //设置当前窗体为全屏显示
         window.setFlags(flag, flag);
+
+        final Window win = getWindow();
+        win.addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED
+                | WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);
+        win.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON
+                | WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON);
+
         setContentView(R.layout.activity_newmessagetip);
 
         showMsg = (Button) findViewById(R.id.showMsg);
@@ -117,6 +125,9 @@ public class NewMessageTipActivity extends Activity {
         intentFilter.addAction(Intent.ACTION_SCREEN_OFF);
         registerReceiver(screenReceiver, intentFilter);
 
+        ScreenUtils.wakeUpAndUnlock(this);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
     }
 
     @Override
@@ -128,9 +139,10 @@ public class NewMessageTipActivity extends Activity {
 
         }
         if (!powerManager.isScreenOn()) {
-            sendKeyEvent(26);
+            //sendKeyEvent(26);
             handler.sendEmptyMessageDelayed(4444, 10000);
-            sendTouchEvent();
+            //sendTouchEvent();
+
             /*handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {

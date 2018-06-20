@@ -36,8 +36,8 @@ public class ShowImedActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_imed);
 
-        showImed = (TextView) findViewById(R.id.showMsg);
-        showImed.setText("IMEI:"+DeviceUtils.getIMEI(App.getsContext()));
+        showImed = (TextView) findViewById(R.id.showImed);
+        showImed.setText("MEID:"+DeviceUtils.getIMEI(App.getsContext()));
 
     }
 
