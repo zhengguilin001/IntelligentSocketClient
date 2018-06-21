@@ -1080,6 +1080,10 @@
         "source": "/home/shipeixian/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/543713d1a909b42c07daf70035a30008/res/drawable-hdpi-v4/abc_ic_star_black_16dp.png"
     },
     {
+        "merged": "/home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/build/intermediates/res/merged/ctyon/debug/layout_activity_wifitest.xml.flat",
+        "source": "/home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/res/layout/activity_wifitest.xml"
+    },
+    {
         "merged": "/home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/build/intermediates/res/merged/ctyon/debug/mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "/home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
     },
@@ -1758,6 +1762,10 @@
     {
         "merged": "/home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/build/intermediates/res/merged/ctyon/debug/drawable-ldrtl-mdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "/home/shipeixian/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/543713d1a909b42c07daf70035a30008/res/drawable-ldrtl-mdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/build/intermediates/res/merged/ctyon/debug/layout_activity_jwd.xml.flat",
+        "source": "/home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/res/layout/activity_jwd.xml"
     },
     {
         "merged": "/home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/build/intermediates/res/merged/ctyon/debug/drawable_navigation_empty_icon.xml.flat",

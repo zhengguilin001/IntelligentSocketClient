@@ -7,11 +7,11 @@ INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app
 	android:name
 		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:44:9-31
 manifest
-ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-114:12
-INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-114:12
-INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-114:12
-INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-114:12
-MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-40:12
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-116:12
+INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-116:12
+INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-116:12
+INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-116:12
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-47:12
 MERGED from [com.github.hss01248:NotifyUtil:1.0.1] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/NotifyUtil-1.0.1.aar/64540cee893e286178ab9e12e6feb3f0/AndroidManifest.xml:2:1-17:12
 MERGED from [:wxchat] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/wxchat/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-42:12
 MERGED from [:common] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/common/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-11:12
@@ -48,31 +48,29 @@ MERGED from [com.android.support:support-compat:26.1.0] /home/shipeixian/.gradle
 MERGED from [android.arch.lifecycle:runtime:1.0.3] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/5eac6832f82618fad35b2f235ecde8f8/AndroidManifest.xml:17:1-24:12
 MERGED from [com.lzy.net:okserver:2.0.5] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/okserver-2.0.5.aar/411a751041ce7e49f0f58912d1af2457/AndroidManifest.xml:17:1-27:12
 MERGED from [com.lzy.net:okgo:3.0.4] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/okgo-3.0.4.aar/44c8b7a08e2fb1509bad315ffb486acc/AndroidManifest.xml:17:1-31:12
-INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-114:12
-INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-114:12
-INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-114:12
+INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-116:12
+INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-116:12
+INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-116:12
 	package
 		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:4:5-37
 		INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml
 		INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml
-	android:sharedUserId
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:5:5-46
 	android:versionName
 		INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-114:12
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-116:12
 		INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml
 	xmlns:tools
 		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-114:12
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-116:12
 		INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:11-69
 uses-permission#android.permission.READ_PHONE_STATE
 ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:7:5-75
-MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:23:5-75
-MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:23:5-75
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:24:5-75
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:24:5-75
 MERGED from [:phone] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:12:5-75
 MERGED from [:phone] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:12:5-75
 MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:11:5-75
@@ -81,8 +79,8 @@ MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/
 		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:7:22-72
 uses-permission#android.permission.INTERNET
 ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:8:5-67
-MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:21:5-67
-MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:21:5-67
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:22:5-67
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:22:5-67
 MERGED from [:socket] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/socket/build/intermediates/manifests/full/debug/AndroidManifest.xml:8:5-67
 MERGED from [:socket] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/socket/build/intermediates/manifests/full/debug/AndroidManifest.xml:8:5-67
 MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:12:5-67
@@ -93,8 +91,8 @@ MERGED from [com.lzy.net:okgo:3.0.4] /home/shipeixian/.gradle/caches/transforms-
 		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:8:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:9:5-79
-MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:15:5-79
-MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:15:5-79
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:16:5-79
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:16:5-79
 MERGED from [:socket] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/socket/build/intermediates/manifests/full/debug/AndroidManifest.xml:9:5-79
 MERGED from [:socket] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/socket/build/intermediates/manifests/full/debug/AndroidManifest.xml:9:5-79
 MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:13:5-79
@@ -103,8 +101,8 @@ MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/
 		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:9:22-76
 uses-permission#android.permission.ACCESS_WIFI_STATE
 ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:10:5-76
-MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:17:5-76
-MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:17:5-76
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:18:5-76
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:18:5-76
 MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:14:5-76
 MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:14:5-76
 	android:name
@@ -117,8 +115,8 @@ MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/
 		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:11:22-65
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
 ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:12:5-81
-MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:25:5-81
-MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:25:5-81
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:26:5-81
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:26:5-81
 MERGED from [:wxchat] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/wxchat/build/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-81
 MERGED from [:wxchat] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/wxchat/build/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-81
 MERGED from [:voice] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/voice/build/intermediates/manifests/full/debug/AndroidManifest.xml:12:5-81
@@ -199,14 +197,14 @@ ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/sr
 		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:24:22-65
 uses-permission#android.permission.ACCESS_FINE_LOCATION
 ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:25:5-78
-MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:13:5-79
-MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:13:5-79
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:14:5-79
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:14:5-79
 	android:name
 		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:25:22-76
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
 ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:26:5-80
-MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-81
-MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-81
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:12:5-81
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:12:5-81
 MERGED from [:phone] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-81
 MERGED from [:phone] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/phone/build/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-81
 	android:name
@@ -219,8 +217,8 @@ ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/sr
 		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:27:22-77
 uses-permission#android.permission.CHANGE_WIFI_STATE
 ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:29:5-75
-MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:19:5-76
-MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:19:5-76
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:20:5-76
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:20:5-76
 	android:name
 		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:29:22-73
 uses-permission#android.permission.CHANGE_WIFI_MULTICAST_STATE
@@ -242,9 +240,9 @@ ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/sr
 	android:name
 		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:37:9-51
 application
-ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:48:5-112:19
-MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:32:5-38:19
-MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:32:5-38:19
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:48:5-114:19
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:33:5-45:19
+MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:33:5-45:19
 MERGED from [com.github.hss01248:NotifyUtil:1.0.1] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/NotifyUtil-1.0.1.aar/64540cee893e286178ab9e12e6feb3f0/AndroidManifest.xml:11:5-15:19
 MERGED from [com.github.hss01248:NotifyUtil:1.0.1] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/NotifyUtil-1.0.1.aar/64540cee893e286178ab9e12e6feb3f0/AndroidManifest.xml:11:5-15:19
 MERGED from [:wxchat] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/wxchat/build/intermediates/manifests/full/debug/AndroidManifest.xml:13:5-40:19
@@ -409,6 +407,14 @@ ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/sr
 		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:111:65-126
 	android:name
 		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:111:19-64
+activity#com.ctyon.socketclient.app.activity.LocationTestActivity
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:112:9-70
+	android:name
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:112:19-68
+activity#com.ctyon.socketclient.app.activity.WifiTestActivity
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:113:9-66
+	android:name
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:113:19-64
 uses-sdk
 INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml
@@ -500,27 +506,27 @@ INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app
 		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml
 		INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml
 uses-permission#android.permission.ACCESS_LOCATION_EXTRA_COMMANDS
-ADDED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:27:5-89
+ADDED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:28:5-89
 	android:name
-		ADDED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:27:22-86
+		ADDED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:28:22-86
 uses-permission#android.permission.BLUETOOTH
-ADDED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:29:5-68
+ADDED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:30:5-68
 	android:name
-		ADDED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:29:22-65
+		ADDED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:30:22-65
 uses-permission#android.permission.BLUETOOTH_ADMIN
-ADDED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:30:5-74
+ADDED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:31:5-74
 	android:name
-		ADDED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:30:22-71
+		ADDED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:31:22-71
 meta-data#com.amap.api.v2.apikey
-ADDED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:33:9-35:64
+ADDED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:40:9-42:64
 	android:value
-		ADDED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:35:13-61
+		ADDED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:42:13-61
 	android:name
-		ADDED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:34:13-50
+		ADDED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:41:13-50
 service#com.amap.api.location.APSService
-ADDED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:37:9-68
+ADDED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:44:9-68
 	android:name
-		ADDED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:37:18-65
+		ADDED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:44:18-65
 activity#me.example.wxchat.app.WxchatActivity
 ADDED from [:wxchat] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/wxchat/build/intermediates/manifests/full/debug/AndroidManifest.xml:20:9-39:20
 	android:launchMode

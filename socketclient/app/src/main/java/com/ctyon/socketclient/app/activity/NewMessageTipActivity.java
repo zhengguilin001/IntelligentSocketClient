@@ -77,6 +77,7 @@ public class NewMessageTipActivity extends Activity {
         //设置当前窗体为全屏显示
         window.setFlags(flag, flag);
 
+        //just for test
         final Window win = getWindow();
         win.addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED
                 | WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);
@@ -125,6 +126,7 @@ public class NewMessageTipActivity extends Activity {
         intentFilter.addAction(Intent.ACTION_SCREEN_OFF);
         registerReceiver(screenReceiver, intentFilter);
 
+        //just for test
         ScreenUtils.wakeUpAndUnlock(this);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 

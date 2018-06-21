@@ -96,7 +96,10 @@ public class AMapLocationImp {
             } else {
                 mLocationClient.stopLocation();
                 Log.d(TAG, "定位失败，loc is null");
-                mHandler.obtainMessage(Constants.COMMON.MSG.MSG_LOCATION_SUC).sendToTarget();
+                Message message = new Message();
+                message.what = 4400;
+                mHandler.sendMessage(message);
+                //mHandler.obtainMessage(Constants.COMMON.MSG.MSG_LOCATION_SUC).sendToTarget();
             }
             try {
                 //关闭wifi

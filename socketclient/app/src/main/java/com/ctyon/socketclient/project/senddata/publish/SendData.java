@@ -198,29 +198,47 @@ public class SendData implements ISendable {
                         jsonObject.put(Constants.MODEL.DATA.DATA_GPS, jgps);
                     }
                     //cells
-                    if (args == null || args.length == 0) {
-                        JSONArray jsonArray = new JSONArray();
-                        JSONObject jm = new JSONObject();
-                        Modem m = Modem2Utils.getModemCell(App.getsContext());
-                        jm.put(Constants.MODEL.DATA.DATA_MCC, m.getMcc());
-                        jm.put(Constants.MODEL.DATA.DATA_MNC, m.getMnc());
-                        jm.put(Constants.MODEL.DATA.DATA_LAC, m.getLac());
-                        jm.put(Constants.MODEL.DATA.DATA_CI, m.getCi());
-                        jm.put(Constants.MODEL.DATA.DATA_RXLEV, m.getRxlev());
-                        jsonArray.put(jm);
-                        jsonObject.put(Constants.MODEL.DATA.DATA_CELLS, jsonArray);
-                    }
+                    JSONArray jsonArray = new JSONArray();
+                    JSONObject jm = new JSONObject();
+                    Modem m = Modem2Utils.getModemCell(App.getsContext());
+                    jm.put(Constants.MODEL.DATA.DATA_MCC, m.getMcc());
+                    jm.put(Constants.MODEL.DATA.DATA_MNC, m.getMnc());
+                    jm.put(Constants.MODEL.DATA.DATA_LAC, m.getLac());
+                    jm.put(Constants.MODEL.DATA.DATA_CI, m.getCi());
+                    jm.put(Constants.MODEL.DATA.DATA_RXLEV, m.getRxlev());
+                    jsonArray.put(jm);
+                    jsonObject.put(Constants.MODEL.DATA.DATA_CELLS, jsonArray);
+
                     //wifis
                     if (args != null && args.length > 2) {
                         JSONArray wifiJsonArray = new JSONArray();
-                        JSONObject wifiJsonObj = new JSONObject();
+                        JSONObject wifiJsonObj1 = new JSONObject();
                         //wifiJsonObj.put("mac", "02:00:00:00:00:00");
                         //wifiJsonObj.put("signal", "-51");
                         //wifiJsonObj.put("ssid", "ctyon-test22");
-                        wifiJsonObj.put("mac", args[0]);
-                        wifiJsonObj.put("signal", args[1]);
-                        wifiJsonObj.put("ssid", args[2]);
-                        wifiJsonArray.put(wifiJsonObj);
+                        wifiJsonObj1.put("mac", args[0]);
+                        wifiJsonObj1.put("signal", args[1]);
+                        wifiJsonObj1.put("ssid", args[2]);
+                        wifiJsonArray.put(wifiJsonObj1);
+
+                        JSONObject wifiJsonObj2 = new JSONObject();
+                        //wifiJsonObj.put("mac", "02:00:00:00:00:00");
+                        //wifiJsonObj.put("signal", "-51");
+                        //wifiJsonObj.put("ssid", "ctyon-test22");
+                        wifiJsonObj2.put("mac", args[3]);
+                        wifiJsonObj2.put("signal", args[4]);
+                        wifiJsonObj2.put("ssid", args[5]);
+                        wifiJsonArray.put(wifiJsonObj2);
+
+                        JSONObject wifiJsonObj3 = new JSONObject();
+                        //wifiJsonObj.put("mac", "02:00:00:00:00:00");
+                        //wifiJsonObj.put("signal", "-51");
+                        //wifiJsonObj.put("ssid", "ctyon-test22");
+                        wifiJsonObj3.put("mac", args[6]);
+                        wifiJsonObj3.put("signal", args[7]);
+                        wifiJsonObj3.put("ssid", args[8]);
+                        wifiJsonArray.put(wifiJsonObj3);
+
                         jsonObject.put("wifis", wifiJsonArray);
                     }
                     jsonObject.put(Constants.MODEL.DATA.DATA_TIMESTAMP, Float.valueOf(timestamp));

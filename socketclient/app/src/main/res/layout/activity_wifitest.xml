@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/relativelayout1"
+        android:gravity="start|center_vertical"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/Curr_connected_wifi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/testView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="lll"/>
+            <EditText
+                android:id="@+id/et1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false" />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Curr_connected_wifi"
+            android:scrollbars="vertical"
+            android:fadingEdge="vertical">
+            <LinearLayout
+                android:id="@+id/list_wifi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/testView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="kkk" />
+
+                <EditText
+                    android:id="@+id/et2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false" />
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.location">
+    package="com.amap.location">
+    <!--package="com.example.location">-->
     <!--用于进行网络定位-->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
     <!--用于访问GPS定位-->
@@ -23,9 +24,12 @@
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"></uses-permission>
 
     <application>
-        <meta-data
+        <!--<meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="a951d23c47853b33478af10349cb7396" />
+            android:value="a951d23c47853b33478af10349cb7396" />-->
+        <meta-data android:name="com.amap.api.v2.apikey"
+            android:value="9850fd4eff5fe92640ac86286197359d" />
+
         <service android:name="com.amap.api.location.APSService"></service>
     </application>
 </manifest>
