@@ -144,4 +144,56 @@ public class SocketServiceB extends Service {
         }
         return isImageFile;
     }
+
+
+    /**
+     * 切换模式 4G与2G切换，传入10则为4G，传入5则为2G
+     * 4g通用Global：10   2G CDMA w/o EVDO：5
+     * @param context
+     * @param nwMode
+     */
+    private void setPreferredNetworkMode(Context context, int nwMode) {
+        final int phoneSubId = 2;
+        final int phoneId = 0;
+        android.provider.Settings.Global.putInt(context.getContentResolver(),"preferred_network_mode" + phoneSubId, nwMode);
+        if(putIntAtIndex(context.getContentResolver(), "preferred_network_mode", phoneId, nwMode)) {
+            android.util.Log.i("shipeixian", "网络模式切换成功,模式为"+(nwMode == 5 ? "2G" : "4G"));
+        }
+    }
+
+    public boolean putIntAtIndex(android.content.ContentResolver cr, String name, int index, int value) {
+        String data = "";
+        String valArray[] = null;
+        String v = android.provider.Settings.Global.getString(cr, name);
+
+        if (index == Integer.MAX_VALUE) {
+            throw new RuntimeException("putIntAtIndex index == MAX_VALUE index=" + index);
+        }
+        if (index < 0) {
+            throw new RuntimeException("putIntAtIndex index < 0 index=" + index);
+        }
+        if (v != null) {
+            valArray = v.split(",");
+        }
+
+        // Copy the elements from valArray till index
+        for (int i = 0; i < index; i++) {
+            String str = "";
+            if ((valArray != null) && (i < valArray.length)) {
+                str = valArray[i];
+            }
+            data = data + str + ",";
+        }
+
+        data = data + value;
+
+        // Copy the remaining elements from valArray if any.
+        if (valArray != null) {
+            for (int i = index+1; i < valArray.length; i++) {
+                data = data + "," + valArray[i];
+            }
+        }
+        return android.provider.Settings.Global.putString(cr, name, data);
+    }
+
 }

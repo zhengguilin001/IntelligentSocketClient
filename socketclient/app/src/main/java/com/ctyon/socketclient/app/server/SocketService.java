@@ -36,8 +36,10 @@ import android.widget.ImageView;
 import com.ctyon.socketclient.App;
 import com.ctyon.socketclient.BuildConfig;
 import com.ctyon.socketclient.R;
-import com.ctyon.socketclient.app.activity.LocationTestActivity;
 import com.ctyon.socketclient.app.activity.ShowImedActivity;
+import com.ctyon.socketclient.app.location.GPSLocationListener;
+import com.ctyon.socketclient.app.location.GPSLocationManager;
+import com.ctyon.socketclient.app.location.GPSProviderStatus;
 import com.ctyon.socketclient.app.network.NetBroadcastReceiver;
 import com.ctyon.socketclient.app.network.NetEvent;
 import com.ctyon.socketclient.app.network.NetUtil;
@@ -131,6 +133,8 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
 
     private LocationManager locationmanager;
 
+    private GPSLocationManager gpsLocationManager;
+
 
     /**
      * 监控网络的广播
@@ -190,10 +194,6 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
         initGpsService();
 
         Log.i(TAG, "SocketService oncreate(...) end");
-
-
-        //just for test
-        //mHandler.sendEmptyMessageDelayed(7777, 20000);
 
     }
 
@@ -321,7 +321,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                                     .pulse();
                             //上传电量，服务器要求的
                             mHandler.sendEmptyMessageDelayed(4401, 20 * 1000);
-                            //上传定位，服务器要求的, just for test
+                            //上传定位，服务器要求的
                             mHandler.sendEmptyMessageDelayed(4403, 40 * 1000);
                             //请求天气
                             mHandler.sendEmptyMessageDelayed(4402, 2 * 60 * 1000);
@@ -965,11 +965,6 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                     startActivity(new Intent().setAction("com.ctyon.shawn.MESSAGE_TIP").setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                 }
                 break;
-            //just fot test
-            /*case 7777:
-                startLocationWithNetwork();
-                mHandler.sendEmptyMessageDelayed(7777, 60 * 60 * 1000);
-                break;*/
             default:
                 break;
         }
@@ -994,9 +989,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
             unregisterReceiver(screenReceiver);
         }
         //add by shipeixian for close manager end
-        if (locationManager != null) {
-            locationManager.removeUpdates(locationlistener);
-        }
+
         cancelNotification();
         Log.i(TAG, "SocketService onDestroy");
     }
@@ -1033,31 +1026,66 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
         startLocationWithSuperMethod();
     }
 
+    /**
+     * 定位方法，优先GPS经纬度，次之WiFi列表，最后基站信息
+     */
     private void startLocationWithSuperMethod() {
 
         try {
             //打开GPS开关
             GpsTool.toggleGps(getApplicationContext(), true);
+            //打开wifi开关
+            WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
+            wifiManager.setWifiEnabled(true);
         } catch (Exception e) {
 
         }
+        //获取WiFi列表
+        getWifiListInfo();
         mHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                if (true == false && longtitude != 0 && lantitude != 0) {
+                if (TextUtils.isEmpty(wifiListInfo)) {
+                    if (mManager != null && mManager.isConnect()) {
+                        mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_LOCATION_C));
+                        Log.i("shipeixian", "handler 上传基站定位数据包");
+                        closeGpsAndWifi();
+                    }
+                } else {
+                    String[] wifiArray = wifiListInfo.split("/");
+                    if (wifiArray.length >= 6) {
+                        if (mManager != null && mManager.isConnect()) {
+                            if (wifiArray.length >= 9) {
+                                mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_LOCATION_C, wifiArray[0], wifiArray[1], wifiArray[2], wifiArray[3], wifiArray[4], wifiArray[5], wifiArray[6], wifiArray[7], wifiArray[8]));
+                            } else if (wifiArray.length == 6) {
+                                mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_LOCATION_C, wifiArray[0], wifiArray[1], wifiArray[2], wifiArray[3], wifiArray[4], wifiArray[5]));
+                            }
+                            Log.i("shipeixian", "handler 上传wifi定位数据包");
+                            closeGpsAndWifi();
+                        }
+                    } else {
+                        if (mManager != null && mManager.isConnect()) {
+                            mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_LOCATION_C));
+                            Log.i("shipeixian", "handler 上传基站定位数据包");
+                            closeGpsAndWifi();
+                        }
+                    }
+                }
+            }
+        }, 8000);
+        //开启GPS服务
+        /*startGpsService();
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if (longtitude != 0 && lantitude != 0) {
                     if (mManager != null && mManager.isConnect()) {
                         mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_LOCATION_C, longtitude+"", lantitude+""));
                         Log.i("shipeixian", "handler 上传GPS定位数据包");
+                        closeGpsAndWifi();
                     }
                 } else {
                     //获取WiFi列表
-                    try {
-                        //打开wifi开关
-                        //WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
-                        //wifiManager.setWifiEnabled(true);
-                    } catch (Exception e) {
-
-                    }
                     getWifiListInfo();
                     mHandler.postDelayed(new Runnable() {
                         @Override
@@ -1066,19 +1094,25 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                                 if (mManager != null && mManager.isConnect()) {
                                     mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_LOCATION_C));
                                     Log.i("shipeixian", "handler 上传基站定位数据包");
+                                    closeGpsAndWifi();
                                 }
                             } else {
                                 String[] wifiArray = wifiListInfo.split("/");
-                                if (wifiArray.length >= 9) {
+                                if (wifiArray.length >= 6) {
                                     if (mManager != null && mManager.isConnect()) {
-                                        mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_LOCATION_C, wifiArray[0], wifiArray[1], wifiArray[2], wifiArray[3], wifiArray[4], wifiArray[5], wifiArray[6], wifiArray[7], wifiArray[8]));
+                                        if (wifiArray.length >= 9) {
+                                            mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_LOCATION_C, wifiArray[0], wifiArray[1], wifiArray[2], wifiArray[3], wifiArray[4], wifiArray[5], wifiArray[6], wifiArray[7], wifiArray[8]));
+                                        } else if (wifiArray.length == 6) {
+                                            mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_LOCATION_C, wifiArray[0], wifiArray[1], wifiArray[2], wifiArray[3], wifiArray[4], wifiArray[5]));
+                                        }
                                         Log.i("shipeixian", "handler 上传wifi定位数据包");
-                                        wifiListInfo = "";
+                                        closeGpsAndWifi();
                                     }
                                 } else {
                                     if (mManager != null && mManager.isConnect()) {
                                         mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_LOCATION_C));
                                         Log.i("shipeixian", "handler 上传基站定位数据包");
+                                        closeGpsAndWifi();
                                     }
                                 }
                             }
@@ -1087,8 +1121,23 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
 
                 }
             }
-        }, 10000);
+        }, 10000);*/
 
+    }
+
+    private void closeGpsAndWifi() {
+        longtitude = 0;
+        lantitude = 0;
+        wifiListInfo = "";
+        try {
+            //关闭GPS开关
+            GpsTool.toggleGps(getApplicationContext(), false);
+            //关闭wifi开关
+            WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
+            wifiManager.setWifiEnabled(false);
+        } catch (Exception e) {
+
+        }
     }
 
     private void getWifiListInfo(){
@@ -1193,6 +1242,56 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
     //add by shipeixian for gps tool begin
 
     private void initGpsService() {
+        gpsLocationManager = GPSLocationManager.getInstances(getApplicationContext());
+    }
+
+    private void startGpsService() {
+        gpsLocationManager.start(new MyListener());
+    }
+
+    class MyListener implements GPSLocationListener {
+
+        @Override
+        public void UpdateLocation(Location location) {
+            if (location != null) {
+                longtitude = location.getLongitude();
+                lantitude = location.getLatitude();
+            } else {
+                longtitude = 0;
+                lantitude = 0;
+            }
+        }
+
+        @Override
+        public void UpdateStatus(String provider, int status, Bundle extras) {
+            if ("gps" == provider) {
+                Log.i(TAG, "定位类型：" + provider);
+            }
+        }
+
+        @Override
+        public void UpdateGPSProviderStatus(int gpsStatus) {
+            switch (gpsStatus) {
+                case GPSProviderStatus.GPS_ENABLED:
+                    Log.i(TAG, "GPS开启");
+                    break;
+                case GPSProviderStatus.GPS_DISABLED:
+                    Log.i(TAG, "GPS关闭");
+                    break;
+                case GPSProviderStatus.GPS_OUT_OF_SERVICE:
+                    Log.i(TAG, "GPS不可用");
+                    break;
+                case GPSProviderStatus.GPS_TEMPORARILY_UNAVAILABLE:
+                    Log.i(TAG, "GPS暂时不可用");
+                    break;
+                case GPSProviderStatus.GPS_AVAILABLE:
+                    Log.i(TAG, "GPS可用啦");
+                    break;
+            }
+        }
+    }
+
+    /*private void initGpsService() {
         locationmanager = (LocationManager) getSystemService(LOCATION_SERVICE);
         Criteria criteria = new Criteria();
         criteria.setAccuracy(1);
@@ -1232,7 +1331,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
         longtitude = 0;
         lantitude = 0;
         Log.i(TAG, "GPS开关关了，经纬度复原");
-    }
+    }*/
     //add by shipeixian for gps tool end
 
 
@@ -1258,7 +1357,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                 @Override
                 public void run() {
                     //"isAlarmSet"
-                    //Settings.Global.putInt(getContentResolver(), "isSocketLogin", 1);
+                    Settings.Global.putInt(getContentResolver(), "isSocketLogin", 1);
                 }
             }, 3000);
         } catch (Exception e) {
@@ -1279,7 +1378,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
 
     private void cancelNotification() {
         try {
-            //Settings.Global.putInt(getContentResolver(), "isSocketLogin", 0);
+            Settings.Global.putInt(getContentResolver(), "isSocketLogin", 0);
         } catch (Exception e) {
 
         }

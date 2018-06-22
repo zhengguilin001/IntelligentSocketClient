@@ -1,4 +1,0 @@
-#Thu Jun 21 20:49:58 CST 2018
-base.0=/home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/build/intermediates/transforms/dexMerger/ctyon/debug/2
-path.0=classes.dex
-renamed.0=classes.dex
