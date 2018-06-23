@@ -1,23 +1,15 @@
 package com.ctyon.socketclient.app.server;
 
 import android.app.ActivityManager;
-import android.app.Notification;
-import android.app.NotificationManager;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.location.Criteria;
-import android.location.GpsSatellite;
-import android.location.GpsStatus;
 import android.location.Location;
-import android.location.LocationListener;
 import android.location.LocationManager;
-import android.location.LocationProvider;
 import android.media.MediaPlayer;
 import android.net.ConnectivityManager;
 import android.net.wifi.ScanResult;
-import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.os.Environment;
@@ -25,18 +17,15 @@ import android.os.IBinder;
 import android.os.Message;
 import android.os.Process;
 import android.provider.Settings;
-import android.support.v4.app.NotificationCompat;
-import android.telecom.TelecomManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
-import android.widget.EditText;
-import android.widget.ImageView;
 
 import com.ctyon.socketclient.App;
 import com.ctyon.socketclient.BuildConfig;
 import com.ctyon.socketclient.R;
 import com.ctyon.socketclient.app.activity.ShowImedActivity;
+import com.ctyon.socketclient.app.activity.XCameraActivity;
 import com.ctyon.socketclient.app.location.GPSLocationListener;
 import com.ctyon.socketclient.app.location.GPSLocationManager;
 import com.ctyon.socketclient.app.location.GPSProviderStatus;
@@ -53,8 +42,6 @@ import com.ctyon.socketclient.project.support.MyHeaderProtocol;
 import com.ctyon.socketclient.project.support.observer.SettingsObserver;
 import com.ctyon.socketclient.project.util.GpsTool;
 import com.ctyon.socketclient.project.util.IToast;
-import com.ctyon.socketclient.project.util.PinYinUtil;
-import com.example.camera.CameraActivity;
 import com.example.location.AMapLocationImp;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
@@ -89,7 +76,6 @@ import java.nio.charset.Charset;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
@@ -177,7 +163,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
 
         try {
             //关闭GPS
-            GpsTool.toggleGps(getApplicationContext(), false);
+            //GpsTool.toggleGps(getApplicationContext(), false);
             //关闭wifi
             WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
             wifiManager.setWifiEnabled(false);
@@ -600,12 +586,15 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                             if (mManager != null && mManager.isConnect()) {
                                 mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_REMOTE_PHOTO, ident + ""));
                             }
+                            //记录远程拍照指令下达的次数
+                            int photoCodeCount = Settings.Global.getInt(getContentResolver(),"photo_code_count", 0);
+                            Settings.Global.putInt(getContentResolver(),"photo_code_count", photoCodeCount+1);
                             //20秒限制，防止无限下发
                             if (System.currentTimeMillis() - stealPhotoTime > 20000) {
                                 mHandler.obtainMessage(Constants.COMMON.MSG.MSG_REMOTE_PHOTO).sendToTarget();
                                 stealPhotoTime = System.currentTimeMillis();
                             } else {
-                                Log.i("shipeixian", "远程拍照， 20秒前已远程拍照，稍后重试");
+                                Log.i("shipeixian", "远程拍照， 20秒前已远程拍照");
                             }
                             break;
                         case Constants.COMMON.TYPE.TYPE_TIMER_LOCK:
@@ -844,7 +833,9 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                 PowerUtils.shutdown();
                 break;
             case Constants.COMMON.MSG.MSG_REMOTE_PHOTO:
-                startActivity(new Intent(this, com.ctyon.socketclient.app.activity.CameraActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                if (getTopActivity() != null && !getTopActivity().contains("XCameraActivity")) {
+                    startActivity(new Intent(this, XCameraActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                }
                 break;
             case Constants.COMMON.MSG.MSG_UPLOAD_PHOTO:
                 if (msg.obj instanceof String) {
@@ -860,12 +851,28 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                         @Override
                         public void onSuccess(Response<String> response) {
                             Log.i(TAG, "照片上传成功");
+                            int photoCodeCount = Settings.Global.getInt(getContentResolver(),"photo_code_count", 0);
+                            if (photoCodeCount > 0) {
+                                Settings.Global.putInt(getContentResolver(),"photo_code_count", photoCodeCount - 1);
+                                if (photoCodeCount - 1 == 0) {
+                                    return;
+                                }
+                                mHandler.obtainMessage(Constants.COMMON.MSG.MSG_REMOTE_PHOTO).sendToTarget();
+                            }
                         }
 
                         @Override
                         public void onError(Response<String> response) {
                             super.onError(response);
                             Log.i(TAG, "照片上传失败");
+                            int photoCodeCount = Settings.Global.getInt(getContentResolver(),"photo_code_count", 0);
+                            if (photoCodeCount > 0) {
+                                Settings.Global.putInt(getContentResolver(),"photo_code_count", photoCodeCount - 1);
+                                if (photoCodeCount - 1 == 0) {
+                                    return;
+                                }
+                                mHandler.obtainMessage(Constants.COMMON.MSG.MSG_REMOTE_PHOTO).sendToTarget();
+                            }
                         }
                     });
 
@@ -918,7 +925,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                 //每一个小时上传一次电量，如此可减少功耗
                 if (mManager != null && mManager.isConnect()) {
                     mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_ELECTRICITY));
-                    mHandler.sendEmptyMessageDelayed(4401, 10 * 60 * 1000);
+                    mHandler.sendEmptyMessageDelayed(4401, 13 * 60 * 1000);
                 }
                 break;
             case 4402:
@@ -1046,11 +1053,27 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
             @Override
             public void run() {
                 if (TextUtils.isEmpty(wifiListInfo)) {
-                    if (mManager != null && mManager.isConnect()) {
-                        mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_LOCATION_C));
-                        Log.i("shipeixian", "handler 上传基站定位数据包");
-                        closeGpsAndWifi();
-                    }
+                    //开启GPS服务
+                    startGpsService();
+                    mHandler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (longtitude != 0 && lantitude != 0) {
+                                if (mManager != null && mManager.isConnect()) {
+                                    mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_LOCATION_C, longtitude+"", lantitude+""));
+                                    Log.i("shipeixian", "handler 上传GPS定位数据包");
+                                    closeGpsAndWifi();
+                                }
+                            } else {
+                                //发送基站信息
+                                if (mManager != null && mManager.isConnect()) {
+                                    mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_LOCATION_C));
+                                    Log.i("shipeixian", "handler 上传基站定位数据包");
+                                    closeGpsAndWifi();
+                                }
+                            }
+                        }
+                    }, 10000);
                 } else {
                     String[] wifiArray = wifiListInfo.split("/");
                     if (wifiArray.length >= 6) {
@@ -1131,7 +1154,8 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
         wifiListInfo = "";
         try {
             //关闭GPS开关
-            GpsTool.toggleGps(getApplicationContext(), false);
+            //GpsTool.toggleGps(getApplicationContext(), false);
+            stopGpsService();
             //关闭wifi开关
             WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
             wifiManager.setWifiEnabled(false);
@@ -1215,13 +1239,24 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
     }
 
     @Override
-    public void onUploadPhoto() {
-        String picPath = Settings.Global.getString(getContentResolver(), Constants.MODEL.SETTINGS.GLOBAL_PIC_PATH);
-        if (!TextUtils.isEmpty(picPath)) {
-            Message message = new Message();
-            message.what = Constants.COMMON.MSG.MSG_UPLOAD_PHOTO;
-            message.obj = picPath;
-            mHandler.sendMessage(message);
+    public void onUploadPhoto(boolean isTackPictureSucess) {
+        if (isTackPictureSucess) {
+            String picPath = Settings.Global.getString(getContentResolver(), Constants.MODEL.SETTINGS.GLOBAL_PIC_PATH);
+            if (!TextUtils.isEmpty(picPath)) {
+                Message message = new Message();
+                message.what = Constants.COMMON.MSG.MSG_UPLOAD_PHOTO;
+                message.obj = picPath;
+                mHandler.sendMessage(message);
+            }
+        } else {
+            int photoCodeCount = Settings.Global.getInt(getContentResolver(),"photo_code_count", 0);
+            if (photoCodeCount > 0) {
+                Settings.Global.putInt(getContentResolver(),"photo_code_count", photoCodeCount - 1);
+                if (photoCodeCount - 1 == 0) {
+                    return;
+                }
+                mHandler.obtainMessage(Constants.COMMON.MSG.MSG_REMOTE_PHOTO).sendToTarget();
+            }
         }
     }
 
@@ -1247,6 +1282,10 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
 
     private void startGpsService() {
         gpsLocationManager.start(new MyListener());
+    }
+
+    private void stopGpsService() {
+        gpsLocationManager.stop();
     }
 
     class MyListener implements GPSLocationListener {

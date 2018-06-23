@@ -16,6 +16,10 @@ public class NetBroadcastReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
+        if (intent == null) {
+            return;
+        }
+
         if (intent.getAction().equals(ConnectivityManager.CONNECTIVITY_ACTION)) {
             //检查网络状态的类型
             int netWrokState = NetUtil.getNetWorkState(context);
@@ -25,7 +29,7 @@ public class NetBroadcastReceiver extends BroadcastReceiver {
         }
         if (intent.getAction().equals("com.ctyon.shawn.UPLOAD_PHOTO")) {
             if (netEvent != null) {
-                netEvent.onUploadPhoto();
+                netEvent.onUploadPhoto(intent.getBooleanExtra("is_upload_success", false));
             }
         }
         if ("unbind_watch".equals(intent.getAction())) {

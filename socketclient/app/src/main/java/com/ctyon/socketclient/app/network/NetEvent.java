@@ -6,7 +6,7 @@ package com.ctyon.socketclient.app.network;
 
 public interface NetEvent {
     void onNetChange(int netMobile);
-    void onUploadPhoto();
+    void onUploadPhoto(boolean isUploadSucess);
     void onUnbindWatch();
     void onShowImed();
 }
