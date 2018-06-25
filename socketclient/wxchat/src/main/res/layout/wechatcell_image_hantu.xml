@@ -42,7 +42,7 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_marginLeft="10dp"
-            android:src="@mipmap/address_book_apply_small"
+            android:src="@mipmap/address_book_custom_big"
             />
 
 <!--

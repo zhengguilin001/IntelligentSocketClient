@@ -38,15 +38,23 @@ import java.util.concurrent.TimeUnit;
 
 import static android.media.AudioManager.AUDIOFOCUS_GAIN;
 
+import java.util.List;
+import com.ctyon.watch.manager.AlarmManager;
+import com.ctyon.watch.model.AlarmModel;
+import java.util.ArrayList;
+
 /**
  * 闹钟响铃界面
  */
 public class ClockAlarmActivity extends BaseActivity {
 
+    private List<AlarmModel> list = new ArrayList<>();
+    private AlarmManager manager;
+
     private MediaPlayer player;
     public static boolean isRing = false;
     private AudioManager audioManager;
-    private Vibrator mVibrator;
+    //private Vibrator mVibrator;
     private ScheduledExecutorService executorService;
     private TextView nowTime;
     private TextView keepSleep;
@@ -70,6 +78,14 @@ public class ClockAlarmActivity extends BaseActivity {
 
     @Override
     protected void setContentView() {
+   
+        manager = new AlarmManager(getApplicationContext());
+        list.clear();
+        list.addAll(manager.queryAll());
+        if(list.size() == 0) {
+            finish();
+        }
+
         final Window win = getWindow();
         win.addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED
                 | WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);
@@ -91,7 +107,9 @@ public class ClockAlarmActivity extends BaseActivity {
         AlarmManager manager = new AlarmManager(this);
         AlarmModel model = manager.queryIsRepeatById(alarm_id);
         ringModel = alarmIntent.getIntExtra("soundOrVibrator", 2);
-        switch(ringModel){
+      
+        playRingtone();
+        /*switch(ringModel){
             case 0:
                 //震动
                 startVibrator();
@@ -106,7 +124,7 @@ public class ClockAlarmActivity extends BaseActivity {
                 startVibrator();
                 break;
         }
-        CommonConstants.IS_ALARM_RING = true;
+        CommonConstants.IS_ALARM_RING = true;*/
     }
 
     @Override
@@ -141,8 +159,9 @@ public class ClockAlarmActivity extends BaseActivity {
         keepSleep.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                stopRingtone();
                 continueSleep();
+                finish();
             }
         });
         handler.postDelayed(new Runnable() {
@@ -170,8 +189,8 @@ public class ClockAlarmActivity extends BaseActivity {
         TimerTask task = new TimerTask() {
             @Override
             public void run() {
-                if (CommonConstants.IS_ALARM_RING)
-                    return;
+                /*if (CommonConstants.IS_ALARM_RING)
+                    return;*/
                 Intent intent1 = new Intent(ClockAlarmActivity.this, ClockAlarmActivity.class);
                 intent1.putExtra("title", mTitle.getText());
                 startActivity(intent1);
@@ -191,7 +210,7 @@ public class ClockAlarmActivity extends BaseActivity {
     //取消铃声
     public void stopRingtone() {
         LogUtils.e("stopRingtone: music and vibrator");
-        stopVibrator();
+        //stopVibrator();
         if (player != null) {
             if (player.isPlaying()) {
                 player.stop();
@@ -201,7 +220,7 @@ public class ClockAlarmActivity extends BaseActivity {
         }
         isRing = false;
         audioManager.abandonAudioFocus(afChangeListener);
-        CommonConstants.IS_ALARM_RING = false;
+        //CommonConstants.IS_ALARM_RING = false;
     }
 
     //播放铃声
@@ -324,13 +343,13 @@ public class ClockAlarmActivity extends BaseActivity {
     /**
      * 开启震动
      */
-    private void startVibrator() {
+    /*private void startVibrator() {
         if(!phoneIsInUse(this)){
             mVibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
             long[] patten = {400, 200, 400, 200};
             mVibrator.vibrate(patten, 0);
         }
-    }
+    }*/
 
     /**
      * 判断是否在接电话
@@ -348,9 +367,9 @@ public class ClockAlarmActivity extends BaseActivity {
     /**
      * 停止震动
      */
-    private void stopVibrator(){
+    /*private void stopVibrator(){
         if(mVibrator != null){
             mVibrator.cancel();
         }
-    }
+    }*/
 }

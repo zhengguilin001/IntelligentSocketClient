@@ -138,6 +138,7 @@ public class ContactMainActivity extends Activity implements View.OnClickListene
         Log.e("TAG","onResume"+ "isFirstIn:"+ isFirstIn);
         if (simReceiver == null){
             registerSimReceiver();
+            queryAllContacts();
         }
         /*if (!isFirstIn){
             //ProgressDialogUtil.showProgressDialog(ContactMainActivity.this,getString(R.string.loading)+"...");
@@ -150,7 +151,6 @@ public class ContactMainActivity extends Activity implements View.OnClickListene
             });
         }
         isFirstIn = false;*/
-        queryAllContacts();
         if (popupWindow != null){
             popupWindow.dismiss();
         }
@@ -158,7 +158,9 @@ public class ContactMainActivity extends Activity implements View.OnClickListene
 
     private void registerSimReceiver() {
         simReceiver = new MySimReceiver();
-        IntentFilter filter = new IntentFilter("com.android.ctyon.sim");
+        IntentFilter filter = new IntentFilter();
+        filter.addAction("com.android.ctyon.sim");
+        filter.addAction("com.ctyon.shawn.UPDATE_CONTACT");
         registerReceiver(simReceiver,filter);
     }
 
@@ -376,12 +378,13 @@ public class ContactMainActivity extends Activity implements View.OnClickListene
     }
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+        //super.onBackPressed();
         if (isFromInCallUI){
             Intent dialIntent =  new Intent(Intent.ACTION_CALL_BUTTON);//跳转到拨号界面
             startActivity(dialIntent);
             finish();
         }
+        moveTaskToBack(true);
     }
     class MySimReceiver extends BroadcastReceiver {
 
@@ -396,6 +399,10 @@ public class ContactMainActivity extends Activity implements View.OnClickListene
                         handler.sendEmptyMessage(3);
                     }
                 });
+            }
+            //更新联系人界面
+            if(intent.getAction().equals("com.ctyon.shawn.UPDATE_CONTACT")) {
+                queryAllContacts();
             }
         }
     }

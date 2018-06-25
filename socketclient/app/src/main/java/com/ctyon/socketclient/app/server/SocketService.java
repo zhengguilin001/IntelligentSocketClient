@@ -25,6 +25,7 @@ import com.ctyon.socketclient.App;
 import com.ctyon.socketclient.BuildConfig;
 import com.ctyon.socketclient.R;
 import com.ctyon.socketclient.app.activity.ShowImedActivity;
+import com.ctyon.socketclient.app.activity.ShowTokenActivity;
 import com.ctyon.socketclient.app.activity.XCameraActivity;
 import com.ctyon.socketclient.app.location.GPSLocationListener;
 import com.ctyon.socketclient.app.location.GPSLocationManager;
@@ -35,11 +36,13 @@ import com.ctyon.socketclient.app.network.NetUtil;
 import com.ctyon.socketclient.app.receive.ScreenReceiver;
 import com.ctyon.socketclient.project.model.AlarmModel;
 import com.ctyon.socketclient.project.model.ContactJson;
+import com.ctyon.socketclient.project.model.ForbidUseModel;
 import com.ctyon.socketclient.project.senddata.RedirectException;
 import com.ctyon.socketclient.project.senddata.publish.PulseData;
 import com.ctyon.socketclient.project.senddata.publish.SendData;
 import com.ctyon.socketclient.project.support.MyHeaderProtocol;
 import com.ctyon.socketclient.project.support.observer.SettingsObserver;
+import com.ctyon.socketclient.project.util.DateUtil;
 import com.ctyon.socketclient.project.util.GpsTool;
 import com.ctyon.socketclient.project.util.IToast;
 import com.example.location.AMapLocationImp;
@@ -427,17 +430,21 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                             if (mManager != null && mManager.isConnect()) {
                                 mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_VOICE_MESSAGE, ident + ""));
                             }
-                            if (mediaPlayer == null) {
-                                mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.test);
-                                mediaPlayer.start();
-                            } else {
-                                if (!mediaPlayer.isPlaying()) {
-                                    mediaPlayer.release();
-                                    mediaPlayer = null;
+                            //如果不是上课禁用，才播放声音
+                            if (!isForbidUse()) {
+                                if (mediaPlayer == null) {
                                     mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.test);
                                     mediaPlayer.start();
+                                } else {
+                                    if (!mediaPlayer.isPlaying()) {
+                                        mediaPlayer.release();
+                                        mediaPlayer = null;
+                                        mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.test);
+                                        mediaPlayer.start();
+                                    }
                                 }
                             }
+
                             WeChatMessage bean = new WeChatMessage();
                             bean.setMessageType(WxchatMessageBean.MessageType.Voice.ordinal());
                             bean.setMessageSenderType(WxchatMessageBean.MessageSenderType.Parents.ordinal());
@@ -449,7 +456,10 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                             bean.setDuringTime(jsonObject.get(Constants.MODEL.DATA.DATA_DURATION).getAsInt());
                             bean.setValue2(jsonObject.get(Constants.MODEL.DATA.DATA_SIZE).getAsInt() + "");
                             DbUtils.insertMsg(App.getsContext(), bean);
-                            mHandler.sendEmptyMessage(4406);
+                            //如果不是上课禁用，才弹出消息框
+                            if (!isForbidUse()) {
+                                mHandler.sendEmptyMessage(4406);
+                            }
                             break;
                         case Constants.COMMON.TYPE.TYPE_SET_VOLUME:
 //                             {"type":26,"ident":706373,"level":5}
@@ -558,15 +568,18 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                             if (mManager != null && mManager.isConnect()) {
                                 mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_TEXT_MESSAGE, ident + ""));
                             }
-                            if (mediaPlayer == null) {
-                                mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.test);
-                                mediaPlayer.start();
-                            } else {
-                                if (!mediaPlayer.isPlaying()) {
-                                    mediaPlayer.release();
-                                    mediaPlayer = null;
+                            //如果不是上课禁用，才播放声音
+                            if (!isForbidUse()) {
+                                if (mediaPlayer == null) {
                                     mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.test);
                                     mediaPlayer.start();
+                                } else {
+                                    if (!mediaPlayer.isPlaying()) {
+                                        mediaPlayer.release();
+                                        mediaPlayer = null;
+                                        mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.test);
+                                        mediaPlayer.start();
+                                    }
                                 }
                             }
                             WeChatMessage wcm = new WeChatMessage();
@@ -578,7 +591,10 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                             wcm.setMessageReadStatus(WxchatMessageBean.MessageReadStatus.UnRead.ordinal());
                             wcm.setShowMeaageTime(true);
                             DbUtils.insertMsg(App.getsContext(), wcm);
-                            mHandler.sendEmptyMessage(4406);
+                            //如果不是上课禁用，才弹出消息框
+                            if (!isForbidUse()) {
+                                mHandler.sendEmptyMessage(4406);
+                            }
                             break;
                         case Constants.COMMON.TYPE.TYPE_REMOTE_PHOTO:
                             //远程拍照
@@ -657,9 +673,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                             }
                             Settings.Global.putString(getContentResolver(), "socket_client_shawn_token", deviceToken);
                             //startActivity
-                            Intent qrcodeIntent = new Intent();
-                            qrcodeIntent.setClassName("com.ctyon.watch", "com.ctyon.watch.ui.activity.QrcodeActivity");
-                            startActivity(qrcodeIntent);
+                            startActivity(new Intent(SocketService.this, ShowTokenActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                             break;
                         case Constants.COMMON.TYPE.TYPE_MASTER_UNTIE:
                             Log.i("shipeixian", "服务器响应，解绑手表成功");
@@ -1006,8 +1020,10 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
         //"socket_client_sos_number"初始化为“0”,需要在WatchLauncher里面初始化一下
         try {
             String sosString = "";
-            for (String item : sosNumbers) {
-                sosString += item + "/";
+            if (sosNumbers != null && sosNumbers.length > 0) {
+                for (String item : sosNumbers) {
+                    sosString += item + "/";
+                }
             }
             Settings.Global.putString(getContentResolver(), "socket_client_sos_number", sosString);
         } catch (Exception e) {
@@ -1490,6 +1506,82 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                 resetSocket();
             }
         }, 5000);
+    }
+
+
+    private boolean isForbidUse() {
+        try {
+            /*String jsonString = "{\n" +
+                    "    \"type\" : 28,\n" +
+                    "    \"ident\" : 9,\n" +
+                    "    \"disturb\" : [\n" +
+                    "        {\n" +
+                    "            \"start\" : \"08:00\",\n" +
+                    "            \"end\" : \"18:00\",\n" +
+                    "            \"week\" : \"1111100\",\n" +
+                    "            \"status\" : 1\n" +
+                    "        }\n" +
+                    "    ]\n" +
+                    "}";*/
+            String jsonString = android.provider.Settings.Global.getString(getContentResolver(), "socket_client_disturb");
+            com.google.gson.Gson gson = new com.google.gson.Gson();
+            ForbidUseModel forbidUseModel = gson.fromJson(jsonString, ForbidUseModel.class);
+            String start = forbidUseModel.getDisturb().get(0).getStart();
+            String end = forbidUseModel.getDisturb().get(0).getEnd();
+            String week = forbidUseModel.getDisturb().get(0).getWeek();
+            int status = forbidUseModel.getDisturb().get(0).getStatus();
+            String nowTime = DateUtil.getTime(new java.util.Date());
+
+            String[] timeZoneArray = {start, end, nowTime};
+            java.util.Arrays.sort(timeZoneArray);
+
+            //上课禁用1:开启 0：未开启
+            if (status == 1 && timeZoneArray[1].equals(nowTime) && week.charAt(getWeek()) == '1') {
+                return true;
+            }
+        } catch (Exception e) {
+
+        }
+        return false;
+    }
+
+    /*获取星期几*/
+    private int getWeek() {
+        java.util.Calendar cal = java.util.Calendar.getInstance();
+        int i = cal.get(java.util.Calendar.DAY_OF_WEEK);
+        int week = 0;
+        switch (i) {
+            case 1:
+                //"星期日"
+                week = 6;
+                break;
+            case 2:
+                //"星期一"
+                week = 0;
+                break;
+            case 3:
+                //"星期二"
+                week = 1;
+            case 4:
+                //"星期三"
+                week = 2;
+                break;
+            case 5:
+                //"星期四"
+                week = 3;
+                break;
+            case 6:
+                //"星期五"
+                week = 4;
+                break;
+            case 7:
+                //"星期六"
+                week = 5;
+                break;
+            default:
+                break;
+        }
+        return week;
     }
 
 }

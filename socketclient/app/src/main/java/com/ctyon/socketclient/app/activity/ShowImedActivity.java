@@ -45,7 +45,7 @@ public class ShowImedActivity extends Activity {
         setContentView(R.layout.activity_show_imed);
 
         showImed = (TextView) findViewById(R.id.showImed);
-        showImed.setText("MEID:"+DeviceUtils.getIMEI(App.getsContext()));
+        showImed.setText("MEID    "+DeviceUtils.getIMEI(App.getsContext()));
 
         ScreenUtils.wakeUpAndUnlock(this);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);

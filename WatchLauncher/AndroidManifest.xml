@@ -44,11 +44,12 @@
         <activity android:name=".ui.activity.CameraActivity" />
         <activity android:name=".ui.activity.CreateAlarmActivity"/>
         <activity android:name=".ui.activity.AlarmListActivity"/>
-        <activity android:name=".ui.activity.ClockAlarmActivity"/>
+        <activity android:name=".ui.activity.ClockAlarmActivity" android:launchMode="singleTop"/>
         <activity android:name=".ui.activity.DialerActivity" android:theme="@style/FullScreenActivity"/>
         <activity android:name=".ui.activity.calllogs.CalllogActivity"/>
-        <activity android:name=".ui.activity.contact.ContactMainActivity" android:theme="@style/FullScreenActivity"/>
+        <activity android:name=".ui.activity.contact.ContactMainActivity" android:theme="@style/FullScreenActivity" android:launchMode="singleInstance"/>
         <activity android:name=".ui.activity.contact.ContactActivity" android:theme="@style/FullScreenActivity"/>
+        <activity android:name=".ui.activity.ConfirmSosActivity" android:theme="@style/FullScreenActivity" android:launchMode="singleTop"/>
 
         <activity android:name=".ui.activity.calculator.CalculatorActivity">
 
@@ -87,6 +88,7 @@
             </intent-filter>
         </activity>
         <service android:name="com.ctyon.watch.service.ContactsService" />
+        <service android:name="com.ctyon.watch.service.AlarmService" />
     </application>
 
 </manifest>

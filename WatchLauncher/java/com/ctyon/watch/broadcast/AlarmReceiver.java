@@ -22,6 +22,10 @@ import static com.ctyon.watch.model.CommonConstants.ALARM_RING_ACTION;
 public class AlarmReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
+        //do nothing
+        if(1 == 1) {
+            return;
+        }
         if(intent == null)
             return;
         if(intent.getAction().equals(ALARM_RING_ACTION)){

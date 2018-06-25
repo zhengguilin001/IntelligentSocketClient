@@ -31,6 +31,8 @@ import java.util.List;
 import static com.ctyon.watch.utils.DateUtil.get24HourTime;
 import static com.ctyon.watch.utils.DateUtil.getTime;
 
+import android.provider.Settings;
+
 /**
  * 创建闹钟界面
  */
@@ -274,6 +276,7 @@ public class CreateAlarmActivity extends BaseActivity implements View.OnClickLis
                 AlarmManagerUtil.setAlarm(this, 2, Integer.parseInt(alarm_hour), Integer
                         .parseInt(alarm_minute), alarm_id, weeksStr, "闹钟响了", ring);
             }
+            Settings.Global.putInt(getContentResolver(), "isAlarmSet", 1);
             WarnUtils.toast(this,"闹钟设置成功");
         }
     }

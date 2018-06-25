@@ -63,6 +63,7 @@ public class ContactsService extends Service {
                         String[] splitOldContactStr = contactStr.split("/");
                         if (splitOldContactStr.length > 0) {
                             batchAddContact(getApplicationContext(), splitOldContactStr);
+                            ContactsService.this.sendBroadcast(new Intent("com.ctyon.shawn.UPDATE_CONTACT"));
                             /*for (String item : splitOldContactStr) {
                                 String[] contacts = item.split(",");
                                 if (contactsManager.insertContact(contacts[0], contacts[1])) {
@@ -71,6 +72,7 @@ public class ContactsService extends Service {
                             }*/
                         }
                     } else {
+                        ContactsService.this.sendBroadcast(new Intent("com.ctyon.shawn.UPDATE_CONTACT"));
                         android.util.Log.d("shipeixian", "添加联系人字符串为空");
                     }
                 } catch(Exception e) {

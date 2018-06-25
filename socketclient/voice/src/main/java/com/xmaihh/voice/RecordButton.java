@@ -190,6 +190,38 @@ public class RecordButton extends AppCompatButton {
                         recordState = RECORD_ON;
                         mAudioRecorder.start();
                         callRecordTimeThread();
+                        //15秒后,发送消息
+                        recordHandler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                if (recordState == RECORD_ON) {
+                                    recordState = RECORD_OFF;
+                                    if (mRecordDialog.isShowing()) {
+                                        mRecordDialog.dismiss();
+                                    }
+                                    mAudioRecorder.stop();
+                                    mRecordThread.interrupt();
+                                    voiceValue = 0.0;
+                                    if (isCanceled) {
+                                        mAudioRecorder.deleteOldFile();
+                                    } else {
+                                        if (recodeTime < MIN_RECORD_TIME) {
+                                            //showWarnToast("时间太短  录音失败");
+                                            if (quickRecordListener != null) {
+                                                quickRecordListener.onOneSecondRecordAudio();
+                                            }
+                                            mAudioRecorder.deleteOldFile();
+                                        } else {
+                                            if (listener != null) {
+                                                listener.recordEnd(mAudioRecorder.getFilePath());
+                                            }
+                                        }
+                                    }
+                                    isCanceled = false;
+                                    RecordButton.this.setText("按住 说话");
+                                }
+                            }
+                        }, 15000);
                     }
                 }
                 break;
@@ -219,7 +251,10 @@ public class RecordButton extends AppCompatButton {
                         mAudioRecorder.deleteOldFile();
                     } else {
                         if (recodeTime < MIN_RECORD_TIME) {
-                            showWarnToast("时间太短  录音失败");
+                            //showWarnToast("时间太短  录音失败");
+                            if (quickRecordListener != null) {
+                                quickRecordListener.onOneSecondRecordAudio();
+                            }
                             mAudioRecorder.deleteOldFile();
                         } else {
                             if (listener != null) {
@@ -237,5 +272,15 @@ public class RecordButton extends AppCompatButton {
 
     public interface RecordListener {
         public void recordEnd(String filePath);
+    }
+
+    public interface QuickRecordListener {
+        void onOneSecondRecordAudio();
+    }
+
+    private QuickRecordListener quickRecordListener;
+
+    public void setQuickRecordListener(QuickRecordListener quickRecordListener) {
+        this.quickRecordListener = quickRecordListener;
     }
 }

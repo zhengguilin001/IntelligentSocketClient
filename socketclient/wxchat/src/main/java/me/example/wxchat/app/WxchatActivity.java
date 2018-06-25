@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.lzy.okgo.OkGo;
@@ -63,7 +64,10 @@ import me.example.wxchat.support.view.WxchatAdapter;
 import me.xmai.global.config.Constants;
 
 public class WxchatActivity extends AppCompatActivity implements WxchatAdapter.WxchatAdapterDelegate
-,SafeHandler.HandlerContainer{
+,SafeHandler.HandlerContainer, RecordButton.QuickRecordListener {
+
+    //录音太短提示区域
+    private LinearLayout oneSecondRecordZone;
 
     private RecyclerView recyclerview;
     private SafeHandler<WxchatActivity> mHandler;
@@ -108,6 +112,7 @@ public class WxchatActivity extends AppCompatActivity implements WxchatAdapter.W
         recyclerview.setAdapter(adapter);
 
         RecordButton v = findViewById(R.id.send_voice);
+        v.setQuickRecordListener(this);
         v.setAudioRecord(new AudioRecorder());
         v.setRecordListener(filePath -> {
             try {
@@ -128,6 +133,8 @@ public class WxchatActivity extends AppCompatActivity implements WxchatAdapter.W
 
 
         });
+
+        oneSecondRecordZone = (LinearLayout) findViewById(R.id.oneSecondRecordTipZone);
     }
 
 
@@ -279,4 +286,16 @@ public class WxchatActivity extends AppCompatActivity implements WxchatAdapter.W
         super.onPause();
     }
     //add by shipeixian for cancel animation end
+
+
+    @Override
+    public void onOneSecondRecordAudio() {
+        oneSecondRecordZone.setVisibility(View.VISIBLE);
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                oneSecondRecordZone.setVisibility(View.GONE);
+            }
+        }, 500);
+    }
 }

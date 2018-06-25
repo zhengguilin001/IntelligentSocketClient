@@ -26,6 +26,7 @@ import com.mylhyl.pickpicture.PictureTotal;
 import java.io.File;
 import java.util.List;
 import java.util.ArrayList;
+import android.os.Environment;
 //add by shipeixian for adjust ui begin
 import android.widget.ListView;
 import android.widget.AdapterView;
@@ -92,15 +93,7 @@ public class PickPictureActivity extends BaseActivity {
             }
         });
         //add by shipeixian for adjust ui end
-    }
 
-    @Override
-    protected void setContentView() {
-
-    }
-
-    @Override
-    protected void loadData() {
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -127,6 +120,16 @@ public class PickPictureActivity extends BaseActivity {
                 }
             }
         }).start();
+    }
+
+    @Override
+    protected void setContentView() {
+
+    }
+
+    @Override
+    protected void loadData() {
+        
     }
 
     @Override

@@ -47,6 +47,16 @@ public class AlarmManager {
         db.close();
     }
 
+    //add by shipeixian for set alarm closed begin
+    public void updateToCloseAlarm(AlarmModel entity) {
+        db = helper.getWritableDatabase();
+        ContentValues updatedValues = new ContentValues();
+        updatedValues.put(ALARM_IS_OPEN_VALUE, false);
+        db.update(ALARM_TABLE_NAME, updatedValues, "_id=?", new String[]{"" + entity.getAlramId()});
+        db.close();
+    }
+    //add by shipeixian for set alarm closed end
+
     public void deleteAlarmById(long id) {
         db = helper.getWritableDatabase();
         db.delete(ALARM_TABLE_NAME, "_id=?", new String[]{"" + id});

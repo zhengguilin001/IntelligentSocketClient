@@ -12,6 +12,14 @@ import com.ctyon.watch.R;
 import com.ctyon.watch.utils.ContactsUtil;
 import com.ctyon.watch.ui.activity.contact.ContactsManager;
 import android.os.Message;
+import android.content.Context;
+import android.content.IntentFilter;
+
+import android.telephony.TelephonyManager;
+import java.lang.reflect.Method;
+import android.media.AudioFormat;
+import android.media.AudioRecord;
+import android.media.MediaRecorder;
 
 
 /**
@@ -23,8 +31,11 @@ public class GuideActivity extends Activity {
     private static final String TAG = "GuideActivity";
     private ImageView mIVGuide;
 
+    private boolean hasSendBatterySMS = false;
+
     private int phoneNumIndex = 1;
-    private int callCounts = 1;
+    private int callCounts = 0;
+    private int sosNumberCounts = 0;
 
     private String outgoingPhoneNumber = "";
 
@@ -106,6 +117,9 @@ public class GuideActivity extends Activity {
         //add by shipeixian for sos call handle end
 
         mHandler.sendEmptyMessageDelayed(5555, 3*60*1000);
+
+        //for alarm
+        mHandler.sendEmptyMessageDelayed(6666, 5*1000);
     }
 
     @Override
@@ -251,7 +265,7 @@ public class GuideActivity extends Activity {
                     String number = getResultData();
                     outgoingPhoneNumber = number;
                     android.util.Log.d("shipeixian", "sos 发短信给"+outgoingPhoneNumber);
-                    sendSMS(number, "宝贝发出sos求救信息，快去营救！");
+                    sendSMS(number, "您关注的宝贝发出sos紧急求救信息，请尽快确认宝贝的安全！");
                     mHandler.removeMessages(4400);
                     callCounts += 1;
                 }
@@ -269,20 +283,29 @@ public class GuideActivity extends Activity {
             }
             if(intent.getAction().equals("android.intent.action.BATTERY_LOW")) {
                 android.util.Log.d("shipeixian", "收到低电量广播");
-                try {
-                    String sosString = android.provider.Settings.Global.getString(getContentResolver(),"socket_client_sos_number");
-                    String[] sosNumbers  = sosString.split("/");
-                    sendSMS(sosNumbers[0], "您关联的手表电量低，请及时充电！");
-                    android.util.Log.d("shipeixian", "低电量，发短信给"+sosNumbers[0]);
-                } catch (Exception e) {
+                if((int)(getBattery(GuideActivity.this)*100) < 20 && !hasSendBatterySMS) {
+                    try {
+                        String sosString = android.provider.Settings.Global.getString(getContentResolver(),"socket_client_sos_number");
+                        String[] sosNumbers  = sosString.split("/");
+                        sendSMS(sosNumbers[0], "您关联的手表电量低，请及时充电！");
+                        android.util.Log.d("shipeixian", "低电量，发短信给"+sosNumbers[0]);
+                        hasSendBatterySMS = true;
+                        mHandler.sendEmptyMessageDelayed(7777, 30*1000);
+                    } catch (Exception e) {
 
-                }
+                    }
+                } 
+                
             }
             if(intent.getAction().equals("com.ctyon.shawn.ADD_CONTACT")) {
                 android.util.Log.d("shipeixian", "添加联系人广播");
                 String contactStr = intent.getStringExtra("contacts");
                 android.util.Log.d("shipeixian", "添加联系人广播--"+contactStr);
                 startService(new Intent(GuideActivity.this, com.ctyon.watch.service.ContactsService.class).putExtra("contacts", contactStr));
+            }
+            if(intent.getAction().equals("com.ctyon.shawn.CONFIRM_DIAL_SOS")) {
+                startActivity(new Intent(GuideActivity.this, ConfirmSosActivity.class));
+                overridePendingTransition(0,0);
             }
         }
     }
@@ -296,41 +319,50 @@ public class GuideActivity extends Activity {
                 case android.telephony.TelephonyManager.CALL_STATE_IDLE:/* 无任何状态 */
                     android.os.SystemProperties.set("persist.sys.monitor", "1");
                     mHandler.removeMessages(4409);
-                    //判断是否接听
-                    if(getCallLogState(outgoingPhoneNumber)) {
-                        android.util.Log.d("shipeixian", "sos 已经被接听");
-                        android.provider.Settings.Global.putInt(getContentResolver(),"socket_client_sos_status", 0);
-                        phoneNumIndex = 1;
-                        callCounts = 1;
-                        mHandler.removeMessages(4400);
-                    }
+                    
                     sosStatus = android.provider.Settings.Global.getInt(getContentResolver(),"socket_client_sos_status", 0);
                     if (sosStatus == 1) {
                         //dangerous
-                        if(callCounts == 6) {
-                            android.util.Log.d("shipeixian", "sos 拨打6次了，不打了");
-                            android.provider.Settings.Global.putInt(getContentResolver(),"socket_client_sos_status", 0);
-                            phoneNumIndex = 1;
-                            callCounts = 1;
-                            mHandler.removeMessages(4400);
-                            break;
-                        }
                         android.util.Log.d("shipeixian", "GuideActivity 发送轮询");
-                        mHandler.sendEmptyMessageDelayed(4400, 10*1000);
+                        mHandler.sendEmptyMessageDelayed(4400, 5*1000);
+                    } else {
+                        android.util.Log.d("shipeixian", "sos 已经被接听");
+                        phoneNumIndex = 1;
+                        callCounts = 0;
+                        sosNumberCounts = 0;
+                        mHandler.removeMessages(4400);
                     }
                     break;
                 case android.telephony.TelephonyManager.CALL_STATE_OFFHOOK:/* 接起电话 */
-                    android.util.Log.d("shipeixian", "GuideActivity 接起电话");
-                    mHandler.sendEmptyMessageDelayed(4409, 10*60*1000);
-                    /*sosStatus = android.provider.Settings.Global.getInt(getContentResolver(),"socket_client_sos_status", 0);
-                    if (sosStatus == 1) {
-                        android.provider.Settings.Global.putInt(getContentResolver(),"socket_client_sos_status", 0);
-                        phoneNumIndex = 1;
-                        callCounts = 1;
-                        mHandler.removeMessages(4400);
-                    }*/
+                     if(getRecordState()) {
+                         android.provider.Settings.Global.putInt(getContentResolver(),"socket_client_sos_status", 0);
+                         phoneNumIndex = 1;
+                         callCounts = 0;
+                         sosNumberCounts = 0;
+                         mHandler.removeMessages(4400);
+                     }
                     break;
                 case android.telephony.TelephonyManager.CALL_STATE_RINGING:/* 电话进来 */
+                    //上课禁用，挂断电话
+                    if (isForbidUse()) {
+                        try{
+                            Log.d("shipeixian", "上课禁用，挂断电话");
+			    TelephonyManager telMag = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+			    Class<TelephonyManager> c = TelephonyManager.class;
+			    // 再去反射TelephonyManager里面的私有方法 getITelephony 得到 ITelephony对象
+		            Method mthEndCall = c.getDeclaredMethod("getITelephony", (Class[]) null);
+			    //允许访问私有方法
+			    mthEndCall.setAccessible(true);
+			    final Object obj = mthEndCall.invoke(telMag, (Object[]) null);
+			    // 再通过ITelephony对象去反射里面的endCall方法，挂断电话
+			    Method mt = obj.getClass().getMethod("endCall");
+			    //允许访问私有方法
+			    mt.setAccessible(true);
+			    mt.invoke(obj);
+		        } catch (Exception e){
+			    e.printStackTrace();
+                        }
+                    }
                     break;
             }
         }
@@ -341,10 +373,11 @@ public class GuideActivity extends Activity {
         public void handleMessage(final android.os.Message msg) {
             switch (msg.what) {
                 case 4400:
-                    //每10秒钟发一次求救
+                    //每5秒钟发一次求救
                     try {
                         String sosString = android.provider.Settings.Global.getString(getContentResolver(),"socket_client_sos_number");
                         String[] sosNumbers  = sosString.split("/");
+                        sosNumberCounts = sosNumbers.length;
                         int index = random.nextInt(sosNumbers.length);
                         Intent intent = new Intent("android.intent.action.CALL_PRIVILEGED", android.net.Uri.parse("tel:"+sosNumbers[phoneNumIndex]));
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -355,10 +388,12 @@ public class GuideActivity extends Activity {
                         } else {
                             phoneNumIndex = 0;
                         }
-                        if(callCounts == 6) {
+                        //拨打两轮，1个号码，拨打2次；2个号码，拨打4次；3个号码，拨打6次
+                        if((callCounts == 6 && sosNumberCounts == 3) || (callCounts == 4 && sosNumberCounts == 2) || (callCounts == 2 && sosNumberCounts == 1)) {
                             android.provider.Settings.Global.putInt(getContentResolver(),"socket_client_sos_status", 0);
                             phoneNumIndex = 1;
-                            callCounts = 1;
+                            callCounts = 0;
+                            sosNumberCounts = 0;
                             mHandler.removeMessages(4400);
                             break;
                         }
@@ -369,7 +404,7 @@ public class GuideActivity extends Activity {
                     android.util.Log.d("shipeixian", "GuideActivity 时间到了发送轮询");
                     break;
                 case 4409:
-                    try{
+                    /*try{
 			    android.telephony.TelephonyManager telMag = (android.telephony.TelephonyManager) getSystemService(android.content.Context.TELEPHONY_SERVICE);
 			    Class<android.telephony.TelephonyManager> c = android.telephony.TelephonyManager.class;
 			    // 再去反射TelephonyManager里面的私有方法 getITelephony 得到 ITelephony对象
@@ -385,7 +420,7 @@ public class GuideActivity extends Activity {
 			    android.util.Log.d("---SHIPEIXIAN---", "通话10分钟，挂断电话");
 		    } catch (Exception e){
 			    e.printStackTrace();
-		    }
+		    }*/
                     break;
                  case 5555:
                     if(!isApplicationRunning("com.ctyon.socketclient")) {
@@ -393,6 +428,26 @@ public class GuideActivity extends Activity {
                         startService(new android.content.Intent().setClassName("com.ctyon.socketclient", "com.ctyon.socketclient.app.server.SocketService"));
                     }
                     mHandler.sendEmptyMessageDelayed(5555, 60*1000);
+                    break;
+                 case 6666:
+                    if((int)(getBattery(GuideActivity.this)*100) > 20) {
+                        hasSendBatterySMS = false;
+                    }
+                    //如果没有上课禁用，才开启闹钟服务
+                    if (!isForbidUse()) {
+                        startService(new Intent(GuideActivity.this, com.ctyon.watch.service.AlarmService.class));
+                    }
+                    mHandler.sendEmptyMessageDelayed(6666, 60*1000);
+                    break;
+                 case 7777:
+                    try {
+                        String sosString = android.provider.Settings.Global.getString(getContentResolver(),"socket_client_sos_number");
+                        String[] sosNumbers  = sosString.split("/");
+                        sendSMS(sosNumbers[0], "您关联的手表电量低，请及时充电！");
+                        android.util.Log.d("shipeixian", "低电量，发短信给"+sosNumbers[0]);
+                    } catch (Exception e) {
+
+                    }
                     break;
             }
         }
@@ -415,6 +470,7 @@ public class GuideActivity extends Activity {
         phoneFilter.addAction("com.ctyon.shawn.STEAL_CALL");
         phoneFilter.addAction("android.intent.action.BATTERY_LOW");
         phoneFilter.addAction("com.ctyon.shawn.ADD_CONTACT");
+        phoneFilter.addAction("com.ctyon.shawn.CONFIRM_DIAL_SOS");
         registerReceiver(phoneReceiver, phoneFilter);
 
         android.telephony.TelephonyManager telManager = (android.telephony.TelephonyManager) getSystemService(android.content.Context.TELEPHONY_SERVICE);
@@ -481,6 +537,71 @@ public class GuideActivity extends Activity {
             }
         }
         return false;
+    }
+
+    /**
+     * 获取电池电量,0~1
+     *
+     * @param context
+     * @return
+     */
+    public float getBattery(Context context) {
+        Intent batteryInfoIntent = context.getApplicationContext().registerReceiver(null,new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+        int status = batteryInfoIntent.getIntExtra("status", 0);
+        int health = batteryInfoIntent.getIntExtra("health", 1);
+        boolean present = batteryInfoIntent.getBooleanExtra("present", false);
+        int level = batteryInfoIntent.getIntExtra("level", 0);
+        int scale = batteryInfoIntent.getIntExtra("scale", 0);
+        int plugged = batteryInfoIntent.getIntExtra("plugged", 0);
+        int voltage = batteryInfoIntent.getIntExtra("voltage", 0);
+        int temperature = batteryInfoIntent.getIntExtra("temperature", 0);
+        String technology = batteryInfoIntent.getStringExtra("technology");
+        return ((float) level) / scale;
+    }
+
+    public boolean getRecordState() {
+        int minBuffer = AudioRecord.getMinBufferSize(44100, AudioFormat.CHANNEL_IN_MONO, AudioFormat.ENCODING_PCM_16BIT);
+        AudioRecord audioRecord = new AudioRecord(MediaRecorder.AudioSource.DEFAULT, 44100, AudioFormat.CHANNEL_IN_MONO, AudioFormat.ENCODING_PCM_16BIT, (minBuffer * 100));
+        short[] point = new short[minBuffer];
+        int readSize = 0;
+        try {
+            audioRecord.startRecording();
+        } catch (Exception e) {
+            if (audioRecord != null) {
+                audioRecord.release();
+                audioRecord = null;
+                Log.i("shipeixian","startRecording():" + e);
+            }
+            return false;
+        }
+        if (audioRecord.getRecordingState() != AudioRecord.RECORDSTATE_RECORDING) {
+            if (audioRecord != null) {
+                audioRecord.stop();
+                audioRecord.release();
+                audioRecord = null;
+            }
+            Log.d("shipeixian","audio input has been occupied");
+            return false;
+        } else {
+            readSize = audioRecord.read(point, 0, point.length);
+            if (readSize <= 0) {
+                if (audioRecord != null) {
+                    audioRecord.stop();
+                    audioRecord.release();
+                    audioRecord = null;
+                }
+                Log.d("shipeixian","result of audiorecord is empty");
+                return false;
+            } else {
+                if (audioRecord != null) {
+                    audioRecord.stop();
+                    audioRecord.release();
+                    audioRecord = null;
+                }
+                Log.d("shipeixian","result of audiorecord is not empty");
+                return true;
+            }
+        }
     }
 
 }

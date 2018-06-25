@@ -24,6 +24,7 @@ import java.util.List;
 //add by shipeixian for adjust ui begin
 import android.widget.Button;
 //add by shipeixian for adjust ui end
+import android.provider.Settings;
 
 /**
  * 闹钟主界面
@@ -102,6 +103,7 @@ public class AlarmListActivity extends BaseActivity {
                                 //add by shipeixian for adjust ui begin
                                 if(list.size() == 0) {
                                      tipText.setVisibility(View.VISIBLE);
+                                     Settings.Global.putInt(getContentResolver(), "isAlarmSet", 0);
                                 }
                                 //add by shipeixian for adjust ui end
                             }

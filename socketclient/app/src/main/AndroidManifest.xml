@@ -109,6 +109,7 @@
 
         <activity android:name=".app.activity.XCameraActivity" android:theme="@style/OnePixelActivity"/>
         <activity android:name=".app.activity.ShowImedActivity" android:configChanges="orientation|keyboardHidden|screenSize" android:launchMode="singleTop"/>
+        <activity android:name=".app.activity.ShowTokenActivity" android:configChanges="orientation|keyboardHidden|screenSize" android:launchMode="singleTop"/>
     </application>
 
 </manifest>

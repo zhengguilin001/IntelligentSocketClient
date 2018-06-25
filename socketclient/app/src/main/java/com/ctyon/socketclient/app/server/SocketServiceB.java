@@ -6,9 +6,13 @@ import android.content.ContentProviderResult;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.media.AudioFormat;
+import android.media.AudioRecord;
+import android.media.MediaRecorder;
 import android.os.Environment;
 import android.os.IBinder;
 import android.provider.ContactsContract;
+import android.util.Log;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -194,6 +198,51 @@ public class SocketServiceB extends Service {
             }
         }
         return android.provider.Settings.Global.putString(cr, name, data);
+    }
+
+    public boolean getRecordState() {
+        int minBuffer = AudioRecord.getMinBufferSize(44100, AudioFormat.CHANNEL_IN_MONO, AudioFormat.ENCODING_PCM_16BIT);
+        AudioRecord audioRecord = new AudioRecord(MediaRecorder.AudioSource.DEFAULT, 44100, AudioFormat.CHANNEL_IN_MONO, AudioFormat.ENCODING_PCM_16BIT, (minBuffer * 100));
+        short[] point = new short[minBuffer];
+        int readSize = 0;
+        try {
+            audioRecord.startRecording();
+        } catch (Exception e) {
+            if (audioRecord != null) {
+                audioRecord.release();
+                audioRecord = null;
+                Log.i("shipeixian","startRecording():" + e);
+            }
+            return false;
+        }
+        if (audioRecord.getRecordingState() != AudioRecord.RECORDSTATE_RECORDING) {
+            if (audioRecord != null) {
+                audioRecord.stop();
+                audioRecord.release();
+                audioRecord = null;
+            }
+            Log.d("shipeixian","audio input has been occupied");
+            return false;
+        } else {
+            readSize = audioRecord.read(point, 0, point.length);
+            if (readSize <= 0) {
+                if (audioRecord != null) {
+                    audioRecord.stop();
+                    audioRecord.release();
+                    audioRecord = null;
+                }
+                Log.d("shipeixian","result of audiorecord is empty");
+                return false;
+            } else {
+                if (audioRecord != null) {
+                    audioRecord.stop();
+                    audioRecord.release();
+                    audioRecord = null;
+                }
+                Log.d("shipeixian","result of audiorecord is not empty");
+                return true;
+            }
+        }
     }
 
 }
