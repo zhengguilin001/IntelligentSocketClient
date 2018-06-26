@@ -19,7 +19,9 @@ import java.util.List;
  */
 
 public class Modem2Utils {
-    private static final String TAG = ModemUtils.class.getSimpleName();
+    //private static final String TAG = ModemUtils.class.getSimpleName();
+    private static final String TAG = "shipeixian";
+    //"cells":[{"mcc":460,"mnc":0,"lac":10342,"ci":45736962,"rxlev":8}]
 
     public static Modem getModemCell(Context ctx) {
         //      通过MNC判断
@@ -36,8 +38,29 @@ public class Modem2Utils {
         String operator = telManager.getNetworkOperator();
         int mcc = Integer.parseInt(operator.substring(0, 3));
         int mnc = Integer.parseInt(operator.substring(3));
-        int lac = 10342;
-        int cellId = 45736962;
+        int lac = 0;
+        int cellId = 0;
+        try {
+
+            @SuppressLint("MissingPermission") GsmCellLocation location = (GsmCellLocation) telManager.getCellLocation();
+            lac = location.getLac();
+            cellId = location.getCid();
+            Log.i(TAG, "基站来了1 MCC = " + mcc + "\t MNC = " + mnc + "\t LAC = " + lac + "\t CID = " + cellId);
+        } catch (Exception e) {
+
+        }
+
+        /*try {
+            // 中国电信获取LAC、CID的方式
+            @SuppressLint("MissingPermission") CdmaCellLocation location1 = (CdmaCellLocation) telManager.getCellLocation();
+            lac = location1.getNetworkId();
+            cellId = location1.getBaseStationId();
+            cellId /= 16;
+            Log.i(TAG, "基站来了2 MCC = " + mcc + "\t MNC = " + mnc + "\t LAC = " + lac + "\t CID = " + cellId);
+        } catch (Exception e) {
+
+        }*/
+
         if (imsi != null) {
 //            if (imsi.startsWith("46000") || imsi.startsWith("46002") || imsi.startsWith("46007")) {//因为移动网络编号46000下的IMSI已经用完，所以虚拟了一个46002编号，134/159号段使用了此编号
 //                //中国移动
@@ -51,14 +74,14 @@ public class Modem2Utils {
                 @SuppressLint("MissingPermission") GsmCellLocation location = (GsmCellLocation) telManager.getCellLocation();
                 lac = location.getLac();
                 cellId = location.getCid();
-                Log.i(TAG, " MCC = " + mcc + "\t MNC = " + mnc + "\t LAC = " + lac + "\t CID = " + cellId);
+                Log.i(TAG, "不是中国电信 MCC = " + mcc + "\t MNC = " + mnc + "\t LAC = " + lac + "\t CID = " + cellId);
             } else if (imsi.startsWith("46003")) {
                 // 中国电信获取LAC、CID的方式
                 @SuppressLint("MissingPermission") CdmaCellLocation location1 = (CdmaCellLocation) telManager.getCellLocation();
                 lac = location1.getNetworkId();
                 cellId = location1.getBaseStationId();
                 cellId /= 16;
-                Log.i(TAG, " MCC = " + mcc + "\t MNC = " + mnc + "\t LAC = " + lac + "\t CID = " + cellId);
+                Log.i(TAG, "中国电信 MCC = " + mcc + "\t MNC = " + mnc + "\t LAC = " + lac + "\t CID = " + cellId);
             }
         }
         // 获取邻区基站信息

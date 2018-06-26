@@ -36,6 +36,7 @@
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.SHUTDOWN" />
     <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
     <!-- 以下AndroidStudio3.0下使用多渠道打包 -->
@@ -130,6 +131,10 @@
             android:launchMode="singleTop" />
         <activity
             android:name="com.ctyon.socketclient.app.activity.ShowTokenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.ctyon.socketclient.app.activity.ConfirmUnbindActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:launchMode="singleTop" />
         <!--

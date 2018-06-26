@@ -798,6 +798,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/ctyon/debug/slices/slice_8.apk" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/ctyon/debug/slices/slice_9.apk" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/desugar/ctyon/debug/8/com/ctyon/socketclient/App$MyDaemonListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/desugar/ctyon/debug/8/com/ctyon/socketclient/app/server/SocketService$$Lambda$0.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/desugar/ctyon/debug/8/com/example/location/R$anim.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/desugar/ctyon/debug/8/com/example/location/R$attr.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/desugar/ctyon/debug/8/com/example/location/R$bool.class" afterPath="" />
@@ -3847,6 +3848,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/desugar/ctyon/debug/47.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/desugar/ctyon/debug/47.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/desugar/ctyon/debug/48.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/desugar/ctyon/debug/48.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/desugar/ctyon/debug/49.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/desugar/ctyon/debug/49.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/desugar/ctyon/debug/5.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/desugar/ctyon/debug/5.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/desugar/ctyon/debug/50.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/desugar/ctyon/debug/50.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/desugar/ctyon/debug/51.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/desugar/ctyon/debug/51.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/desugar/ctyon/debug/52.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/desugar/ctyon/debug/52.jar" />
@@ -4314,6 +4316,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/location/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/location/src/main/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/location/src/main/java/com/example/location/AMapLocationImp.java" afterPath="$PROJECT_DIR$/location/src/main/java/com/example/location/AMapLocationImp.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phone/phone.iml" afterPath="$PROJECT_DIR$/phone/phone.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phone/src/main/java/com/xmaihh/phone/support/hardware/Modem2Utils.java" afterPath="$PROJECT_DIR$/phone/src/main/java/com/xmaihh/phone/support/hardware/Modem2Utils.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/socket/socket.iml" afterPath="$PROJECT_DIR$/socket/socket.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/socket/src/main/java/com/xuhao/android/libsocket/sdk/OkSocketOptions.java" afterPath="$PROJECT_DIR$/socket/src/main/java/com/xuhao/android/libsocket/sdk/OkSocketOptions.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/socketclient.iml" afterPath="$PROJECT_DIR$/socketclient.iml" />
@@ -4362,26 +4365,28 @@
       <file leaf-file-name="SocketService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/app/server/SocketService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="446">
-              <caret line="1029" column="0" lean-forward="false" selection-start-line="1029" selection-start-column="0" selection-end-line="1029" selection-end-column="0" />
+            <state relative-caret-position="813">
+              <caret line="1423" column="9" lean-forward="false" selection-start-line="1423" selection-start-column="9" selection-end-line="1423" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1529924860022" expanded="false" signature="40219:40254" ph=" { " />
-                <marker date="1529924860022" expanded="false" signature="40273:40303" ph=" }" />
-                <marker date="1529924860022" expanded="false" signature="66435:66450" ph=" { " />
-                <marker date="1529924860022" expanded="false" signature="66482:66492" ph=" }" />
-                <marker date="1529924860022" expanded="false" signature="66549:66564" ph=" { " />
-                <marker date="1529924860022" expanded="false" signature="66592:66602" ph=" }" />
+                <element signature="e#62277#62278#0" expanded="true" />
+                <element signature="e#62325#62326#0" expanded="true" />
+                <marker date="1529996448834" expanded="false" signature="40664:40699" ph=" { " />
+                <marker date="1529996448834" expanded="false" signature="40718:40748" ph=" }" />
+                <marker date="1529996448834" expanded="false" signature="65029:65044" ph=" { " />
+                <marker date="1529996448834" expanded="false" signature="65076:65086" ph=" }" />
+                <marker date="1529996448834" expanded="false" signature="65143:65158" ph=" { " />
+                <marker date="1529996448834" expanded="false" signature="65186:65196" ph=" }" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SocketServiceB.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/app/server/SocketServiceB.java">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/app/activity/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="10" selection-end-column="35" />
+            <state relative-caret-position="-6868">
+              <caret line="112" column="0" lean-forward="false" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -4390,24 +4395,21 @@
       <file leaf-file-name="SendData.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/project/senddata/publish/SendData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="68" column="26" lean-forward="false" selection-start-line="68" selection-start-column="26" selection-end-line="68" selection-end-column="26" />
+            <state relative-caret-position="432">
+              <caret line="55" column="55" lean-forward="true" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
               <folding>
-                <marker date="1529669204265" expanded="true" signature="1930:2084" ph="//..." />
+                <marker date="1530002414926" expanded="true" signature="2034:2188" ph="//..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WxchatActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wxchat/src/main/java/me/example/wxchat/app/WxchatActivity.java">
+      <file leaf-file-name="Modem2Utils.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/phone/src/main/java/com/xmaihh/phone/support/hardware/Modem2Utils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="281" column="50" lean-forward="false" selection-start-line="281" selection-start-column="50" selection-end-line="281" selection-end-column="50" />
-              <folding>
-                <element signature="e#12569#12570#0" expanded="true" />
-                <element signature="e#12645#12646#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="520">
+              <caret line="59" column="31" lean-forward="true" selection-start-line="59" selection-start-column="31" selection-end-line="59" selection-end-column="31" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -4418,8 +4420,8 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1660">
-              <caret line="83" column="34" lean-forward="false" selection-start-line="83" selection-start-column="34" selection-end-line="83" selection-end-column="34" />
+            <state relative-caret-position="180">
+              <caret line="9" column="67" lean-forward="false" selection-start-line="9" selection-start-column="67" selection-end-line="9" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -4438,17 +4440,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>MSG_REMOTE_PHOTO</find>
-      <find>locatioin</find>
-      <find>gpsLocationManager</find>
-      <find>GpsTool.toggleGps(getApplicationContext(), false)</find>
-      <find>上传成功</find>
-      <find>4444</find>
-      <find>address_book_friend_big.png</find>
-      <find>address_book_friend_big.pn</find>
-      <find>address_book_friend_big.p</find>
-      <find>address_book_friend_big.</find>
-      <find>address_book_friend_big</find>
       <find>uploa</find>
       <find>address_book_custom_big</find>
       <find>address_book_apply_small.png</find>
@@ -4468,6 +4459,17 @@
       <find>语音</find>
       <find>30</find>
       <find>sos</find>
+      <find>mcc</find>
+      <find>lac</find>
+      <find>cellId</find>
+      <find>startloc</find>
+      <find>4403</find>
+      <find>mnc</find>
+      <find>MSG_TIMER_LOCK</find>
+      <find>regist</find>
+      <find>just</find>
+      <find>unbin</find>
+      <find>justf</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -16165,9 +16167,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/app/activity/GpsTestActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/app/activity/NettyClient.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/project/model/json.txt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/App.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/arrays.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/app/receive/ScreenReceiver.java" />
@@ -16187,14 +16186,10 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/project/util/PinyinDemo.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/project/util/PinYinUtil.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/app/activity/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/app/location/GPSLocationListener.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/app/location/GPSLocationManager.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/project/senddata/publish/SendData.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/app/activity/CameraActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/app/network/NetEvent.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/app/network/NetBroadcastReceiver.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/app/activity/XCameraActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_show_imed.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/app/activity/ShowImedActivity.java" />
@@ -16207,23 +16202,30 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/project/model/ForbidUseModel.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/project/util/DateUtil.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/app/activity/ShowTokenActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/wxchat/src/main/res/layout/activity_wxchat.xml" />
         <option value="$PROJECT_DIR$/voice/build.gradle" />
         <option value="$PROJECT_DIR$/voice/src/main/java/com/xmaihh/voice/RecordButton.java" />
         <option value="$PROJECT_DIR$/wxchat/src/main/java/me/example/wxchat/app/WxchatActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_confirm_sos.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/app/server/SocketService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/app/activity/ConfirmSosActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/app/server/SocketServiceB.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/app/activity/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_confirm_unbind.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/app/network/NetEvent.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/app/network/NetBroadcastReceiver.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/app/activity/ConfirmUnbindActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/app/server/SocketService.java" />
+        <option value="$PROJECT_DIR$/phone/src/main/java/com/xmaihh/phone/support/hardware/Modem2Utils.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/project/senddata/publish/SendData.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="64" />
-    <option name="y" value="-11" />
-    <option name="width" value="1857" />
-    <option name="height" value="1092" />
+    <option name="x" value="65" />
+    <option name="y" value="-4" />
+    <option name="width" value="1855" />
+    <option name="height" value="1084" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -16990,6 +16992,10 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="receive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -17026,6 +17032,40 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="network" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="socketclient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="socketclient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="socketclient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -17268,7 +17308,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1529931079451" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1530002439438" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -17316,7 +17356,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1529931079451" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1530002439438" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -17499,7 +17539,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1529931079451" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1530002439438" />
       </method>
     </configuration>
     <configuration default="false" name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
@@ -17548,7 +17588,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1529931079451" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1530002439438" />
       </method>
     </configuration>
     <configuration default="false" name="weather" type="AndroidRunConfigurationType" factoryName="Android App">
@@ -17597,7 +17637,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1529931079453" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1530002439438" />
       </method>
     </configuration>
     <list size="3">
@@ -17647,9 +17687,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
+    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947367" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24" sideWeight="0.49806094" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -17666,7 +17707,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.75789475" sideWeight="0.50193906" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2498615" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2498615" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -17690,22 +17731,12 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PROJECT_DIR$/app/libs/pinyin4j-2.5.0.jar!/com/hp/hpl/sparta/xpath/AttrEqualsExpr.class" />
-    <entry file="jar://$PROJECT_DIR$/app/libs/pinyin4j-2.5.0.jar!/pinyindb/pinyin_mapping.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/project/util/PinYinUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/app/activity/NewMessageTipActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="659">
           <caret line="133" column="0" lean-forward="true" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <marker date="1529560629638" expanded="false" signature="5796:5819" ph=" { " />
             <marker date="1529560629638" expanded="false" signature="5841:5859" ph=" }" />
           </folding>
@@ -17713,14 +17744,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/app/activity/WifiTestActivity.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/app/activity/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="104" column="57" lean-forward="true" selection-start-line="104" selection-start-column="57" selection-end-line="104" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/phone/src/main/java/com/xmaihh/phone/support/hardware/PowerUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="627">
@@ -17781,14 +17804,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1520">
-          <caret line="76" column="50" lean-forward="false" selection-start-line="76" selection-start-column="50" selection-end-line="76" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/Android/Sdk/platforms/android-26/android.jar!/android/provider/Settings.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="307">
@@ -17796,26 +17811,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/app/network/NetEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/app/location/GPSLocationManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="681">
           <caret line="128" column="16" lean-forward="false" selection-start-line="128" selection-start-column="16" selection-end-line="128" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/app/network/NetBroadcastReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="38" column="9" lean-forward="true" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -17909,7 +17908,7 @@
         <state relative-caret-position="40">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -17957,10 +17956,10 @@
         <state relative-caret-position="446">
           <caret line="270" column="5" lean-forward="false" selection-start-line="270" selection-start-column="5" selection-end-line="270" selection-end-column="5" />
           <folding>
-            <element signature="e#6235#6363#0" expanded="true" />
-            <element signature="e#6362#6363#0" expanded="true" />
-            <element signature="e#7074#8826#0" expanded="true" />
-            <element signature="e#8825#8826#0" expanded="true" />
+            <element signature="e#6235#6363#0" expanded="false" />
+            <element signature="e#6362#6363#0" expanded="false" />
+            <element signature="e#7074#8826#0" expanded="false" />
+            <element signature="e#8825#8826#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -18025,29 +18024,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/app/activity/ConfirmSosActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="31" column="30" lean-forward="true" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3905#3906#0" expanded="true" />
-            <element signature="e#3969#3970#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_confirm_sos.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="37" column="33" lean-forward="false" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/app/activity/ShowTokenActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="481">
@@ -18056,13 +18032,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/project/senddata/publish/SendData.java">
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="68" column="26" lean-forward="false" selection-start-line="68" selection-start-column="26" selection-end-line="68" selection-end-column="26" />
+        <state relative-caret-position="521">
+          <caret line="73" column="9" lean-forward="false" selection-start-line="73" selection-start-column="9" selection-end-line="73" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phone/src/main/java/com/xmaihh/phone/project/model/Modem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="661">
+          <caret line="53" column="15" lean-forward="false" selection-start-line="53" selection-start-column="15" selection-end-line="53" selection-end-column="15" />
           <folding>
-            <marker date="1529669204265" expanded="true" signature="1930:2084" ph="//..." />
+            <element signature="e#1056#1057#0" expanded="false" />
+            <element signature="e#1081#1082#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Android/Sdk/platforms/android-26/android.jar!/android/media/AudioManager.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="796">
+          <caret line="284" column="15" lean-forward="false" selection-start-line="284" selection-start-column="15" selection-end-line="284" selection-end-column="15" />
+          <folding>
+            <element signature="e#7794#7795#0" expanded="true" />
+            <element signature="e#7845#7846#0" expanded="true" />
+            <element signature="e#10448#10449#0" expanded="true" />
+            <element signature="e#10499#10500#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/app/network/NetEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="31" lean-forward="false" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_confirm_unbind.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="539">
+          <caret line="29" column="46" lean-forward="true" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/app/network/NetBroadcastReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="46" column="47" lean-forward="false" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/app/server/SocketServiceB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2862">
+          <caret line="14" column="24" lean-forward="false" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/app/activity/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6868">
+          <caret line="112" column="0" lean-forward="false" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -18077,37 +18118,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/app/activity/ConfirmUnbindActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="56" column="63" lean-forward="true" selection-start-line="56" selection-start-column="63" selection-end-line="56" selection-end-column="63" />
+          <folding>
+            <element signature="e#2162#2163#0" expanded="true" />
+            <element signature="e#2195#2196#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider editor-type-id="android-manifest">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1660">
-          <caret line="83" column="34" lean-forward="false" selection-start-line="83" selection-start-column="34" selection-end-line="83" selection-end-column="34" />
+        <state relative-caret-position="180">
+          <caret line="9" column="67" lean-forward="false" selection-start-line="9" selection-start-column="67" selection-end-line="9" selection-end-column="67" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/app/server/SocketService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="1029" column="0" lean-forward="false" selection-start-line="1029" selection-start-column="0" selection-end-line="1029" selection-end-column="0" />
+        <state relative-caret-position="813">
+          <caret line="1423" column="9" lean-forward="false" selection-start-line="1423" selection-start-column="9" selection-end-line="1423" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1529924860022" expanded="false" signature="40219:40254" ph=" { " />
-            <marker date="1529924860022" expanded="false" signature="40273:40303" ph=" }" />
-            <marker date="1529924860022" expanded="false" signature="66435:66450" ph=" { " />
-            <marker date="1529924860022" expanded="false" signature="66482:66492" ph=" }" />
-            <marker date="1529924860022" expanded="false" signature="66549:66564" ph=" { " />
-            <marker date="1529924860022" expanded="false" signature="66592:66602" ph=" }" />
+            <element signature="e#62277#62278#0" expanded="true" />
+            <element signature="e#62325#62326#0" expanded="true" />
+            <marker date="1529996448834" expanded="false" signature="40664:40699" ph=" { " />
+            <marker date="1529996448834" expanded="false" signature="40718:40748" ph=" }" />
+            <marker date="1529996448834" expanded="false" signature="65029:65044" ph=" { " />
+            <marker date="1529996448834" expanded="false" signature="65076:65086" ph=" }" />
+            <marker date="1529996448834" expanded="false" signature="65143:65158" ph=" { " />
+            <marker date="1529996448834" expanded="false" signature="65186:65196" ph=" }" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/app/server/SocketServiceB.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ctyon/socketclient/project/senddata/publish/SendData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="10" selection-end-column="35" />
+        <state relative-caret-position="432">
+          <caret line="55" column="55" lean-forward="true" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
+          <folding>
+            <marker date="1530002414926" expanded="true" signature="2034:2188" ph="//..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phone/src/main/java/com/xmaihh/phone/support/hardware/Modem2Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="59" column="31" lean-forward="true" selection-start-line="59" selection-start-column="31" selection-end-line="59" selection-end-column="31" />
           <folding />
         </state>
       </provider>

@@ -9,4 +9,5 @@ public interface NetEvent {
     void onUploadPhoto(boolean isUploadSucess);
     void onUnbindWatch();
     void onShowImed();
+    void onReallyUnbindWatch();
 }

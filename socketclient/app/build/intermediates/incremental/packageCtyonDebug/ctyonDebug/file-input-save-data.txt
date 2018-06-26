@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Jun 25 20:40:27 CST 2018
+#Tue Jun 26 16:09:30 CST 2018
 4.path=lib/armeabi/libdaemon_api21.so
 13.baseType=DIRECTORY
 8.set=NATIVE_RESOURCE

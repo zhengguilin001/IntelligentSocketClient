@@ -7,7 +7,11 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.location.Location;
 import android.location.LocationManager;
+import android.media.AudioFormat;
+import android.media.AudioManager;
+import android.media.AudioRecord;
 import android.media.MediaPlayer;
+import android.media.MediaRecorder;
 import android.net.ConnectivityManager;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiManager;
@@ -15,6 +19,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.IBinder;
 import android.os.Message;
+import android.os.PowerManager;
 import android.os.Process;
 import android.provider.Settings;
 import android.text.TextUtils;
@@ -24,6 +29,7 @@ import android.view.Gravity;
 import com.ctyon.socketclient.App;
 import com.ctyon.socketclient.BuildConfig;
 import com.ctyon.socketclient.R;
+import com.ctyon.socketclient.app.activity.ConfirmUnbindActivity;
 import com.ctyon.socketclient.app.activity.ShowImedActivity;
 import com.ctyon.socketclient.app.activity.ShowTokenActivity;
 import com.ctyon.socketclient.app.activity.XCameraActivity;
@@ -98,6 +104,8 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
     String path = Environment.getExternalStorageDirectory().getAbsolutePath();
     String file = "/weather.json";
 
+    private int cycleLocationTime = 0;
+
     private int ident = 999999;
 
     //add by shipeixian on 2018-05-24 begin
@@ -168,11 +176,11 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
             //关闭GPS
             //GpsTool.toggleGps(getApplicationContext(), false);
             //关闭wifi
-            WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
+            /*WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
             wifiManager.setWifiEnabled(false);
             if (!wifiManager.isWifiEnabled()) {
                 Log.i(TAG, "wifi是关闭的");
-            }
+            }*/
             //还未登录，取消登录通知图标
             cancelNotification();
         } catch (Exception e) {
@@ -205,6 +213,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
             filter.addAction("com.ctyon.shawn.UPLOAD_PHOTO");
             filter.addAction("unbind_watch");
             filter.addAction("show_imed");
+            filter.addAction("com.ctyon.shawn.REALLY_UNBIND_WATCH");
             registerReceiver(netBroadcastReceiver, filter);
             //设置监听
             netBroadcastReceiver.setNetEvent(this);
@@ -217,6 +226,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
             filter.addAction(Intent.ACTION_SCREEN_OFF);
             registerReceiver(screenReceiver, filter);
         }
+
     }
 
     private void resetSocket() {
@@ -234,10 +244,10 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
         //add by shipeixian on 2018-05-24 end
 
         //没写imei号，则return
-        String imei = DeviceUtils.getIMEI(App.getsContext());
+        /*String imei = DeviceUtils.getIMEI(App.getsContext());
         if (imei.startsWith("0")&&imei.endsWith("0")){
             return;
-        }
+        }*/
         //如果没有网络,return
         if (NetUtil.getNetWorkState(getApplicationContext()) == -1) {
             return;
@@ -622,6 +632,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                             }
                             Settings.Global.putInt(getContentResolver(),
                                     Constants.MODEL.SETTINGS.GLOBAL_TIMER_LOCK, timer);
+                            mHandler.removeMessages(Constants.COMMON.MSG.MSG_TIMER_LOCK);
                             mHandler.obtainMessage(Constants.COMMON.MSG.MSG_TIMER_LOCK).sendToTarget();
                             break;
                         case Constants.COMMON.TYPE.TYPE_CALL_STRATEGY:
@@ -894,7 +905,12 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                 break;
             case Constants.COMMON.MSG.MSG_TIMER_LOCK:
                 mHandler.removeMessages(4403);
-                RxTimeUtil.cancel();
+                int cycleTime = Settings.Global.getInt(getContentResolver(), Constants.MODEL.SETTINGS.GLOBAL_TIMER_LOCK, 180);
+                if (mManager != null && mManager.isConnect()) {
+                    startLocationWithSuperMethod();
+                }
+                mHandler.sendEmptyMessageDelayed(Constants.COMMON.MSG.MSG_TIMER_LOCK, 1000*cycleTime);
+                /*RxTimeUtil.cancel();
                 int time = (int) msg.obj;
                 //重新设置定时上传定位的时间
                 RxTimeUtil.interval(1000 * time, number -> {
@@ -903,7 +919,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                             }
                             AMapLocationImp.buildLocationClient(App.getsContext(), mHandler).startLocation();
 
-                            //***每天更新天气信息
+                            /*//***每天更新天气信息
                             SimpleDateFormat df = new SimpleDateFormat("HH:mm");//设置日期格式
                             boolean isInTime = TimeUtils.isInTime("02:00-10:00", df.format(new Date()));
                             //如果当天未更新天气信息，则将自动从服务器获取一次
@@ -915,7 +931,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                                 }
                             }
                         }
-                );
+                );*/
                 break;
             case 4400:
                 if (msg.obj == null) {
@@ -950,7 +966,8 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
             case 4403:
                 //默认正常模式，每10分钟上传一次定位
                 startLocationWithNetwork();
-                mHandler.sendEmptyMessageDelayed(4403, 10 * 60 * 1000);
+                mHandler.sendEmptyMessageDelayed(Constants.COMMON.MSG.MSG_TIMER_LOCK, 3*60*1000);
+
                 break;
             case 4404:
                 if (isWaitingServerResponse) {
@@ -1054,7 +1071,13 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
      */
     private void startLocationWithSuperMethod() {
 
-        try {
+        //发送基站信息
+        if (mManager != null && mManager.isConnect()) {
+            mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_LOCATION_C));
+            Log.i("shipeixian", "handler 上传基站定位数据包");
+        }
+
+        /*try {
             //打开GPS开关
             GpsTool.toggleGps(getApplicationContext(), true);
             //打开wifi开关
@@ -1111,56 +1134,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                     }
                 }
             }
-        }, 8000);
-        //开启GPS服务
-        /*startGpsService();
-        mHandler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if (longtitude != 0 && lantitude != 0) {
-                    if (mManager != null && mManager.isConnect()) {
-                        mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_LOCATION_C, longtitude+"", lantitude+""));
-                        Log.i("shipeixian", "handler 上传GPS定位数据包");
-                        closeGpsAndWifi();
-                    }
-                } else {
-                    //获取WiFi列表
-                    getWifiListInfo();
-                    mHandler.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            if (TextUtils.isEmpty(wifiListInfo)) {
-                                if (mManager != null && mManager.isConnect()) {
-                                    mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_LOCATION_C));
-                                    Log.i("shipeixian", "handler 上传基站定位数据包");
-                                    closeGpsAndWifi();
-                                }
-                            } else {
-                                String[] wifiArray = wifiListInfo.split("/");
-                                if (wifiArray.length >= 6) {
-                                    if (mManager != null && mManager.isConnect()) {
-                                        if (wifiArray.length >= 9) {
-                                            mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_LOCATION_C, wifiArray[0], wifiArray[1], wifiArray[2], wifiArray[3], wifiArray[4], wifiArray[5], wifiArray[6], wifiArray[7], wifiArray[8]));
-                                        } else if (wifiArray.length == 6) {
-                                            mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_LOCATION_C, wifiArray[0], wifiArray[1], wifiArray[2], wifiArray[3], wifiArray[4], wifiArray[5]));
-                                        }
-                                        Log.i("shipeixian", "handler 上传wifi定位数据包");
-                                        closeGpsAndWifi();
-                                    }
-                                } else {
-                                    if (mManager != null && mManager.isConnect()) {
-                                        mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_LOCATION_C));
-                                        Log.i("shipeixian", "handler 上传基站定位数据包");
-                                        closeGpsAndWifi();
-                                    }
-                                }
-                            }
-                        }
-                    }, 10000);
-
-                }
-            }
-        }, 10000);*/
+        }, 8000);*/
 
     }
 
@@ -1278,8 +1252,19 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
 
     @Override
     public void onUnbindWatch() {
+        startActivity(new Intent(this, ConfirmUnbindActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+    }
+
+    @Override
+    public void onReallyUnbindWatch() {
         if (mManager != null && mManager.isConnect()) {
             mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_MASTER_UNTIE));
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    reboot();
+                }
+            }, 2500);
         }
     }
 
@@ -1582,6 +1567,16 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                 break;
         }
         return week;
+    }
+
+    private void reboot() {
+        PowerManager pManager = (PowerManager) getSystemService(Context.POWER_SERVICE);
+        try {
+            pManager.reboot("unbind_watch");
+        } catch (Exception e) {
+            // TODO: handle exception
+            e.printStackTrace();
+        }
     }
 
 }

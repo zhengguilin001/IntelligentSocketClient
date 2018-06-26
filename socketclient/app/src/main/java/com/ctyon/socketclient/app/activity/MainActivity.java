@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity implements SafeHandler.Handl
         ButterKnife.bind(this);
         //initData();
 //        initializeSocket();
-        //startService(new Intent(this, SocketService.class));
+        startService(new Intent(this, SocketService.class));
         //mHandler = new SafeHandler<MainActivity>(this);
         Log.i("shipeixian", "com.ctyon.socketclient comming");
     }

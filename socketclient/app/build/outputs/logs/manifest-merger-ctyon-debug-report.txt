@@ -1,16 +1,16 @@
 -- Merging decision tree log ---
 meta-data#CHANNEL
-INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:43:5-45:44
+INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:44:5-46:44
 	android:value
 		INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:45:9-41
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:46:9-41
 	android:name
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:44:9-31
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:45:9-31
 manifest
-ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-115:12
-INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-115:12
-INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-115:12
-INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-115:12
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-117:12
+INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-117:12
+INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-117:12
+INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-117:12
 MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-47:12
 MERGED from [com.github.hss01248:NotifyUtil:1.0.1] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/NotifyUtil-1.0.1.aar/64540cee893e286178ab9e12e6feb3f0/AndroidManifest.xml:2:1-17:12
 MERGED from [:wxchat] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/wxchat/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-42:12
@@ -48,9 +48,9 @@ MERGED from [com.android.support:support-compat:26.1.0] /home/shipeixian/.gradle
 MERGED from [android.arch.lifecycle:runtime:1.0.3] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/5eac6832f82618fad35b2f235ecde8f8/AndroidManifest.xml:17:1-24:12
 MERGED from [com.lzy.net:okserver:2.0.5] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/okserver-2.0.5.aar/411a751041ce7e49f0f58912d1af2457/AndroidManifest.xml:17:1-27:12
 MERGED from [com.lzy.net:okgo:3.0.4] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/okgo-3.0.4.aar/44c8b7a08e2fb1509bad315ffb486acc/AndroidManifest.xml:17:1-31:12
-INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-115:12
-INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-115:12
-INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-115:12
+INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-117:12
+INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-117:12
+INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-117:12
 	package
 		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:4:5-37
 		INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml
@@ -59,13 +59,13 @@ INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app
 		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:5:5-46
 	android:versionName
 		INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-115:12
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-117:12
 		INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml
 	xmlns:tools
 		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-115:12
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:1-117:12
 		INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:2:11-69
@@ -214,7 +214,7 @@ MERGED from [:phone] /home/shipeixian/Projects/IntelligentSocketClient/socketcli
 uses-permission#android.permission.WRITE_SECURE_SETTINGS
 ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:27:5-80
 	tools:ignore
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:41:9-44
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:42:9-44
 	android:name
 		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:27:22-77
 uses-permission#android.permission.CHANGE_WIFI_STATE
@@ -236,13 +236,13 @@ ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/sr
 	android:name
 		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:32:22-65
 uses-permission#android.permission.SHUTDOWN
-ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:36:5-38:47
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:37:5-39:47
 	tools:ignore
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:38:9-44
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:39:9-44
 	android:name
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:37:9-51
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:38:9-51
 application
-ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:48:5-113:19
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:49:5-115:19
 MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:33:5-45:19
 MERGED from [:location] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/location/build/intermediates/manifests/full/debug/AndroidManifest.xml:33:5-45:19
 MERGED from [com.github.hss01248:NotifyUtil:1.0.1] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/NotifyUtil-1.0.1.aar/64540cee893e286178ab9e12e6feb3f0/AndroidManifest.xml:11:5-15:19
@@ -290,133 +290,141 @@ MERGED from [com.android.support:support-vector-drawable:26.1.0] /home/shipeixia
 MERGED from [com.android.support:support-compat:26.1.0] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/81e2db3afa336e04cee60aa58f71a5f7/AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:support-compat:26.1.0] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/81e2db3afa336e04cee60aa58f71a5f7/AndroidManifest.xml:25:5-29:19
 	android:supportsRtl
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:54:9-35
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:55:9-35
 	android:label
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:52:9-41
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:53:9-41
 	android:roundIcon
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:53:9-54
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:54:9-54
 	android:icon
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:51:9-43
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:52:9-43
 	android:allowBackup
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:50:9-35
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:51:9-35
 	android:theme
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:55:9-40
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:56:9-40
 		REJECTED from [:wxchat] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/wxchat/build/intermediates/manifests/full/debug/AndroidManifest.xml:19:9-40
 		REJECTED from [:camera] /home/shipeixian/Projects/IntelligentSocketClient/socketclient/camera/build/intermediates/manifests/full/debug/AndroidManifest.xml:29:9-40
 	tools:replace
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:56:9-38
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:57:9-38
 	android:name
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:49:9-28
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:50:9-28
 activity#com.ctyon.socketclient.app.activity.MainActivity
-ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:57:9-68:20
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:58:9-69:20
 	android:name
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:57:19-60
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:58:19-60
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:58:13-67:29
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:59:13-68:29
 action#android.intent.action.MAIN
-ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:59:17-69
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:60:17-69
 	android:name
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:59:25-66
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:60:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:66:17-77
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:67:17-77
 	android:name
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:66:27-74
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:67:27-74
 activity#com.ctyon.socketclient.app.activity.NewMessageTipActivity
-ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:70:9-75:20
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:71:9-76:20
 	android:launchMode
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:70:132-162
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:71:132-162
 	android:configChanges
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:70:70-131
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:71:70-131
 	android:name
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:70:19-69
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:71:19-69
 intent-filter#android.intent.category.DEFAULT+com.ctyon.shawn.MESSAGE_TIP
-ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:71:13-74:29
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:72:13-75:29
 action#com.ctyon.shawn.MESSAGE_TIP
-ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:72:17-70
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:73:17-70
 	android:name
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:72:25-67
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:73:25-67
 category#android.intent.category.DEFAULT
-ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:73:17-76
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:74:17-76
 	android:name
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:73:27-73
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:74:27-73
 activity#com.tencent.bugly.beta.ui.BetaActivity
-ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:77:9-80:64
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:78:9-81:64
 MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:22:9-26:56
 MERGED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:22:9-26:56
 	android:configChanges
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:79:13-81
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:80:13-81
 	android:theme
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:80:13-61
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:81:13-61
 	tools:replace
 		ADDED from [:bugly_crashreport_upgrade-1.3.4:] /home/shipeixian/.gradle/caches/transforms-1/files-1.1/bugly_crashreport_upgrade-1.3.4.aar/72b17e39a143c3ee45d42b4d66d5a625/AndroidManifest.xml:26:13-53
 	android:name
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:78:13-66
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:79:13-66
 receiver#com.ctyon.socketclient.app.receive.BootBroadcastReceiver
-ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:82:9-93:20
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:83:9-94:20
 	android:enabled
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:84:13-35
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:85:13-35
 	android:exported
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:85:13-36
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:86:13-36
 	android:name
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:83:13-62
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:84:13-62
 intent-filter#android.intent.action.BOOT_COMPLETED+android.intent.category.HOME
-ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:86:13-92:29
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:87:13-93:29
 	android:priority
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:87:17-40
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:88:17-40
 action#android.intent.action.BOOT_COMPLETED
-ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:88:17-79
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:89:17-79
 	android:name
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:88:25-76
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:89:25-76
 category#android.intent.category.HOME
-ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:91:17-72
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:92:17-72
 	android:name
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:91:27-70
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:92:27-70
 service#com.ctyon.socketclient.app.server.SocketService
-ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:96:9-99:39
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:97:9-100:39
 	android:enabled
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:98:13-35
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:99:13-35
 	android:exported
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:99:13-36
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:100:13-36
 	android:name
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:97:13-53
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:98:13-53
 service#com.ctyon.socketclient.app.server.SocketServiceB
-ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:100:9-103:39
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:101:9-104:39
 	android:enabled
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:102:13-35
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:103:13-35
 	android:exported
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:103:13-36
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:104:13-36
 	android:name
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:101:13-54
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:102:13-54
 receiver#com.ctyon.socketclient.app.receive.SocketReceiverB
-ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:105:9-108:48
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:106:9-109:48
 	android:enabled
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:107:13-35
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:108:13-35
 	android:exported
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:108:13-36
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:109:13-36
 	android:name
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:106:13-56
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:107:13-56
 activity#com.ctyon.socketclient.app.activity.XCameraActivity
-ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:110:9-105
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:111:9-105
 	android:theme
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:110:64-103
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:111:64-103
 	android:name
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:110:19-63
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:111:19-63
 activity#com.ctyon.socketclient.app.activity.ShowImedActivity
-ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:111:9-159
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:112:9-159
 	android:launchMode
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:111:127-157
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:112:127-157
 	android:configChanges
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:111:65-126
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:112:65-126
 	android:name
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:111:19-64
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:112:19-64
 activity#com.ctyon.socketclient.app.activity.ShowTokenActivity
-ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:112:9-160
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:113:9-160
 	android:launchMode
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:112:128-158
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:113:128-158
 	android:configChanges
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:112:66-127
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:113:66-127
 	android:name
-		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:112:19-65
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:113:19-65
+activity#com.ctyon.socketclient.app.activity.ConfirmUnbindActivity
+ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:114:9-164
+	android:launchMode
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:114:132-162
+	android:configChanges
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:114:70-131
+	android:name
+		ADDED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml:114:19-69
 uses-sdk
 INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/shipeixian/Projects/IntelligentSocketClient/socketclient/app/src/main/AndroidManifest.xml

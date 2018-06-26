@@ -42,6 +42,11 @@ public class NetBroadcastReceiver extends BroadcastReceiver {
                 netEvent.onShowImed();
             }
         }
+        if ("com.ctyon.shawn.REALLY_UNBIND_WATCH".equals(intent.getAction())) {
+            if (netEvent != null) {
+                netEvent.onReallyUnbindWatch();
+            }
+        }
     }
 
     public void setNetEvent(NetEvent netEvent) {
