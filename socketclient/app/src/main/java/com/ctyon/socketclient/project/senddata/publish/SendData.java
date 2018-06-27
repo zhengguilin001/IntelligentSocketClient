@@ -200,8 +200,18 @@ public class SendData implements ISendable {
                         jgps.put(Constants.MODEL.DATA.DATA_DIRECTION, 0);
                         jsonObject.put(Constants.MODEL.DATA.DATA_GPS, jgps);
                     }
-                    //cells
-                    JSONArray jsonArray = new JSONArray();
+                    //telecom 电信
+                    //JSONArray jsonArray = new JSONArray();
+                    JSONObject jm = new JSONObject();
+                    Modem m = Modem2Utils.getModemCell(App.getsContext());
+                    jm.put("sid", m.getSid());
+                    jm.put("nid", m.getNid());
+                    jm.put("bid", m.getBid());
+                    //jsonArray.put(jm);
+                    jsonObject.put("telecomcell", jm);
+
+                    //cells 移动联通
+                    /*JSONArray jsonArray = new JSONArray();
                     JSONObject jm = new JSONObject();
                     Modem m = Modem2Utils.getModemCell(App.getsContext());
                     jm.put(Constants.MODEL.DATA.DATA_MCC, m.getMcc());
@@ -210,7 +220,7 @@ public class SendData implements ISendable {
                     jm.put(Constants.MODEL.DATA.DATA_CI, m.getCi());
                     jm.put(Constants.MODEL.DATA.DATA_RXLEV, m.getRxlev());
                     jsonArray.put(jm);
-                    jsonObject.put(Constants.MODEL.DATA.DATA_CELLS, jsonArray);
+                    jsonObject.put(Constants.MODEL.DATA.DATA_CELLS, jsonArray);*/
 
                     //wifis
                     if (args != null && args.length > 2) {

@@ -27,6 +27,36 @@ public class Modem {
     private int ci;
     private int rxlev;
 
+    //add by shipeixian begin
+    private int sid;
+    private int nid;
+    private int bid;
+
+    public int getSid() {
+        return sid;
+    }
+
+    public void setSid(int sid) {
+        this.sid = sid;
+    }
+
+    public int getNid() {
+        return nid;
+    }
+
+    public void setNid(int nid) {
+        this.nid = nid;
+    }
+
+    public int getBid() {
+        return bid;
+    }
+
+    public void setBid(int bid) {
+        this.bid = bid;
+    }
+    //add by shipeixian end
+
     public int getMcc() {
         return mcc;
     }

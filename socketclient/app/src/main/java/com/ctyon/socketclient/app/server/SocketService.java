@@ -244,10 +244,10 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
         //add by shipeixian on 2018-05-24 end
 
         //没写imei号，则return
-        /*String imei = DeviceUtils.getIMEI(App.getsContext());
+        String imei = DeviceUtils.getIMEI(App.getsContext());
         if (imei.startsWith("0")&&imei.endsWith("0")){
             return;
-        }*/
+        }
         //如果没有网络,return
         if (NetUtil.getNetWorkState(getApplicationContext()) == -1) {
             return;
@@ -1072,12 +1072,8 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
     private void startLocationWithSuperMethod() {
 
         //发送基站信息
-        if (mManager != null && mManager.isConnect()) {
-            mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_LOCATION_C));
-            Log.i("shipeixian", "handler 上传基站定位数据包");
-        }
 
-        /*try {
+        try {
             //打开GPS开关
             GpsTool.toggleGps(getApplicationContext(), true);
             //打开wifi开关
@@ -1087,7 +1083,18 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
 
         }
         //获取WiFi列表
-        getWifiListInfo();
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                getWifiListInfo();
+            }
+        }, 6000);
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                getWifiListInfo();
+            }
+        }, 8000);
         mHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -1134,7 +1141,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                     }
                 }
             }
-        }, 8000);*/
+        }, 10000);
 
     }
 
