@@ -43,6 +43,7 @@ import com.ctyon.socketclient.app.receive.ScreenReceiver;
 import com.ctyon.socketclient.project.model.AlarmModel;
 import com.ctyon.socketclient.project.model.ContactJson;
 import com.ctyon.socketclient.project.model.ForbidUseModel;
+import com.ctyon.socketclient.project.model.LocationResult;
 import com.ctyon.socketclient.project.senddata.RedirectException;
 import com.ctyon.socketclient.project.senddata.publish.PulseData;
 import com.ctyon.socketclient.project.senddata.publish.SendData;
@@ -110,6 +111,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
 
     //add by shipeixian on 2018-05-24 begin
     private boolean isWaitingServerResponse = false;
+    private boolean isWifiLocationSuccess = false;
     private boolean isGpsLocatioinSuccess = false;
     private int connectFailedCount = 0;
     private int resendCodeCount = 0;
@@ -189,6 +191,9 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
 
         //初始化LocationManager
         initGpsService();
+
+        //just for test
+        acquireWakeLock();
 
         Log.i(TAG, "SocketService oncreate(...) end");
 
@@ -358,6 +363,20 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                             if (mManager != null && mManager.isConnect()) {
                                 mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_LOCATION_S, ident + ""));
                             }
+                            //用WiFi定位返回的经纬度，再次发给服务器，以便让APP端显示GPS标签
+                            if (isWifiLocationSuccess) {
+                                isWifiLocationSuccess = false;
+                                try {
+                                    Gson gson = new Gson();
+                                    LocationResult locationResult = gson.fromJson(str, LocationResult.class);
+                                    if (mManager != null && mManager.isConnect()) {
+                                        mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_LOCATION_C, locationResult.getLoc_lon(), locationResult.getLoc_lat()));
+                                    }
+                                } catch (Exception e) {
+
+                                }
+
+                            }
                             break;
                         case Constants.COMMON.TYPE.TYPE_LOCATION_C:
                             //终端上传定位
@@ -418,20 +437,6 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                                 addContactIntent.setAction("com.ctyon.shawn.ADD_CONTACT");
                                 sendBroadcast(addContactIntent);
                             }
-                            /*int index = jsonObject.get(Constants.MODEL.DATA.DATA_INEDX).getAsInt();
-                            int last = jsonObject.get(Constants.MODEL.DATA.DATA_LAST).getAsInt();
-                            JsonArray jsonArray = jsonObject.get(Constants.MODEL.DATA.DATA_CONTACT).getAsJsonArray();
-                            JsonObject cj = jsonArray.get(index).getAsJsonObject();
-                            String cj_name = cj.get(Constants.MODEL.DATA.DATA_NAME).getAsString();
-                            String cj_phone = cj.get(Constants.MODEL.DATA.DATA_PHONE).getAsString();
-                            //ContactUtils.addContact(App.getsContext(),cj_name,cj_phone);
-                            Intent addContactIntent = new Intent();
-                            //addContactIntent.putExtra("contact_name", cj_name);
-                            //addContactIntent.putExtra("contact_number", cj_phone);
-                            addContactIntent.putExtra("contact_json", str);
-                            addContactIntent.setAction("com.ctyon.shawn.ADD_CONTACT");
-                            sendBroadcast(addContactIntent);
-                            //IToast.show("通讯录号码设置");*/
                             break;
                         case Constants.COMMON.TYPE.TYPE_VOICE_MESSAGE:
 //                        {"type":10,"ident":226201,"id":"5ab49367c493a9055a9344dc","url":"http://devicetest.iot08.com/static/message/fe801c53132108ecc9781e9e.amr","duration":8,"size":14022}
@@ -1029,6 +1034,8 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
         //add by shipeixian for close manager end
 
         cancelNotification();
+        //just for test
+        releaseWakeLock();
         Log.i(TAG, "SocketService onDestroy");
     }
 
@@ -1039,7 +1046,9 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
             String sosString = "";
             if (sosNumbers != null && sosNumbers.length > 0) {
                 for (String item : sosNumbers) {
-                    sosString += item + "/";
+                    if (!TextUtils.isEmpty(item)) {
+                        sosString += item + "/";
+                    }
                 }
             }
             Settings.Global.putString(getContentResolver(), "socket_client_sos_number", sosString);
@@ -1107,6 +1116,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                             if (longtitude != 0 && lantitude != 0) {
                                 if (mManager != null && mManager.isConnect()) {
                                     mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_LOCATION_C, longtitude+"", lantitude+""));
+                                    isWifiLocationSuccess = false;
                                     Log.i("shipeixian", "handler 上传GPS定位数据包");
                                     closeGpsAndWifi();
                                 }
@@ -1114,6 +1124,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                                 //发送基站信息
                                 if (mManager != null && mManager.isConnect()) {
                                     mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_LOCATION_C));
+                                    isWifiLocationSuccess = false;
                                     Log.i("shipeixian", "handler 上传基站定位数据包");
                                     closeGpsAndWifi();
                                 }
@@ -1129,12 +1140,14 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                             } else if (wifiArray.length == 6) {
                                 mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_LOCATION_C, wifiArray[0], wifiArray[1], wifiArray[2], wifiArray[3], wifiArray[4], wifiArray[5]));
                             }
+                            isWifiLocationSuccess = true;
                             Log.i("shipeixian", "handler 上传wifi定位数据包");
                             closeGpsAndWifi();
                         }
                     } else {
                         if (mManager != null && mManager.isConnect()) {
                             mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_LOCATION_C));
+                            isWifiLocationSuccess = false;
                             Log.i("shipeixian", "handler 上传基站定位数据包");
                             closeGpsAndWifi();
                         }
@@ -1585,5 +1598,30 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
             e.printStackTrace();
         }
     }
+
+    //add by shipeixian for keep alive begin
+    public android.os.PowerManager.WakeLock wakeLock;
+
+    private void acquireWakeLock() {
+        if (null == wakeLock) {
+            android.os.PowerManager pm = (android.os.PowerManager) getSystemService(android.content.Context.POWER_SERVICE);
+            wakeLock = pm.newWakeLock(android.os.PowerManager.PARTIAL_WAKE_LOCK
+                    | android.os.PowerManager.ON_AFTER_RELEASE, getClass()
+                    .getCanonicalName());
+            if (null != wakeLock) {
+                android.util.Log.d("shipeixian","call acquireWakeLock");
+                wakeLock.acquire();
+            }
+        }
+    }
+
+    private void releaseWakeLock() {
+        if (null != wakeLock && wakeLock.isHeld()) {
+            android.util.Log.d("shipeixian", "call releaseWakeLock");
+            wakeLock.release();
+            wakeLock = null;
+        }
+    }
+    //add by shipeixian for keep alive end
 
 }
