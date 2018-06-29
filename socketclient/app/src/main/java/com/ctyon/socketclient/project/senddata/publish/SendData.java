@@ -114,7 +114,19 @@ public class SendData implements ISendable {
                 try {
                     jsonObject.put(Constants.MODEL.DATA.DATA_TYPE, Constants.COMMON.TYPE.TYPE_GET_WEATHER);
                     jsonObject.put(Constants.MODEL.DATA.DATA_IDENT, random.nextInt(999999));
-                    JSONArray jsonArray = new JSONArray();
+
+
+                    //telecom 电信
+                    //JSONArray jsonArray = new JSONArray();
+                    JSONObject jm = new JSONObject();
+                    Modem m = Modem2Utils.getModemCell(App.getsContext());
+                    jm.put("sid", m.getSid());
+                    jm.put("nid", m.getNid());
+                    jm.put("bid", m.getBid());
+                    //jsonArray.put(jm);
+                    jsonObject.put("telecomcell", jm);
+
+                    /*JSONArray jsonArray = new JSONArray();
                     JSONObject j1 = new JSONObject();
                     Modem m = Modem2Utils.getModemCell(App.getsContext());
                     j1.put(Constants.MODEL.DATA.DATA_MCC, m.getMcc());
@@ -123,7 +135,8 @@ public class SendData implements ISendable {
                     j1.put(Constants.MODEL.DATA.DATA_CI, m.getCi());
                     j1.put(Constants.MODEL.DATA.DATA_RXLEV, m.getRxlev());
                     jsonArray.put(j1);
-                    jsonObject.put(Constants.MODEL.DATA.DATA_CELLS, jsonArray);
+                    jsonObject.put(Constants.MODEL.DATA.DATA_CELLS, jsonArray);*/
+
                     str = jsonObject.toString();
                 } catch (JSONException e) {
                     e.printStackTrace();

@@ -193,7 +193,7 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
         initGpsService();
 
         //just for test
-        acquireWakeLock();
+        //acquireWakeLock();
 
         Log.i(TAG, "SocketService oncreate(...) end");
 
@@ -363,14 +363,16 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
                             if (mManager != null && mManager.isConnect()) {
                                 mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_LOCATION_S, ident + ""));
                             }
-                            //用WiFi定位返回的经纬度，再次发给服务器，以便让APP端显示GPS标签
+                            //用WiFi定位返回的经纬度，再次发给服务器，以便让APP端显示GPS标签，这是以假乱真的效果，以后GPS硬件溜的时候，记得删掉此处代码
                             if (isWifiLocationSuccess) {
                                 isWifiLocationSuccess = false;
                                 try {
                                     Gson gson = new Gson();
                                     LocationResult locationResult = gson.fromJson(str, LocationResult.class);
+                                    String[] gpsData = AMapLocationImp.gcj2wgs(Double.parseDouble(locationResult.getLoc_lon()), Double.parseDouble(locationResult.getLoc_lat()));
+                                    Log.d(TAG, "gcj2转换为gps坐标: 经度=" + gpsData[0]+",纬度="+gpsData[1]);
                                     if (mManager != null && mManager.isConnect()) {
-                                        mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_LOCATION_C, locationResult.getLoc_lon(), locationResult.getLoc_lat()));
+                                        mManager.send(new SendData(Constants.COMMON.TYPE.TYPE_LOCATION_C, gpsData[0], gpsData[1]));
                                     }
                                 } catch (Exception e) {
 
@@ -1034,8 +1036,6 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
         //add by shipeixian for close manager end
 
         cancelNotification();
-        //just for test
-        releaseWakeLock();
         Log.i(TAG, "SocketService onDestroy");
     }
 
@@ -1081,7 +1081,8 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
     private void startLocationWithSuperMethod() {
 
         //发送基站信息
-
+        //持有电源锁，让定位能成功
+        acquireWakeLock();
         try {
             //打开GPS开关
             GpsTool.toggleGps(getApplicationContext(), true);
@@ -1162,6 +1163,8 @@ public class SocketService extends Service implements SafeHandler.HandlerContain
         longtitude = 0;
         lantitude = 0;
         wifiListInfo = "";
+        //定位结束，释放电源锁
+        releaseWakeLock();
         try {
             //关闭GPS开关
             //GpsTool.toggleGps(getApplicationContext(), false);

@@ -55,6 +55,11 @@ public class ReaderImpl extends AbsReader {
                 SL.i("read head: " + BytesUtils.toHexStringForLog(headBuf.array()));
             }
             int bodyLength = headerProtocol.getBodyLength(originalData.getHeadBytes(), mOkOptions.getReadByteOrder());
+            //just for test by shipeixian begin
+            if (bodyLength == 65535) {
+                return;
+            }
+            //just for test by shipeixian end
             if (OkSocketOptions.isDebug()) {
                 SL.i("need read body length: " + bodyLength);
             }

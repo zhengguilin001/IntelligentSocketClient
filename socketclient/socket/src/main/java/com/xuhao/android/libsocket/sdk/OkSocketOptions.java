@@ -342,8 +342,8 @@ public class OkSocketOptions {
         okOptions.mHeaderProtocol = new DefaultNormalHeaderProtocol();
         okOptions.mMaxReadDataMB = 10;
         okOptions.mConnectTimeoutSecond = 15;
-        okOptions.mSendSinglePackageBytes = 2048;
-        okOptions.mReadSingleTimeBufferBytes = 2048;
+        okOptions.mSendSinglePackageBytes = 4096;
+        okOptions.mReadSingleTimeBufferBytes = 4096;
         okOptions.mReadByteOrder = ByteOrder.BIG_ENDIAN;
         okOptions.mWriteOrder = ByteOrder.BIG_ENDIAN;
         okOptions.isConnectionHolden = true;
