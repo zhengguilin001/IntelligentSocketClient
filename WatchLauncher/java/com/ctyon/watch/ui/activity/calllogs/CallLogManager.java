@@ -68,7 +68,9 @@ public class CallLogManager {
                     //countCallLog.setName(name);
                     countCallLog.setType(type);
                     countCallLog.setDate(ContactsUtil.parserDate(date,mContext));
-                    countCallLogs.add(countCallLog);
+                    if (!"43215678".equals(countCallLog.getNumber())) {
+                        countCallLogs.add(countCallLog);
+                    }
                 }
             }
             cursor.close();

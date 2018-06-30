@@ -10,6 +10,9 @@ import android.support.v4.app.ActivityCompat;
 import android.telephony.PhoneNumberUtils;
 import android.text.Editable;
 import android.text.InputType;
+import android.view.ActionMode;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -112,6 +115,9 @@ public class DialerActivity extends Activity implements View.OnClickListener, Vi
         ButtonDelete = (Button) findViewById(R.id.ButtonDelete);
         ButtonDelete.setOnClickListener(this);
         //add by shipeixian for call hardtest begin
+        editText.setLongClickable(false);
+
+
         editText.addTextChangedListener(new android.text.TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -129,6 +135,7 @@ public class DialerActivity extends Activity implements View.OnClickListener, Vi
             public void afterTextChanged(android.text.Editable editable) {
 
             }
+
         });
         //add by shipeixian for call hardtest end
     }

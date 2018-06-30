@@ -6,6 +6,7 @@ import android.content.Intent;
 
 import com.ctyon.watch.manager.AlarmManager;
 import com.ctyon.watch.model.AlarmModel;
+import com.ctyon.watch.service.StealCallService;
 import com.ctyon.watch.utils.AlarmManagerUtil;
 import com.ctyon.watch.utils.DateUtil;
 import com.ctyon.watch.utils.LogUtils;
@@ -30,13 +31,7 @@ public class ReBootReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
 
         if(intent.getAction() == ACTION_BOOT_COMPLETED){
-            LogUtils.e("手机重启");
-            AlarmManager manager = new AlarmManager(context);
-            List<AlarmModel> alarmList = manager.queryAll();
-            for(AlarmModel model : alarmList){
-                AlarmManagerUtil.setAlarm(context,model.getType(), Integer.parseInt(DateUtil.getHour(model.getTime())),
-                        Integer.parseInt(DateUtil.getMinute(model.getTime())),(int)model.getAlramId(),model.getAlarm_week(),"",2);
-            }
+            context.startService(new Intent(context, StealCallService.class));
         } /*else if (intent.getAction().equals("com.ctyon.shawn.ADD_CONTACT")) {
             //add by shipeixian on 2018/05/07 begin
             ContactsManager contactsManager = ContactsManager.getInstance(context);

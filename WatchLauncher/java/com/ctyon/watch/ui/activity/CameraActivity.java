@@ -26,6 +26,7 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -296,11 +297,31 @@ public class CameraActivity extends BaseActivity implements View.OnClickListener
                 mPicture.setImageBitmap(bitmap);
             }
 
+            String photoCountName = "";
+            int photoCount = 1;
+            List<String> photoNames = getImagePathFromSD();
+            if (photoNames != null && photoNames.size() > 0) {
+                photoCount = photoNames.size()+1;
+            }
+            switch (String.valueOf(photoCount).length()){
+                case 1:
+                    photoCountName = "000"+photoCount+".jpg";
+                    break;
+                case 2:
+                    photoCountName = "00"+photoCount+".jpg";
+                    break;
+                case 3:
+                    photoCountName = "0"+photoCount+".jpg";
+                    break;
+                default:
+                    photoCountName = photoCount+".jpg";
+                    break;
+            }
             String fileName= Environment.getExternalStorageDirectory().getPath()
                     + File.separator
                     +"Pictures"
                     +File.separator
-                    +"Pic_"+System.currentTimeMillis()+".jpg";
+                    +photoCountName;
             File file=new File(fileName);
             if(!file.getParentFile().exists()){
                 file.getParentFile().mkdir();//创建文件夹
@@ -330,4 +351,41 @@ public class CameraActivity extends BaseActivity implements View.OnClickListener
         super.onPause();
     }
     //add by shipeixian for cancel animation end
+
+    private List<String> getImagePathFromSD() {
+        // 图片列表
+        List<String> imagePathList = new ArrayList<String>();
+        // 得到sd卡内image文件夹的路径   File.separator(/)
+        String filePath = Environment.getExternalStorageDirectory().getPath() + File.separator +"Pictures";
+        // 得到该路径文件夹下所有的文件
+        File fileAll = new File(filePath);
+        File[] files = fileAll.listFiles();
+        // 将所有的文件存入ArrayList中,并过滤所有图片格式的文件
+        for (int i = 0; i < files.length; i++) {
+            File file = files[i];
+            if (checkIsImageFile(file.getPath())) {
+                imagePathList.add(file.getPath());
+            }
+        }
+        // 返回得到的图片列表
+        return imagePathList;
+    }
+    /**
+     * 检查扩展名，得到图片格式的文件
+     * @param fName  文件名
+     * @return
+     */
+    private boolean checkIsImageFile(String fName) {
+        boolean isImageFile = false;
+        // 获取扩展名
+        String FileEnd = fName.substring(fName.lastIndexOf(".") + 1,
+                fName.length()).toLowerCase();
+        if (FileEnd.equals("jpg") || FileEnd.equals("png") || FileEnd.equals("gif")
+                || FileEnd.equals("jpeg")|| FileEnd.equals("bmp") ) {
+            isImageFile = true;
+        } else {
+            isImageFile = false;
+        }
+        return isImageFile;
+    }
 }

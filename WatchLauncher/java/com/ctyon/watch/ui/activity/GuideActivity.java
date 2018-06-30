@@ -2,6 +2,7 @@ package com.ctyon.watch.ui.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -33,7 +34,6 @@ public class GuideActivity extends Activity {
 
     private boolean hasSendBatterySMS = false;
 
-    private int phoneNumIndex = 1;
     private int callCounts = 0;
     private int sosNumberCounts = 0;
 
@@ -266,8 +266,8 @@ public class GuideActivity extends Activity {
                     outgoingPhoneNumber = number;
                     android.util.Log.d("shipeixian", "sos 发短信给"+outgoingPhoneNumber);
                     sendSMS(number, "您关注的宝贝发出sos紧急求救信息，请尽快确认宝贝的安全！");
-                    mHandler.removeMessages(4400);
-                    callCounts += 1;
+                    /*mHandler.removeMessages(4400);*/
+
                 }
 
             }
@@ -290,7 +290,6 @@ public class GuideActivity extends Activity {
                         sendSMS(sosNumbers[0], "您关联的手表电量低，请及时充电！");
                         android.util.Log.d("shipeixian", "低电量，发短信给"+sosNumbers[0]);
                         hasSendBatterySMS = true;
-                        mHandler.sendEmptyMessageDelayed(7777, 30*1000);
                     } catch (Exception e) {
 
                     }
@@ -318,29 +317,52 @@ public class GuideActivity extends Activity {
             switch (state) {
                 case android.telephony.TelephonyManager.CALL_STATE_IDLE:/* 无任何状态 */
                     android.os.SystemProperties.set("persist.sys.monitor", "1");
-                    mHandler.removeMessages(4409);
-                    
                     sosStatus = android.provider.Settings.Global.getInt(getContentResolver(),"socket_client_sos_status", 0);
+                    Log.i("shipeixian", "sosStatus = "+sosStatus);
                     if (sosStatus == 1) {
+                        callCounts = callCounts + 1;
+                        Log.i("shipeixian", "callCounts =  "+callCounts);
                         //dangerous
-                        android.util.Log.d("shipeixian", "GuideActivity 发送轮询");
-                        mHandler.sendEmptyMessageDelayed(4400, 5*1000);
+                        String sosString = android.provider.Settings.Global.getString(getContentResolver(),"socket_client_sos_number");
+                        String[] sosNumbers  = sosString.split("/");
+                        Log.i("shipeixian", "sosNumbers.length = "+sosNumbers.length);
+                        switch (sosNumbers.length) {
+                            case 1:
+                                if (callCounts == 2) {
+                                    callCounts = 0;
+                                    mHandler.removeMessages(4400);
+                                    android.provider.Settings.Global.putInt(getContentResolver(), "socket_client_sos_status", 0);
+                                } else {
+                                    mHandler.sendEmptyMessageDelayed(4400, 13*1000);
+                                }
+                                break;
+                            case 2:
+                                if (callCounts == 4) {
+                                    callCounts = 0;
+                                    mHandler.removeMessages(4400);
+                                    android.provider.Settings.Global.putInt(getContentResolver(), "socket_client_sos_status", 0);
+                                }else {
+                                    mHandler.sendEmptyMessageDelayed(4400, 13*1000);
+                                }
+                                break;
+                            case 3:
+                                if (callCounts == 6) {
+                                    callCounts = 0;
+                                    mHandler.removeMessages(4400);
+                                    android.provider.Settings.Global.putInt(getContentResolver(), "socket_client_sos_status", 0);
+                                }else {
+                                    mHandler.sendEmptyMessageDelayed(4400, 13*1000);
+                                }
+                                break;
+                        }
                     } else {
                         android.util.Log.d("shipeixian", "sos 已经被接听");
-                        phoneNumIndex = 1;
                         callCounts = 0;
                         sosNumberCounts = 0;
                         mHandler.removeMessages(4400);
                     }
                     break;
                 case android.telephony.TelephonyManager.CALL_STATE_OFFHOOK:/* 接起电话 */
-                     if(getRecordState()) {
-                         android.provider.Settings.Global.putInt(getContentResolver(),"socket_client_sos_status", 0);
-                         phoneNumIndex = 1;
-                         callCounts = 0;
-                         sosNumberCounts = 0;
-                         mHandler.removeMessages(4400);
-                     }
                     break;
                 case android.telephony.TelephonyManager.CALL_STATE_RINGING:/* 电话进来 */
                     //上课禁用，挂断电话
@@ -377,25 +399,62 @@ public class GuideActivity extends Activity {
                     try {
                         String sosString = android.provider.Settings.Global.getString(getContentResolver(),"socket_client_sos_number");
                         String[] sosNumbers  = sosString.split("/");
-                        sosNumberCounts = sosNumbers.length;
-                        int index = random.nextInt(sosNumbers.length);
-                        Intent intent = new Intent("android.intent.action.CALL_PRIVILEGED", android.net.Uri.parse("tel:"+sosNumbers[phoneNumIndex]));
-                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        startActivity(intent);
-                        //sendSMS(sosNumbers[phoneNumIndex], "宝贝发出sos求救信息，快去营救！");
-                        if(phoneNumIndex < sosNumbers.length - 1){
-                            phoneNumIndex += 1;
-                        } else {
-                            phoneNumIndex = 0;
-                        }
-                        //拨打两轮，1个号码，拨打2次；2个号码，拨打4次；3个号码，拨打6次
-                        if((callCounts == 6 && sosNumberCounts == 3) || (callCounts == 4 && sosNumberCounts == 2) || (callCounts == 2 && sosNumberCounts == 1)) {
-                            android.provider.Settings.Global.putInt(getContentResolver(),"socket_client_sos_status", 0);
-                            phoneNumIndex = 1;
-                            callCounts = 0;
-                            sosNumberCounts = 0;
-                            mHandler.removeMessages(4400);
-                            break;
+                        switch (sosNumbers.length) {
+                            case 1:
+                                if (callCounts == 1) {
+                                    Intent intent = new Intent("android.intent.action.CALL_PRIVILEGED", android.net.Uri.parse("tel:"+sosNumbers[0]));
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    startActivity(intent);
+                                }
+                                break;
+                            case 2:
+                                if (callCounts == 1) {
+                                    Intent intent = new Intent("android.intent.action.CALL_PRIVILEGED", android.net.Uri.parse("tel:"+sosNumbers[1]));
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    startActivity(intent);
+                                }
+                                if (callCounts == 2) {
+                                    Intent intent = new Intent("android.intent.action.CALL_PRIVILEGED", android.net.Uri.parse("tel:"+sosNumbers[0]));
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    startActivity(intent);
+
+                                }
+                                if (callCounts == 3) {
+                                    Intent intent = new Intent("android.intent.action.CALL_PRIVILEGED", android.net.Uri.parse("tel:"+sosNumbers[1]));
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    startActivity(intent);
+                                }
+
+
+                                break;
+                            case 3:
+                                if (callCounts == 1) {
+                                    Intent intent = new Intent("android.intent.action.CALL_PRIVILEGED", android.net.Uri.parse("tel:"+sosNumbers[1]));
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    startActivity(intent);
+                                }
+                                if (callCounts == 2) {
+                                    Intent intent = new Intent("android.intent.action.CALL_PRIVILEGED", android.net.Uri.parse("tel:"+sosNumbers[2]));
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    startActivity(intent);
+                                }
+                                if (callCounts == 3) {
+                                    Intent intent = new Intent("android.intent.action.CALL_PRIVILEGED", android.net.Uri.parse("tel:"+sosNumbers[0]));
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    startActivity(intent);
+                                }
+                                if (callCounts == 4) {
+                                    Intent intent = new Intent("android.intent.action.CALL_PRIVILEGED", android.net.Uri.parse("tel:"+sosNumbers[1]));
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    startActivity(intent);
+                                }
+                                if (callCounts == 5) {
+                                    Intent intent = new Intent("android.intent.action.CALL_PRIVILEGED", android.net.Uri.parse("tel:"+sosNumbers[2]));
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    startActivity(intent);
+                                }
+                                break;
+
                         }
                         
                     } catch (Exception e) {
@@ -430,24 +489,17 @@ public class GuideActivity extends Activity {
                     mHandler.sendEmptyMessageDelayed(5555, 60*1000);
                     break;
                  case 6666:
-                    if((int)(getBattery(GuideActivity.this)*100) > 20) {
+                    if((int)(getBattery(GuideActivity.this)*100) > 40) {
                         hasSendBatterySMS = false;
                     }
                     //如果没有上课禁用，才开启闹钟服务
                     if (!isForbidUse()) {
                         startService(new Intent(GuideActivity.this, com.ctyon.watch.service.AlarmService.class));
+                    } else {
+                        startActivity(new Intent(GuideActivity.this, ForbidUseActivity.class));
+                        overridePendingTransition(0, 0);
                     }
                     mHandler.sendEmptyMessageDelayed(6666, 60*1000);
-                    break;
-                 case 7777:
-                    try {
-                        String sosString = android.provider.Settings.Global.getString(getContentResolver(),"socket_client_sos_number");
-                        String[] sosNumbers  = sosString.split("/");
-                        sendSMS(sosNumbers[0], "您关联的手表电量低，请及时充电！");
-                        android.util.Log.d("shipeixian", "低电量，发短信给"+sosNumbers[0]);
-                    } catch (Exception e) {
-
-                    }
                     break;
             }
         }

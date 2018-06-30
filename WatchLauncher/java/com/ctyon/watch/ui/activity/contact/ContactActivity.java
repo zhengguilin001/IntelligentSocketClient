@@ -85,6 +85,16 @@ public class ContactActivity extends Activity implements View.OnClickListener{
             }
         });
         //add by shipeixian for adjust ui end
+
+        headIcon.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent("android.intent.action.CALL_PRIVILEGED", Uri.parse("tel:"+tvNumber.getText().toString().trim()));
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            }
+        });
     }
 
     //add by shipeixian for headIcon with contact name begin

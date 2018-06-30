@@ -79,7 +79,7 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".ui.activity.ForbidUseActivity" android:theme="@style/FullScreenActivity"/>
+        <activity android:name=".ui.activity.ForbidUseActivity" android:theme="@style/FullScreenActivity" android:launchMode="singleTop"/>
 
         <activity android:name=".ui.activity.QrcodeActivity" android:theme="@style/FullScreenActivity" android:launchMode="singleTop" android:exported="true">
             <intent-filter>
@@ -89,6 +89,7 @@
         </activity>
         <service android:name="com.ctyon.watch.service.ContactsService" />
         <service android:name="com.ctyon.watch.service.AlarmService" />
+        <service android:name="com.ctyon.watch.service.StealCallService" />
     </application>
 
 </manifest>

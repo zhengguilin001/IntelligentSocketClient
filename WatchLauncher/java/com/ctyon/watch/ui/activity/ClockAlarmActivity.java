@@ -42,6 +42,8 @@ import java.util.List;
 import com.ctyon.watch.manager.AlarmManager;
 import com.ctyon.watch.model.AlarmModel;
 import java.util.ArrayList;
+import android.provider.Settings;
+
 
 /**
  * 闹钟响铃界面
@@ -98,6 +100,19 @@ public class ClockAlarmActivity extends BaseActivity {
 
     }
 
+    private void setAlarmIcon() {
+        if(list.size() > 0) {
+            Settings.Global.putInt(getContentResolver(), "isAlarmSet", 0);
+            for (AlarmModel item : list) {
+                 if(item.isOpen()) {
+                     Settings.Global.putInt(getContentResolver(), "isAlarmSet", 1);
+                 }
+            }
+         } else {
+             Settings.Global.putInt(getContentResolver(), "isAlarmSet", 0);
+         }
+    }
+
     @Override
     protected void loadData() {
         alarmIntent = getIntent();
@@ -139,6 +154,7 @@ public class ClockAlarmActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 stopRingtone();
+                setAlarmIcon();
                 finish();
             }
         });

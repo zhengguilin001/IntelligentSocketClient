@@ -37,6 +37,7 @@ public class RecordButton extends AppCompatButton {
     private ImageView dialogImg;
     private Context mContext;
 
+
     public RecordButton(Context context) {
         super(context);
         // TODO Auto-generated constructor stub
@@ -172,7 +173,37 @@ public class RecordButton extends AppCompatButton {
     private Handler recordHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
-            setDialogImage();
+            if (msg.what == 1) {
+                setDialogImage();
+            }
+            if (msg.what == 6666) {
+                if (recordState == RECORD_ON) {
+                    recordState = RECORD_OFF;
+                    if (mRecordDialog.isShowing()) {
+                        mRecordDialog.dismiss();
+                    }
+                    mAudioRecorder.stop();
+                    mRecordThread.interrupt();
+                    voiceValue = 0.0;
+                    if (isCanceled) {
+                        mAudioRecorder.deleteOldFile();
+                    } else {
+                        if (recodeTime < MIN_RECORD_TIME) {
+                            //showWarnToast("时间太短  录音失败");
+                            if (quickRecordListener != null) {
+                                quickRecordListener.onOneSecondRecordAudio();
+                            }
+                            mAudioRecorder.deleteOldFile();
+                        } else {
+                            if (listener != null) {
+                                listener.recordEnd(mAudioRecorder.getFilePath());
+                            }
+                        }
+                    }
+                    isCanceled = false;
+                    RecordButton.this.setText("按住 说话");
+                }
+            }
         }
     };
 
@@ -191,37 +222,7 @@ public class RecordButton extends AppCompatButton {
                         mAudioRecorder.start();
                         callRecordTimeThread();
                         //15秒后,发送消息
-                        recordHandler.postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                if (recordState == RECORD_ON) {
-                                    recordState = RECORD_OFF;
-                                    if (mRecordDialog.isShowing()) {
-                                        mRecordDialog.dismiss();
-                                    }
-                                    mAudioRecorder.stop();
-                                    mRecordThread.interrupt();
-                                    voiceValue = 0.0;
-                                    if (isCanceled) {
-                                        mAudioRecorder.deleteOldFile();
-                                    } else {
-                                        if (recodeTime < MIN_RECORD_TIME) {
-                                            //showWarnToast("时间太短  录音失败");
-                                            if (quickRecordListener != null) {
-                                                quickRecordListener.onOneSecondRecordAudio();
-                                            }
-                                            mAudioRecorder.deleteOldFile();
-                                        } else {
-                                            if (listener != null) {
-                                                listener.recordEnd(mAudioRecorder.getFilePath());
-                                            }
-                                        }
-                                    }
-                                    isCanceled = false;
-                                    RecordButton.this.setText("按住 说话");
-                                }
-                            }
-                        }, 15000);
+                        recordHandler.sendEmptyMessageDelayed(6666, 15*1000);
                     }
                 }
                 break;
@@ -239,6 +240,7 @@ public class RecordButton extends AppCompatButton {
                 break;
             case MotionEvent.ACTION_UP: // 松开手指
                 Log.d("521", "onTouchEvent: 松开手指");
+                recordHandler.removeMessages(6666);
                 if (recordState == RECORD_ON) {
                     recordState = RECORD_OFF;
                     if (mRecordDialog.isShowing()) {

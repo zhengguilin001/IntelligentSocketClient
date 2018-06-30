@@ -52,7 +52,7 @@ public class PhotoAdapter extends BaseAdapter {
         String[] strArrays = photoNameList.get(i).split("/");
         String name = strArrays[strArrays.length - 1];
         String realName = name.substring(name.length() - 8,name.length());
-        viewHolder.photoName.setText("PIC..."+realName);
+        viewHolder.photoName.setText(realName);
         return view;
     }
 
